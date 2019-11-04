@@ -1,0 +1,85 @@
+package Week02.Chapter06;
+import java.util.ArrayList;
+import java.util.List;
+import java.util.Stack;
+
+public class LeetCode_2_094 {
+    // https://leetcode-cn.com/problems/binary-tree-inorder-traversal/
+    //      1
+    //          2
+    //        3
+    private void inOrder(BinaryTree node, List<Integer> res){
+        if(node!=null){
+            if(node.left!=null){
+                System.out.printf("Left--node:%d%n", node.left.val);
+                inOrder(node.left,res);
+            }
+            res.add(node.val);
+            System.out.printf("res:%s%n", res);
+            if(node.right!=null){
+                System.out.printf("Right--node:%d%n", node.right.val);
+                inOrder(node.right,res);
+            }
+        }
+        if(node!=null)
+            System.out.printf("Node value:%d%n", node.val);
+    }
+    // 颜色标记法
+    private void inorderTraversal(ColorBinaryTree node,List<Integer> res){
+        Stack<ColorBinaryTree> stack = new Stack<>();
+        stack.push(node);
+        while(stack.size()!=0){
+            String color = stack.peek().color;
+            BinaryTree currNode = stack.pop().node;
+            if(currNode == null){
+                continue;
+            }
+            if(color.equals("WHITE")){
+                if(currNode.right!=null){
+                    ColorBinaryTree right = new ColorBinaryTree("WHITE", currNode.right);
+                    stack.push(right);
+                }
+
+                ColorBinaryTree curr = new ColorBinaryTree("GREY", currNode);
+                stack.push(curr);
+                if(currNode.left != null){
+                    ColorBinaryTree left = new ColorBinaryTree("WHITE", currNode.left);
+                    stack.push(left);
+                }
+                // 后压入的元素先弹出 因此循环会将一次将每个节点下的右  根 左 节点依次压人 -- 弹出顺序为 左 根 右
+                //          1
+                //      2      3
+                //    4   5
+                //          6
+                //  第一次压完元素后 ：
+                //
+                //        4  white
+                //        2  grey
+                //        5  white
+                //        1  grey
+                //        3  white
+                //  将每个节点的左子树元素按 左 中 右 依次进行压栈  压到左子树的末尾叶子节点后  弹出当前的 左节点和根节点 在弹出右节点时 又对右节点开始进行遍历压栈
+            }
+            else{
+                res.add(currNode.val);
+            }
+        }
+    }
+    public static void main(String[] args) {
+        BinaryTree node1 = new BinaryTree(1);
+        BinaryTree node2 = new BinaryTree(2);
+        BinaryTree node3 = new BinaryTree(3);
+        node1.right = node2;
+        node2.left = node3;
+        List<Integer> res = new ArrayList<>();
+        List<Integer> res2 = new ArrayList<>();
+
+        LeetCode_2_094 Test = new LeetCode_2_094();
+        Test.inOrder(node1,res);
+        System.out.println(res);
+
+        ColorBinaryTree colorNode1 = new ColorBinaryTree("WHITE", node1);
+        Test.inorderTraversal(colorNode1,res2);
+        System.out.println(res2);
+    }
+}
