@@ -10,5 +10,6 @@
 - And yet another way is to just type the class name in the existing code where you want to use it, IDEA will highlight it in red as it doesn't exist yet, then press <b>Alt+Enter</b> for the Intention Actions pop-up, choose Create Class.
 
 ### navigation
+- Alt + 1 brings to Project bar.
 - Esc always brings the focus back to the editor
 - Pressing F4 (Jump to Source action) in a selected resource in the Project View opens the editor with focus.
