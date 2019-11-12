@@ -1,7 +1,7 @@
 package Week03.Chapter10;
 
 public class LeetCode_3_045 {
-    public int jump(int[] nums) {
+    private int jump(int[] nums) {
         // end 表示当前能跳的边界
         // 遍历数组的  到了边界  更新新的边界
         int end = 0;
