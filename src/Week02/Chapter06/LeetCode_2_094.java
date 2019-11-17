@@ -1,7 +1,5 @@
 package Week02.Chapter06;
-import java.util.ArrayList;
-import java.util.List;
-import java.util.Stack;
+import java.util.*;
 
 public class LeetCode_2_094 {
     // https://leetcode-cn.com/problems/binary-tree-inorder-traversal/
@@ -21,6 +19,7 @@ public class LeetCode_2_094 {
                 inOrder(node.right,res);
             }
         }
+
         if(node!=null)
             System.out.printf("Node value:%d%n", node.val);
     }

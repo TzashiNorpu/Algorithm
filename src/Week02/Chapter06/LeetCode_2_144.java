@@ -1,6 +1,5 @@
 package Week02.Chapter06;
 
-import Week02.Chapter06.BinaryTree;
 
 import java.util.ArrayList;
 import java.util.List;
