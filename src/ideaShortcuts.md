@@ -13,3 +13,5 @@
 - Alt + 1 brings to Project bar.
 - Esc always brings the focus back to the editor
 - Pressing F4 (Jump to Source action) in a selected resource in the Project View opens the editor with focus.
+
+- Ctrl + F12 查看当前类文件的属性和方法 --> File Structure
