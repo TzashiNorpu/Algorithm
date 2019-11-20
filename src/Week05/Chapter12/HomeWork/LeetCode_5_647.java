@@ -19,8 +19,8 @@ public class LeetCode_5_647 {
         if (s == null || s.length() == 0) return 0;
 
         for (int i = 0; i < s.length(); i++) {
-            extendPalindrome(s, i, i); // 奇数  l=1,r=1时，得到"aaa" => l=0到r=1区间的回文 "aaa"
-            extendPalindrome(s, i, i + 1); // 偶数 l=1,r=2时，得到"aaaa" => l=0到r=3区间的回文 "aaaa"
+            extendPalindrome(s, i, i); // 处理奇数个的回文字符  l=1,r=1时，得到"aaa" => l=0到r=1区间的回文 "aaa"
+            extendPalindrome(s, i, i + 1); // 处理偶数个的回文字符 l=1,r=2时，得到"aaaa" => l=0到r=3区间的回文 "aaaa"
         }
         return count;
     }
