@@ -1,7 +1,7 @@
 package Week06.Chapter13;
 
 public class LeetCode_6_208 {
-
+    // TrieNode
     // R links to node children
     private LeetCode_6_208[] links;
 

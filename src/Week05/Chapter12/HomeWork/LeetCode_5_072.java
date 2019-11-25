@@ -3,7 +3,15 @@ package Week05.Chapter12.HomeWork;
 public class LeetCode_5_072 {
     // https://leetcode-cn.com/problems/edit-distance/
     // 给定两个单词 word1 和 word2，计算出将 word1 转换成 word2 所使用的最少操作数
-    public int minDistance(String word1, String word2) {
+    /*
+    输入: word1 = "horse", word2 = "ros"
+    输出: 3
+    解释:
+    horse -> rorse (将 'h' 替换为 'r')
+    rorse -> rose (删除 'r')
+    rose -> ros (删除 'e')
+     */
+    private int minDistance(String word1, String word2) {
         int m = word1.length();
         int n = word2.length();
 

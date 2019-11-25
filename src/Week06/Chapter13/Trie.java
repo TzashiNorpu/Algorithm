@@ -49,5 +49,13 @@ class Trie {
         return node != null;
     }
 
+    public static void main(String[] args) {
+        Trie test = new Trie();
+        test.insert("hel");
+        test.insert("mama");
+        System.out.println(test.searchPrefix("he").isEnd());
+        System.out.println(test.searchPrefix("hel").isEnd());
+    }
+
 }
 
