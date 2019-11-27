@@ -25,7 +25,7 @@ public class LeetCode_6_547 {
         // parent[0] = 0    parent[1] = 0  parent[2] = 1 --> 0 1 2 这三个元素组成一个集合,0是这个集合的boss元素
         //  parent[0] = 0    parent[1] = 0  parent[2] = 1 parent[3] = 2  parent[4] = 3---路径压缩---> parent[0] = 0    parent[1] = 0  parent[2] = 0 parent[3] = 0  parent[4] = 0
 
-        // 路径压缩
+        // 返回boss元素
         public int find(int p) {
             while (p != parent[p]) {
                 // 爷爷节点给到当前节点
@@ -67,13 +67,15 @@ public class LeetCode_6_547 {
         }
         return uf.count();
     }
+
     // M[i,j] == M[j,i]  --> 对称矩阵
     // M[i,j] == 1 : i 和 j 是朋友
     public static void main(String[] args) {
         int[][] friends = {
                 {1, 1, 0},
                 {1, 1, 0},
-                {0, 0, 1}};
+                {0, 0, 1}
+        };
         LeetCode_6_547 test = new LeetCode_6_547();
         System.out.println(test.findCircleNum(friends));
     }
