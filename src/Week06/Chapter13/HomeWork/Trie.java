@@ -1,4 +1,4 @@
-package Week06.Chapter13;
+package Week06.Chapter13.HomeWork;
 
 class Trie {
     private LeetCode_6_208 root;

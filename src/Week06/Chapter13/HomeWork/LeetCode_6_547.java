@@ -1,4 +1,4 @@
-package Week06.Chapter13;
+package Week06.Chapter13.HomeWork;
 
 public class LeetCode_6_547 {
     // https://leetcode-cn.com/problems/friend-circles -- 朋友圈和岛屿问题一致  四连通
