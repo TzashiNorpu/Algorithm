@@ -19,7 +19,7 @@ import java.util.List;
 
 //leetcode submit region begin(Prohibit modification and deletion)
 class ThreeSum {
-    public List<List<Integer>> threeSum(int[] nums) {
+    public List<List<Integer>> threeSum1(int[] nums) {
         List<List<Integer>> res = new ArrayList<>();
         // 排序是为了不重复
         Arrays.sort(nums);
@@ -54,7 +54,7 @@ class ThreeSum {
                     subRes.add(nums[r]);
                     res.add(subRes);
                     // -2,0,0,2,2
-                    // pos 不变且三数和为0时才是屈重的时点 l 和 r 进行去重
+                    // pos 不变且三数和为0时才是去重的时点 l 和 r 进行去重
                     while (l < r && nums[l] == nums[l + 1]) {
                         l++;
                     }
@@ -71,10 +71,29 @@ class ThreeSum {
         return res;
     }
 
+    public List<List<Integer>> threeSum2(int[] nums) {
+        List<List<Integer>> res = new ArrayList<>();
+        for (int pos = 0; pos < nums.length - 2; pos++) {
+            if (pos >= 1 && nums[pos] == nums[pos - 1]) {
+                continue;
+            }
+            int[] m1 = Arrays.copyOfRange(nums, pos+1, nums.length);
+            TwoSum twoSum = new TwoSum();
+            int[] m2 = twoSum.twoSum(m1, -nums[pos]);
+            // twoSum 需要重写
+            List<Integer> subRes = new ArrayList<>();
+            subRes.add(nums[pos]);
+            subRes.add(m1[m2[0]]);
+            subRes.add(m1[m2[1]]);
+            res.add(subRes);
+        }
+        return res;
+    }
+
     public static void main(String[] args) {
         ThreeSum test = new ThreeSum();
         int[] ints = new int[]{-2, 0, 0, 2, 2};
-        List<List<Integer>> res = test.threeSum(ints);
+        List<List<Integer>> res = test.threeSum2(ints);
         for (int i = 0; i < res.size(); i++) {
             for (int j = 0; j < res.get(i).size(); j++) {
                 System.out.println(res.get(i).get(j));
