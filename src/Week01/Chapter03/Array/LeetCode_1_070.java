@@ -44,8 +44,8 @@ public class LeetCode_1_070 {
 
     public static void main(String[] args) {
         LeetCode_1_070 test = new LeetCode_1_070();
-        System.out.printf("climbStairs1=%d\n",test.climbStairs1(5));
-        System.out.printf("climbStairs2=%d\n",test.climbStairs2(5));
-        System.out.printf("climbStairs3=%d\n",test.climbStairs3(5));
+        System.out.printf("climbStairs1=%d\n", test.climbStairs1(5));
+        System.out.printf("climbStairs2=%d\n", test.climbStairs2(5));
+        System.out.printf("climbStairs3=%d\n", test.climbStairs3(5));
     }
 }

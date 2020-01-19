@@ -5,18 +5,21 @@ import java.util.HashMap;
 public class LeetCode_2_001 {
     // https://leetcode-cn.com/problems/two-sum/
     // 两数之和
+    // 题解:  *****  https://leetcode-cn.com/problems/3sum/solution/three-sum-ti-jie-by-wonderful611/
     // nums = [2, 7, 11, 15], target = 9  返回 [0, 1]
     private int[] twoSum(int[] nums, int target) {
-        HashMap<Integer, Integer> s = new HashMap<>();
+        // hash 表中 将当前数组元素的值作为键，索引作为该键的值
+        // 找目标元素即在该hash表中找是否存在“差值"部分的索引元素
+        HashMap<Integer, Integer> tmp = new HashMap<>();
         for (int i = 0; i < nums.length; i++) {
-            if (s.containsKey(target - nums[i])) {
-                return new int[]{s.get(target - nums[i]),i};
-            }else{
+            if (tmp.containsKey(target - nums[i])) {
+                return new int[]{tmp.get(target - nums[i]), i};
+            } else {
                 // 2:0  7:1
-                s.put(nums[i], i);
+                tmp.put(nums[i], i);
             }
         }
-        return null;
+        throw new IllegalArgumentException("No Two Sum Solution");
     }
 
     public static void main(String[] args) {

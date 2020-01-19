@@ -20,7 +20,7 @@ class TwoSum {
         int[] res = new int[2];
         HashMap<Integer, Integer> tmp = new HashMap<Integer, Integer>();
         for (int i = 0; i < nums.length; i++) {
-            // tmp.put(2,0)
+            // tmp.put(2,0)    841000000000
             if (!tmp.containsKey(target - nums[i])) {
                 tmp.put(nums[i], i);
             } else {
