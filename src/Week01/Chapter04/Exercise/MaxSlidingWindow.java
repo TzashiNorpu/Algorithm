@@ -24,7 +24,7 @@ public class MaxSlidingWindow {
     public int[] maxSlidingWindow_2(int[] nums, int k) {
         // 双端队列
         LinkedList<Integer> ints = new LinkedList<>();
-        ints.
+//        ints.
         return new int[0];
     }
 
