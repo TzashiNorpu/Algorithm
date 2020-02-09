@@ -1,6 +1,7 @@
 package Week02.Chapter06;
 
 import java.util.ArrayList;
+import java.util.LinkedList;
 import java.util.List;
 
 public class LeetCode_2_590 {
@@ -21,22 +22,45 @@ public class LeetCode_2_590 {
         temp2.add(node4);
         Node node1 = new Node(1, temp2);
         List<Integer> res = new ArrayList<>();
-        postOrder(node1, res);
+        LeetCode_2_590 test = new LeetCode_2_590();
+//        test.postOrder1(node1, res);
+        res = test.postOrder2(node1);
         System.out.println(res);
     }
 
-    private static void postOrder(Node node, List<Integer> res) {
+    private void postOrder1(Node node, List<Integer> res) {
         if (node != null) {
             // 递归最外层 node.childrens == null -> 说明到达叶子节点
             // 有叶子节点的节点 ,循环完叶子节点后退出
-            if(node.childrens!=null) {
+            if (node.childrens != null) {
                 for (int i = 0; i < node.childrens.size(); i++) {
                     if (node.childrens.get(i) != null) {
-                        postOrder(node.childrens.get(i), res);
+                        postOrder1(node.childrens.get(i), res);
                     }
                 }
             }
             res.add(node.val);
         }
+    }
+    // 迭代
+    private LinkedList<Integer> postOrder2(Node root) {
+        LinkedList<Node> stack = new LinkedList<>();
+        LinkedList<Integer> res = new LinkedList<>();
+        if (root == null) {
+            return res;
+        }
+        stack.add(root);
+        while (!stack.isEmpty()) {
+            Node tmp = stack.pollLast();
+            res.addFirst(tmp.val);
+            if (tmp.childrens != null) {
+                for (int i = 0; i < tmp.childrens.size(); i++) {
+                    if (tmp.childrens.get(i) != null) {
+                        stack.add(tmp.childrens.get(i));
+                    }
+                }
+            }
+        }
+        return res;
     }
 }

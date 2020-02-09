@@ -18,8 +18,9 @@
 //leetcode submit region begin(Prohibit modification and deletion)
 package FirstRound.leetcode.editor.cn;
 
-import java.util.ArrayList;
-import java.util.List;
+import com.sun.jmx.remote.internal.ArrayQueue;
+
+import java.util.*;
 
 /**
  * Definition for a binary tree node.
@@ -34,17 +35,32 @@ class Solution {
 
     public List<Integer> inorderTraversal(TreeNode root) {
         List<Integer> res = new ArrayList<>();
-        traverse(root, res);
+        traverse1(root, res);
         return res;
     }
+
     // 递归
-    private void traverse(TreeNode root, List<Integer> res) {
+    private void traverse1(TreeNode root, List<Integer> res) {
         if (root == null) {
             return;
         }
-        traverse(root.left, res);
+        traverse1(root.left, res);
         res.add(root.val);
-        traverse(root.right, res);
+        traverse1(root.right, res);
+    }
+
+    // 堆栈--迭代
+    private List<Integer> traverse2(TreeNode root) {
+        ArrayList<Integer> res = new ArrayList<>();
+        Stack<TreeNode> stack = new Stack<>();
+        while (root != null && !stack.empty()) {
+            while (root.left != null) {
+                root = root.left;
+            }
+            res.add(stack.pop().val);
+            root = root.right;
+        }
+        return res;
     }
 }
 

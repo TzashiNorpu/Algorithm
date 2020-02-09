@@ -1,5 +1,6 @@
 package Week02.Chapter06;
 
+
 import java.util.*;
 
 public class LeetCode_2_094 {
@@ -7,25 +8,39 @@ public class LeetCode_2_094 {
     //      1
     //          2
     //        3
-    private void inOrder(BinaryTree node, List<Integer> res) {
-        if (node != null) {
-            if (node.left != null) {
-                System.out.printf("Left--node:%d%n", node.left.val);
-                inOrder(node.left, res);
-            }
-            res.add(node.val);
-            System.out.printf("res:%s%n", res);
-            if (node.right != null) {
-                System.out.printf("Right--node:%d%n", node.right.val);
-                inOrder(node.right, res);
-            }
+    public List<Integer> inorderTraversal1(BinaryTree root) {
+        List<Integer> res = new ArrayList<>();
+        traverse(root, res);
+        return res;
+    }
+
+    private void traverse(BinaryTree root, List<Integer> res) {
+        if (root == null) {
+            return;
         }
-        if (node != null)
-            System.out.printf("Node value:%d%n", node.val);
+        traverse(root.left, res);
+        res.add(root.val);
+        traverse(root.right, res);
+    }
+
+    private List<Integer> inorderTraversal2(BinaryTree root) {
+        ArrayList<Integer> res = new ArrayList<>();
+        Stack<BinaryTree> stack = new Stack<>();
+        while (root != null || !stack.empty()) {
+            while (root != null) {
+                stack.push(root);
+                root = root.left;
+            }
+            // 此时的tmp是null 拿到栈中弹出的元素的右节点来更新当前的节点
+            BinaryTree tmp = stack.pop();
+            res.add(tmp.val);
+            root = tmp.right;
+        }
+        return res;
     }
 
     // 颜色标记法
-    private void inorderTraversal(ColorBinaryTree node, List<Integer> res) {
+    private void inorderTraversal3(ColorBinaryTree node, List<Integer> res) {
         Stack<ColorBinaryTree> stack = new Stack<>();
         stack.push(node);
         while (stack.size() != 0) {
@@ -83,11 +98,12 @@ public class LeetCode_2_094 {
         List<Integer> res2 = new ArrayList<>();
 
         LeetCode_2_094 Test = new LeetCode_2_094();
-        Test.inOrder(node1, res);
+//        Test.inorderTraversal1(node1, res);
+        res = Test.inorderTraversal2(node1);
         System.out.println(res);
 //
 //        ColorBinaryTree colorNode1 = new ColorBinaryTree("WHITE", node1);
-//        Test.inorderTraversal(colorNode1, res2);
+//        Test.inorderTraversal3(colorNode1, res2);
 //        System.out.println(res2);
     }
 }
