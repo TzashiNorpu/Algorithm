@@ -4,10 +4,13 @@ import java.util.Deque;
 import java.util.LinkedList;
 
 public class MaxSlidingWindow {
+    int k = 100;
+
     public int[] maxSlidingWindow_1(int[] nums, int k) {
         // 暴力1
         // n - k + 1 个窗口
         int n = nums.length;
+
         int[] res = new int[n - k + 1];
 
         for (int i = 0; i < n - k + 1; i++) {
@@ -20,6 +23,10 @@ public class MaxSlidingWindow {
         return res;
     }
 
+    public void test() {
+        int k = 10;
+        System.out.println(this.k);
+    }
 
     public int[] maxSlidingWindow_2(int[] nums, int k) {
         // 双端队列
@@ -37,5 +44,6 @@ public class MaxSlidingWindow {
                 res) {
             System.out.println(i);
         }
+        test.test();
     }
 }
