@@ -1,6 +1,5 @@
 package algo.tzashinorpu.test;
 
-import com.sun.scenario.animation.shared.ClipEnvelope;
 
 public class LT1060 {
     public static void main(String[] args) {

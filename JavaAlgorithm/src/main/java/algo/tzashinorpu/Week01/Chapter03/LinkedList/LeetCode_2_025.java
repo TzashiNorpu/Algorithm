@@ -2,8 +2,8 @@ package algo.tzashinorpu.Week01.Chapter03.LinkedList;
 
 public class LeetCode_2_025 {
     // https://leetcode.com/problems/reverse-nodes-in-k-group/
-    //    // 图解:https://leetcode-cn.com/problems/reverse-nodes-in-k-group/solution/tu-jie-kge-yi-zu-fan-zhuan-lian-biao-by-user7208t/
-    //  每 k 个节点一组进行翻转
+    // 图解:https://leetcode-cn.com/problems/reverse-nodes-in-k-group/solution/tu-jie-kge-yi-zu-fan-zhuan-lian-biao-by-user7208t/
+    // 每 k 个节点一组进行翻转
     // Input:1->2->3->4->5,k=2  Output:2->1->4->3->5
     private ListNode reverseKGroup(ListNode node, int k) {
         ListNode dummy = new ListNode(0);
