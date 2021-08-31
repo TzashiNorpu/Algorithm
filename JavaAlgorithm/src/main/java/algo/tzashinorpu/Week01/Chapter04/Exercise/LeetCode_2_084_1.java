@@ -27,21 +27,27 @@ public class LeetCode_2_084_1 {
         // 高度为 1 的面积在柱子高度为 1 时的已经计算
         int maxArea = 0;
         Stack<Integer> stack = new Stack<>();
-        stack.push(0);
+        stack.push(-1);
         stack.push(0);
         for (int i = 1; i < heights.length; i++) {
-            if (heights[i] < heights[stack.peek()]) {
-                Integer pop = stack.pop();
-                maxArea = Math.max (pop-stack.peek() * heights[pop],maxArea);
+            while (stack.size()>1&&heights[i] < heights[stack.peek()]) {
+                Integer h = heights[stack.pop()];
+                maxArea= Math.max ((i - stack.peek()-1) * h,maxArea);
             }
             stack.push(i);
+        }
+        int r = stack.size()-1;
+        while ( stack.size() > 1) {
+            int index = stack.pop();
+            Integer h = heights[index];
+            maxArea = Math.max(maxArea, h * (r - stack.peek()-1));
         }
         return maxArea;
     }
 
     public static void main(String[] args) {
         LeetCode_2_084_1 sol = new LeetCode_2_084_1();
-        int[] rec = {2,1,5,6,2,3};
+        int[] rec = {2,1,2};
         int max = sol.largestRectangleArea2(rec);
         System.out.println(max);
     }
