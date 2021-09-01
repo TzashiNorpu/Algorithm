@@ -7,16 +7,33 @@ public class LeetCode_2_084_1 {
         int maxArea = 0;
         int len = heights.length;
         for (int i = 0; i < len; i++) {
-            for (int j = 0; j <= i; j++) {
-                int minHij = heights[j];
-                for (int k = j; k <= i; k++) {
-                    minHij = Math.min(minHij, heights[k]);
+            int left =i-1,right=i+1;
+            int w =1;
+            /*for (; (left>=0&&heights[left]>=heights[i] )||(right<len&&heights[right]>=heights[i]);) {
+                if (left>=0&&heights[left]>=heights[i]){
+                    left--;
                 }
-//                int areaij = (i-j+1)*minHij;
-                maxArea = Math.max((i - j + 1) * minHij, maxArea);
-//                System.out.printf("%d to %d area:%d",i,j,areaij);
-//                System.out.println();
+                if (right<len&&heights[right]>=heights[i]){
+                    right++;
+                }
             }
+            maxArea = Math.max(maxArea, heights[i] * ((right - left - 1)));
+            int area = heights[i]*((right-left-1));
+            System.out.printf("index %d area = %d",i,area);
+            System.out.println();
+            */
+
+            while (left>=0&&heights[left]>=heights[i]) {
+                w++;
+                left--;
+            }
+            while (right<len&&heights[right]>=heights[i]) {
+                w++;
+                right++;
+            }
+            maxArea = Math.max(maxArea, w * heights[i]);
+   /*         System.out.printf("index %d area = %d",i,w * heights[i]);
+            System.out.println();*/
         }
         return maxArea;
     }
@@ -31,24 +48,58 @@ public class LeetCode_2_084_1 {
         stack.push(0);
         for (int i = 1; i < heights.length; i++) {
             while (stack.size()>1&&heights[i] < heights[stack.peek()]) {
-                Integer h = heights[stack.pop()];
+                int left = stack.pop();
+                Integer h = heights[left];
                 maxArea= Math.max ((i - stack.peek()-1) * h,maxArea);
+                System.out.printf("index %d area = %d",left,(i - stack.peek()-1) * h);
+                System.out.println();
             }
             stack.push(i);
         }
-        int r = stack.size()-1;
+        int right = heights.length;
         while ( stack.size() > 1) {
             int index = stack.pop();
             Integer h = heights[index];
-            maxArea = Math.max(maxArea, h * (r - stack.peek()-1));
+            maxArea = Math.max(maxArea, h * (right - stack.peek()-1));
+            System.out.printf("index %d area = %d",index,h * (right - stack.peek()-1));
+            System.out.println();
         }
         return maxArea;
     }
 
+    // 将 2 中的分段进行合并
+    public int largestRectangleArea3(int[] heights) {
+        int res = 0;
+        int len = heights.length;
+        int[] sentryH = new int[len+ 2];
+        System.arraycopy(heights,0,sentryH,1,len);
+        // 记录递增元素位置
+        int[] stack = new int[len + 2];
+        int pos = 1;
+        for (int i = 1; i < len + 2; i++) {
+            while (sentryH[i] < sentryH[stack[pos-1]]) {
+                int leftIndex = stack[pos-2];
+                int height = sentryH[stack[pos - 1]];
+                int width = i - leftIndex - 1;
+                int area = width * height;
+                pos--;
+                res = Math.max(res, area);
+                /*System.out.printf("index %d area = %d",leftIndex,area);
+                System.out.println();*/
+            }
+            stack[pos++] = i;
+        }
+        return res;
+    }
+
     public static void main(String[] args) {
         LeetCode_2_084_1 sol = new LeetCode_2_084_1();
-        int[] rec = {2,1,2};
-        int max = sol.largestRectangleArea2(rec);
-        System.out.println(max);
+        int[] rec = {2,4};
+        /*int max1 = sol.largestRectangleArea1(rec);
+        System.out.println(max1);
+        int max2 = sol.largestRectangleArea2(rec);
+        System.out.println(max2);*/
+        int max3 = sol.largestRectangleArea3(rec);
+        System.out.println(max3);
     }
 }
