@@ -16,7 +16,7 @@ func Constructor(k int) MyCircularDeque {
 /** Adds an item at the front of Deque. Return true if the operation is successful. */
 func (this *MyCircularDeque) InsertFront(value int) bool {
 	if this.IsFull() {
-		panic("Deque Full")
+		return false
 	} else {
 		// front--
 		if this.IsEmpty() {
@@ -33,13 +33,13 @@ func (this *MyCircularDeque) InsertFront(value int) bool {
 /** Adds an item at the rear of Deque. Return true if the operation is successful. */
 func (this *MyCircularDeque) InsertLast(value int) bool {
 	if this.IsFull() {
-		panic("Deque Full")
+		return false
 	} else {
 		// front--
 		if this.IsEmpty() {
 			this.data[this.tail] = value
 		} else {
-			this.tail = (this.tail + 1 + this.cap) % this.cap
+			this.tail = (this.tail + 1) % this.cap
 			this.data[this.tail] = value
 		}
 		this.count = this.count + 1
@@ -50,7 +50,7 @@ func (this *MyCircularDeque) InsertLast(value int) bool {
 /** Deletes an item from the front of Deque. Return true if the operation is successful. */
 func (this *MyCircularDeque) DeleteFront() bool {
 	if this.IsEmpty() {
-		panic("Deque Empty")
+		return false
 	} else {
 		this.data[this.head] = 0
 		this.head = (this.head - 1 + this.cap) % this.cap
@@ -62,7 +62,7 @@ func (this *MyCircularDeque) DeleteFront() bool {
 /** Deletes an item from the rear of Deque. Return true if the operation is successful. */
 func (this *MyCircularDeque) DeleteLast() bool {
 	if this.IsEmpty() {
-		panic("Deque Empty")
+		return false
 	} else {
 		this.data[this.head] = 0
 		this.tail = (this.tail - 1 + this.cap) % this.cap
