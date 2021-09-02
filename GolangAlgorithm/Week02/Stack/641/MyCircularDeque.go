@@ -64,7 +64,7 @@ func (this *MyCircularDeque) DeleteLast() bool {
 	if this.IsEmpty() {
 		return false
 	} else {
-		this.data[this.head] = 0
+		this.data[this.tail] = 0
 		this.tail = (this.tail - 1 + this.cap) % this.cap
 		this.count = this.count - 1
 		return true
