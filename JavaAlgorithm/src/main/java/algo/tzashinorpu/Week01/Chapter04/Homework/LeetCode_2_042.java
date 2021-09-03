@@ -84,24 +84,31 @@ public class LeetCode_2_042 {
     public int trap4(int[] height) {
         int res=0;
         Stack<Integer> stack = new Stack<>();
-        for (int i = 0; i < height.length-2; i++) {
-            while (!stack.empty() && height[i+1] > height[stack.peek()]) {
-                int leftIndex = stack.pop();
+        for (int i = 0; i < height.length; i++) {
+            while (!stack.empty() && height[i] > height[stack.peek()]) {
+                /*int currIndex = stack.pop();
+                if (stack.empty()) break;
+                int leftIndex = stack.peek();
+                int rightIndex = i;
+                int currH = height[currIndex];
                 int leftH = height[leftIndex];
-                int currH = height[i];
-                int righIndex = i+1;
-                int rightH = height[righIndex];
-                int area = (righIndex - leftIndex - 1) * (Math.min(leftH, rightH) - currH)<0?0:(Math.min(leftH, rightH) - currH);
-                System.out.printf("Index %d area = %d",i,area);
-                System.out.println();
+                int rightH = height[rightIndex];
+                int area = (Math.min(leftH,rightH) - currH)*(rightIndex-leftIndex-1);
+                res += area;
+                System.out.printf("Index %d area = %d",currIndex,area);
+                System.out.println();*/
+                // --->
+                int currIndex = stack.pop();
+                if (stack.empty()) break;
+                int leftIndex = stack.peek();
+                res +=(Math.min(height[leftIndex],height[i]) - height[currIndex])*(i-leftIndex-1);
             }
             stack.push(i);
         }
         return res;
     }
     public static void main(String[] args) {
-        int[] trap = {0,1,0,2,1,0,1,3,2,1,2,1};
-        //            0  1  2  0  1  2  1  0  0  1  0  0 --> 8
+        int[] trap = {0,1,0,2,3,1,1,3,2,1,2,1};
         LeetCode_2_042 sol = new LeetCode_2_042();
         System.out.println(sol.trap4(trap));
     }
