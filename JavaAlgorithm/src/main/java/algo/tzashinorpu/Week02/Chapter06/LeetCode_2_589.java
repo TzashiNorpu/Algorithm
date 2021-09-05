@@ -66,7 +66,7 @@ public class LeetCode_2_589 {
         List<Integer> res = new ArrayList<>();
         final LeetCode_2_589 test = new LeetCode_2_589();
 //        res = algo.tzashinorpu.test.preorder(node1);
-        res = test.traverse2(node1);
+        res = test.preorder(node1);
         System.out.println(res);
     }
 }
