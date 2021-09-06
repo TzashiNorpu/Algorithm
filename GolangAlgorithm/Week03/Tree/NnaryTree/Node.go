@@ -1,4 +1,4 @@
-package NaryTree
+package NnaryTree
 
 type Node struct {
 	Val      int

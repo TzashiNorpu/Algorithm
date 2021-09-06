@@ -1,15 +1,15 @@
 package levelOrder
 
 import (
-	"Week03/Tree/NaryTree"
+	"Week03/Tree/NnaryTree"
 )
 
-func levelOrder(root *NaryTree.Node) [][]int {
+func levelOrder(root *NnaryTree.Node) [][]int {
 	res := make([][]int, 0)
 	if root == nil {
 		return res
 	}
-	stack := make([]*NaryTree.Node, 0)
+	stack := make([]*NnaryTree.Node, 0)
 	stack = append(stack, root)
 	/*for len(stack) > 0 {
 	item := make([]int, 0)

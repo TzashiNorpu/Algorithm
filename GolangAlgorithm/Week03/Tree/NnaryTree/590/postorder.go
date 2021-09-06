@@ -1,11 +1,11 @@
 package postorder
 
-import "Week03/Tree/NaryTree"
+import "Week03/Tree/NnaryTree"
 
-func postorder(root *NaryTree.Node) []int {
+func postorder(root *NnaryTree.Node) []int {
 	res := make([]int, 0)
-	var traverse func(root *NaryTree.Node)
-	traverse = func(root *NaryTree.Node) {
+	var traverse func(root *NnaryTree.Node)
+	traverse = func(root *NnaryTree.Node) {
 		// 左 右 根
 		if root == nil {
 			return

@@ -1,11 +1,11 @@
 package preorder
 
-import "Week03/Tree/NaryTree"
+import "Week03/Tree/NnaryTree"
 
-func preorder(root *NaryTree.Node) []int {
+func preorder(root *NnaryTree.Node) []int {
 	res := make([]int, 0)
-	var traverse func(root *NaryTree.Node)
-	traverse = func(root *NaryTree.Node) {
+	var traverse func(root *NnaryTree.Node)
+	traverse = func(root *NnaryTree.Node) {
 		// 根  左 右
 		if root == nil {
 			return
