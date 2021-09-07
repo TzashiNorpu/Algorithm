@@ -1,8 +1,8 @@
-package preorderTraversal
+package PreorderTraversal
 
 import "Week03/Tree/BinaryTree"
 
-func preorderTraversal(root *BinaryTree.TreeNode) []int {
+func PreorderTraversal(root *BinaryTree.TreeNode) []int {
 	res := make([]int, 0)
 	var traverse func(root *BinaryTree.TreeNode)
 	traverse = func(root *BinaryTree.TreeNode) {

@@ -1,4 +1,4 @@
-package preorderTraversal
+package PreorderTraversal
 
 import (
 	"Week03/Tree/BinaryTree"
@@ -10,5 +10,5 @@ func TestPreorderTraversal(t *testing.T) {
 	root := &BinaryTree.TreeNode{Val: 1}
 	root.Left = &BinaryTree.TreeNode{Val: 2}
 	root.Left.Right = &BinaryTree.TreeNode{Val: 3}
-	fmt.Println(preorderTraversal(root))
+	fmt.Println(PreorderTraversal(root))
 }
