@@ -13,4 +13,5 @@ func TestMaxDepth(t *testing.T) {
 	root.Right.Left = &BinaryTree.TreeNode{Val: 3}
 	root.Right.Right = &BinaryTree.TreeNode{Val: 7}
 	fmt.Println(dfs(root))
+	fmt.Println(bfs(root))
 }

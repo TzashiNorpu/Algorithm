@@ -21,6 +21,9 @@ func dfs(root *BinaryTree.TreeNode) int {
 
 func bfs(root *BinaryTree.TreeNode) int {
 	max := 0
+	if root == nil {
+		return max
+	}
 	stack := make([]*BinaryTree.TreeNode, 0)
 	stack = append(stack, root)
 	for len(stack) > 0 {
