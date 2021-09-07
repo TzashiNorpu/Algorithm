@@ -6,7 +6,7 @@ import (
 	"testing"
 )
 
-func TestSerializeAnddeserialize(t *testing.T) {
+func TestSerializeAndDeserialize(t *testing.T) {
 	root := &BinaryTree.TreeNode{Val: 1}
 	root.Left = &BinaryTree.TreeNode{Val: 2}
 	root.Right = &BinaryTree.TreeNode{Val: 3}
@@ -14,5 +14,7 @@ func TestSerializeAnddeserialize(t *testing.T) {
 	root.Right.Right = &BinaryTree.TreeNode{Val: 5}
 	codec := Constructor()
 
-	fmt.Println(codec.bfsDerialize(root))
+	derialize := codec.bfsSerialize(root)
+	fmt.Println(derialize)
+	codec.bfsDeserialize(derialize)
 }

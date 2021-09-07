@@ -1,1 +1,3 @@
-module "Week03"
+module Week03
+
+go 1.14
