@@ -6,7 +6,7 @@ import (
 )
 
 func dfs(root *BinaryTree.TreeNode) int {
-	min := math.MaxInt
+	min := math.MaxInt64
 	if root == nil {
 		return 0
 	}

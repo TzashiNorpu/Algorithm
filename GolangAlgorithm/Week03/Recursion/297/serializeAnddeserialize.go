@@ -69,27 +69,51 @@ func (this *Codec) bfsSerialize(root *BinaryTree.TreeNode) string {
 
 func (this *Codec) bfsDeserialize(data string) *BinaryTree.TreeNode {
 	list := strings.Split(data, ",")
-	// i l:2*i+1    r:2*i+2
-	val, _ := strconv.Atoi(list[0])
-	root := &BinaryTree.TreeNode{Val: val}
-	res := root
-	for i := 0; i < len(list)-4; i++ {
-		val, _ := strconv.Atoi(list[i])
-		root.Val = val
-		if lVal, err := strconv.Atoi(list[2*i+1]); err != nil {
-			root.Left = nil
+	stack := make([]*BinaryTree.TreeNode, 0)
+	// li l:i+2    r:i+3
+	// ri l:i+3    r:i+4
+	// 1,2,3,X,X,4,5,6,7,X, X, X, X, X, X
+	// 0 1 2 3 4 5 6 7 8 9 10,11,12,13 14
+	var nodeR *BinaryTree.TreeNode
+	var nodeL *BinaryTree.TreeNode
+	var node *BinaryTree.TreeNode
+	// 根节点
+	ele := list[0]
+	val, _ := strconv.Atoi(ele)
+	node = &BinaryTree.TreeNode{Val: val}
+	res := node
+	stack = append(stack, node)
+	list = list[1:]
+
+	for len(stack) > 0 {
+		node = stack[0]
+		eleL := list[0]
+		if eleL != "X" {
+			valL, _ := strconv.Atoi(eleL)
+			nodeL = &BinaryTree.TreeNode{Val: valL}
 		} else {
-			root.Left = &BinaryTree.TreeNode{Val: lVal}
+			nodeL = nil
 		}
-		if rVal, err := strconv.Atoi(list[2*i+2]); err != nil {
-			root.Right = nil
+		eleR := list[1]
+		if eleL != "X" {
+			valR, _ := strconv.Atoi(eleR)
+			nodeR = &BinaryTree.TreeNode{Val: valR}
 		} else {
-			root.Right = &BinaryTree.TreeNode{Val: rVal}
+			nodeR = nil
 		}
 
-		nxtRootVal, _ := strconv.Atoi(list[i+1])
-		root = &BinaryTree.TreeNode{Val: nxtRootVal}
-		i = i + 1
+		node.Left = nodeL
+		node.Right = nodeR
+
+		list = list[2:]
+		stack = stack[1:]
+		if nodeL != nil {
+			stack = append(stack, nodeL)
+		}
+		if nodeR != nil {
+			stack = append(stack, nodeR)
+		}
 	}
+
 	return res
 }
