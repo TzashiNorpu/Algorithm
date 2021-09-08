@@ -77,13 +77,17 @@ func (this *Codec) bfsDeserialize(data string) *BinaryTree.TreeNode {
 	var nodeR *BinaryTree.TreeNode
 	var nodeL *BinaryTree.TreeNode
 	var node *BinaryTree.TreeNode
+	var res *BinaryTree.TreeNode
 	// 根节点
+
 	ele := list[0]
-	val, _ := strconv.Atoi(ele)
-	node = &BinaryTree.TreeNode{Val: val}
-	res := node
-	stack = append(stack, node)
-	list = list[1:]
+	if ele != "X" {
+		val, _ := strconv.Atoi(ele)
+		node = &BinaryTree.TreeNode{Val: val}
+		res = node
+		stack = append(stack, node)
+		list = list[1:]
+	}
 
 	for len(stack) > 0 {
 		node = stack[0]
@@ -95,7 +99,7 @@ func (this *Codec) bfsDeserialize(data string) *BinaryTree.TreeNode {
 			nodeL = nil
 		}
 		eleR := list[1]
-		if eleL != "X" {
+		if eleR != "X" {
 			valR, _ := strconv.Atoi(eleR)
 			nodeR = &BinaryTree.TreeNode{Val: valR}
 		} else {
@@ -106,6 +110,7 @@ func (this *Codec) bfsDeserialize(data string) *BinaryTree.TreeNode {
 		node.Right = nodeR
 
 		list = list[2:]
+
 		stack = stack[1:]
 		if nodeL != nil {
 			stack = append(stack, nodeL)
