@@ -15,9 +15,12 @@ func TestBuildTree(t *testing.T) {
 	root.Left.Right = &BinaryTree.TreeNode{Val: 4}
 
 	root.Right = &BinaryTree.TreeNode{Val: 5}
-	root.Right.Left = &BinaryTree.TreeNode{Val: 6}
 	root.Right.Right = &BinaryTree.TreeNode{Val: 7}
 	fmt.Println(InorderTraversal.InorderTraversal1(root))
 	fmt.Println(PreorderTraversal.PreorderTraversal(root))
 
+	inOrder := []int{3, 2, 4, 1, 5, 7}
+	preOrder := []int{1, 2, 3, 4, 5, 7}
+	fmt.Println(InorderTraversal.InorderTraversal1(buildTree(preOrder, inOrder)))
+	fmt.Println(PreorderTraversal.PreorderTraversal(buildTree(preOrder, inOrder)))
 }
