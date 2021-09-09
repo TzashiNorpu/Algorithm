@@ -1,4 +1,4 @@
-package inorderTraversal
+package InorderTraversal
 
 import (
 	"Week03/Tree/BinaryTree"
