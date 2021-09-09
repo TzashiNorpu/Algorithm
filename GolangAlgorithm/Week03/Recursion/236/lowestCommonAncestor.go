@@ -8,7 +8,7 @@ func lowestCommonAncestor(root, p, q *BinaryTree.TreeNode) *BinaryTree.TreeNode 
 	}
 	left := lowestCommonAncestor(root.Left, p, q)
 	right := lowestCommonAncestor(root.Right, p, q)
-	if left == nil && right == nil {
+	/*if left == nil && right == nil {
 		return nil
 	}
 	if left == nil {
@@ -17,5 +17,13 @@ func lowestCommonAncestor(root, p, q *BinaryTree.TreeNode) *BinaryTree.TreeNode 
 	if right == nil {
 		return left
 	}
-	return root
+	return root*/
+
+	if left != nil && right != nil {
+		return nil
+	}
+	if left == nil {
+		return right
+	}
+	return left
 }
