@@ -1,7 +1,14 @@
 package algo.tzashinorpu.Week02.Chapter06;
 
-class BinaryTree {
-    int val;
-    BinaryTree left,right;
-    BinaryTree(int x) { this.val = x; }
+public class BinaryTree {
+    public int val;
+    public BinaryTree left,right;
+    public BinaryTree(){}
+
+    public BinaryTree(int val, BinaryTree l, BinaryTree r) {
+        this.val = val;
+        this.left = l;
+        this.right =r;
+    }
+    public BinaryTree(int x) { this.val = x; }
 }
