@@ -22,9 +22,9 @@ public class LeetCode_2_111 {
         return Math.min(dfs(root.left, minDepth), dfs(root.right, minDepth));
     }
 
-    public int minDepth2(BinaryTree root) {
+    /*public int minDepth2(BinaryTree root) {
        
-    }
+    }*/
 
 
     public static void main(String[] args) {
