@@ -84,7 +84,7 @@ public class LeetCode_2_105 {
     }
 
     private BinaryTree build3(int[] preorder, int preStartIndex, int preEndIndex, int[] inorder, int inStartIndex, int inEndIndex, HashMap<Integer, Integer> inorderMap) {
-        if (preStartIndex > preEndIndex) {
+        if (preStartIndex - preEndIndex==1) {
             return null;
         }
         int rootVal = preorder[preStartIndex];
