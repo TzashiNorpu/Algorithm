@@ -48,24 +48,54 @@ public class LeetCode_2_105 {
         if (length == 0) {
             return null;
         }
-        int rootVal=preorder[0];
+        int rootVal = preorder[0];
         BinaryTree root = new BinaryTree(rootVal);
         if (length == 1) {
             return root;
         }
         int splitIndex = -1;
         for (int i = 0; i < length; i++) {
-            if (inorder[i]== rootVal) {
-                splitIndex=i;
+            if (inorder[i] == rootVal) {
+                splitIndex = i;
                 break;
             }
         }
-        int[] leftPreorder = Arrays.copyOfRange(preorder, 1, splitIndex+1);
-        int[] rightPreorder = Arrays.copyOfRange(preorder, splitIndex+1, length);
+        int[] leftPreorder = Arrays.copyOfRange(preorder, 1, splitIndex + 1);
+        int[] rightPreorder = Arrays.copyOfRange(preorder, splitIndex + 1, length);
         int[] leftInorder = Arrays.copyOfRange(inorder, 0, splitIndex);
-        int[] rightInorder = Arrays.copyOfRange(inorder, splitIndex+1, length);
+        int[] rightInorder = Arrays.copyOfRange(inorder, splitIndex + 1, length);
         root.left = buildTree2(leftPreorder, leftInorder);
         root.right = buildTree2(rightPreorder, rightInorder);
         return root;
     }
+
+    public BinaryTree buildTree3(int[] preorder, int[] inorder) {
+        HashMap<Integer, Integer> inorderMap = new HashMap<>();
+        for (int i = 0; i < inorder.length; i++) {
+            inorderMap.put(inorder[i], i);
+        }
+        int preStartIndex = 0;
+        int preEndIndex = inorder.length - 1;
+        int inStartIndex = 0;
+        int inEndIndex = inorder.length - 1;
+        // leftPreStartIdnex, leftPreEndIdnex, rightPreStartIdnex, rightPreEndIdnex
+        // leftInStartIdnex,  leftInEndIdnex,  rightInStartIdnex,  rightInStartIdnex
+        return build2(preorder, preStartIndex, preEndIndex, inorder, inStartIndex, inEndIndex, inorderMap);
+    }
+
+    private BinaryTree build2(int[] preorder, int preStartIndex, int preEndIndex, int[] inorder, int inStartIndex, int inEndIndex, HashMap<Integer, Integer> inorderMap) {
+        if (preStartIndex == preEndIndex) {
+            return null;
+        }
+        int rootVal = preorder[preStartIndex];
+        BinaryTree root = new BinaryTree(rootVal);
+        if (preEndIndex - preStartIndex == 1) {
+            return root;
+        }
+        Integer splitIndex = inorderMap.get(rootVal);
+        int leftLen = splitIndex - inStartIndex;
+        root.left = build2(preorder, preStartIndex + 1, splitIndex + 1, inorder, inStartIndex, splitIndex - 1, inorderMap);
+        return root;
+    }
+
 }
