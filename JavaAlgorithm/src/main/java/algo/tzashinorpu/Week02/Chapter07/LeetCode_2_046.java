@@ -9,11 +9,11 @@ public class LeetCode_2_046 {
         boolean[] used = new boolean[length];
         List<List<Integer>> res = new ArrayList<>();
         ArrayList<Integer> temp = new ArrayList<>();
-        dfs(nums, used, length, temp, res);
+        backTrack(nums, used, length, temp, res);
         return res;
     }
 
-    private void dfs(int[] nums, boolean[] used, int length, ArrayList<Integer> temp, List<List<Integer>> res) {
+    private void backTrack(int[] nums, boolean[] used, int length, ArrayList<Integer> temp, List<List<Integer>> res) {
         if (temp.size() == length) {
             res.add((List<Integer>) temp.clone());
             return;
@@ -24,7 +24,7 @@ public class LeetCode_2_046 {
             }
             temp.add(i);
             used[i - 1] = true;
-            dfs(nums, used, length, temp, res);
+            backTrack(nums, used, length, temp, res);
             used[i - 1] = false;
             temp.remove(temp.size() - 1);
         }

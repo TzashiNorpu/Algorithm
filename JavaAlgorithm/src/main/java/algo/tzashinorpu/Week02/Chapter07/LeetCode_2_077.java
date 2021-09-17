@@ -18,8 +18,6 @@ public class LeetCode_2_077 {
             res.add((List<Integer>) temp.clone());
             return;
         }
-        // beginIndex <--> n-beginIndex -1
-        // begin 右移时 本次遍历的右边界不能移动 --> beginIndex <--> n-beginIndex + (len(temp)) - 1
         for (int i = beginIndex; i <= n; i++) {
             temp.add(i);
             dfs(n, k, i + 1, res, temp);
