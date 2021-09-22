@@ -12,6 +12,6 @@ var plusOne = function (digits) {
   return digits;
 };
 
-let digits = [2, 9, 9];
+let digits = [9, 9, 9];
 res = plusOne(digits);
 console.log(res);
