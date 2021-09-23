@@ -24,7 +24,4 @@ var twoSum1 = function (nums, target) {
   return res;
 };
 
-let nums = [1, 3, 2, 7];
-let target = 9;
-let res = twoSum1(nums, target);
-console.log(res);
+export {twoSum,twoSum1};

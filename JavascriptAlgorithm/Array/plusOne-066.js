@@ -12,6 +12,4 @@ var plusOne = function (digits) {
   return digits;
 };
 
-let digits = [9, 9, 9];
-res = plusOne(digits);
-console.log(res);
+export {plusOne}
