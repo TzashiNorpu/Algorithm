@@ -3,7 +3,7 @@ import assert from "assert";
 describe("plusOne", function () {
   function makeTest(height, expected) {
     it(`[${height}] plusOne is [${expected}]`, function () {
-      assert.equal(plusOne(height).toString, expected.toString);
+      assert.equal(plusOne(height).toString(), expected.toString());
     });
   }
   let nums = [
