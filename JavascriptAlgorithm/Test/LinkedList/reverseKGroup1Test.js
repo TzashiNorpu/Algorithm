@@ -1,7 +1,7 @@
 import { reverseKGroup } from "../../LinkedList/reverseKGroup-025-1.js";
 import assert from "assert";
 import { ListNode } from "../../LinkedList/ListNode.js";
-describe("reverseKGroup", function () {
+describe("reverseKGroup-1", function () {
   function makeTest(l, k, expected) {
     it(`[${JSON.stringify(l)}] reverse ${k} Group result is [${JSON.stringify(
       expected

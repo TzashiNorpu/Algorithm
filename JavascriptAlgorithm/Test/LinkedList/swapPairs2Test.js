@@ -1,7 +1,7 @@
-import { swapPairs } from "../../LinkedList/swapPairs-024-1.js";
+import { swapPairs } from "../../LinkedList/swapPairs-024-2.js";
 import assert from "assert";
 import { ListNode } from "../../LinkedList/ListNode.js";
-describe("swapPairs-1", function () {
+describe("swapPairs-2", function () {
   function makeTest(l, expected) {
     it(`[${JSON.stringify(l)}] swap result is [${JSON.stringify(
       expected
