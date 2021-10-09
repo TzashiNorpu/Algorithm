@@ -14,13 +14,13 @@ describe("merge", function () {
       [1, 2, 3, 0, 0, 0],
       [2, 5, 6],
     ],
-    // [[1], []],
+    [[1], []],
   ];
   let arg2s = [
     [3, 3],
-    // [1, 0],
+    [1, 0],
   ];
-  let res = [[1, 2, 2, 3, 5, 6] /* , [1] */];
+  let res = [[1, 2, 2, 3, 5, 6], [1]];
   for (let x = 0; x < arg1s.length; x++) {
     makeTest(arg1s[x], arg2s[x], res[x]);
   }
