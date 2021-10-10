@@ -5,9 +5,9 @@ var removeDuplicates = function (nums) {
       nums[++pos] = nums[i];
     }
   }
-  //   return nums.slice(0, pos + 1);
+  return nums.slice(0, pos + 1);
 
-  return pos;
+  // return pos;
 };
 
 export { removeDuplicates };
