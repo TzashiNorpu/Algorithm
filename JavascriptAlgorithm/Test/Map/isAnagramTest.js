@@ -9,8 +9,9 @@ describe("isAnagram1", function () {
   let strs = [
     ["anagram", "nagaram"],
     ["rat", "car"],
+    ["😍x", "x😍"],
   ];
-  let res = [true, false];
+  let res = [true, false, true];
   for (let x = 0; x < strs.length; x++) {
     makeTest(strs[x], res[x]);
   }
