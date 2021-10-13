@@ -1,20 +1,23 @@
 package algo.tzashinorpu;
 
-import java.util.Calendar;
-import java.util.Date;
-import java.util.TimeZone;
+import java.util.Collections;
+import java.util.HashMap;
+import java.util.Map;
 
 /**
  * Hello world!
  */
 public class App {
     public static void main(String[] args) {
-
-        Calendar instance = Calendar.getInstance();
-        instance.set(2021, 0, 10);
-        int maximum = instance.getActualMaximum(Calendar.DAY_OF_MONTH);
-        Date time = instance.getTime();
-        instance.setTimeZone(TimeZone.getDefault());
-        System.out.println(time);
+        class User {
+            String name = "Hello";
+        }
+        HashMap<Object, Object> map = new HashMap<>();
+        User user = new User();
+        map.put(1, user);
+        Map<Object, Object> map1 = Collections.unmodifiableMap(map);
+        User o = (User) map1.get(1);
+        o.name = "Tzashi";
+        System.out.println(map1.get(1));
     }
 }
