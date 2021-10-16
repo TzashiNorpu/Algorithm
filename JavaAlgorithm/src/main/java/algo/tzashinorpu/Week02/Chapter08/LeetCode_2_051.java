@@ -43,7 +43,7 @@ public class LeetCode_2_051 {
             this.cols.add(col);
             this.pies.add(row - col);
             this.nas.add(row + col);
-            colIndexPerRow.add(new Integer(col));
+            colIndexPerRow.add(col);
             dfs(n, row + 1, colIndexPerRow);
 
             this.cols.remove(col);
