@@ -128,4 +128,64 @@ public class LeetCode_3_127 {
         }
         return bfs(next, ed, dic, l + 1);
     }
+
+    public int ladderLength3(String beginWord, String endWord, List<String> wordList) {
+        HashSet<String> dic = new HashSet<>(wordList);
+        if (!dic.contains(endWord)) {
+            return 0;
+        }
+        LinkedList<String> strtStack = new LinkedList<>();
+        strtStack.add(beginWord);
+        dic.remove(beginWord);
+        LinkedList<String> endStack = new LinkedList<>();
+        endStack.add(endWord);
+        dic.remove(endWord);
+        return doubleBfs(strtStack, endStack, dic,1);
+    }
+
+    private int doubleBfs(LinkedList<String> strtStack, LinkedList<String> endStack, HashSet<String> dic, int step) {
+        while (strtStack.size() > 0 && endStack.size() > 0) {
+            int strtLen = strtStack.size();
+            step++;
+            for (int i = 0; i < strtLen; i++) {
+                char[] chars = strtStack.poll().toCharArray();
+                for (int j = 0; j < chars.length; j++) {
+                    char oldChar = chars[j];
+                    for (char c = 'a'; c <='z' ; c++) {
+                        chars[j]=c;
+                        String oneLetterChangedWord = new String(chars);
+                        if (dic.contains(oneLetterChangedWord)||endStack.contains(oneLetterChangedWord)) {
+                            if (endStack.contains(oneLetterChangedWord)) {
+                                return step;
+                            }
+                            strtStack.offer(oneLetterChangedWord);
+                            dic.remove(oneLetterChangedWord);
+                        }
+                    }
+                    chars[j] = oldChar;
+                }
+            }
+            int endLen = endStack.size();
+            step++;
+            for (int i = 0; i < endLen; i++) {
+                char[] chars = endStack.poll().toCharArray();
+                for (int j = 0; j < chars.length; j++) {
+                    char oldChar = chars[j];
+                    for (char c = 'a'; c <='z' ; c++) {
+                        chars[j]=c;
+                        String oneLetterChangedWord = new String(chars);
+                        if (dic.contains(oneLetterChangedWord)||strtStack.contains(oneLetterChangedWord)) {
+                            if (strtStack.contains(oneLetterChangedWord)) {
+                                return step;
+                            }
+                            endStack.offer(oneLetterChangedWord);
+                            dic.remove(oneLetterChangedWord);
+                        }
+                    }
+                    chars[j] = oldChar;
+                }
+            }
+        }
+        return 0;
+    }
 }
