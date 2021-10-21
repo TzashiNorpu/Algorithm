@@ -140,7 +140,7 @@ public class LeetCode_3_127 {
         LinkedList<String> endStack = new LinkedList<>();
         endStack.add(endWord);
         dic.remove(endWord);
-        return doubleBfs(strtStack, endStack, dic,1);
+        return doubleBfs(strtStack, endStack, dic, 1);
     }
 
     private int doubleBfs(LinkedList<String> strtStack, LinkedList<String> endStack, HashSet<String> dic, int step) {
@@ -151,10 +151,10 @@ public class LeetCode_3_127 {
                 char[] chars = strtStack.poll().toCharArray();
                 for (int j = 0; j < chars.length; j++) {
                     char oldChar = chars[j];
-                    for (char c = 'a'; c <='z' ; c++) {
-                        chars[j]=c;
+                    for (char c = 'a'; c <= 'z'; c++) {
+                        chars[j] = c;
                         String oneLetterChangedWord = new String(chars);
-                        if (dic.contains(oneLetterChangedWord)||endStack.contains(oneLetterChangedWord)) {
+                        if (dic.contains(oneLetterChangedWord) || endStack.contains(oneLetterChangedWord)) {
                             if (endStack.contains(oneLetterChangedWord)) {
                                 return step;
                             }
@@ -171,10 +171,10 @@ public class LeetCode_3_127 {
                 char[] chars = endStack.poll().toCharArray();
                 for (int j = 0; j < chars.length; j++) {
                     char oldChar = chars[j];
-                    for (char c = 'a'; c <='z' ; c++) {
-                        chars[j]=c;
+                    for (char c = 'a'; c <= 'z'; c++) {
+                        chars[j] = c;
                         String oneLetterChangedWord = new String(chars);
-                        if (dic.contains(oneLetterChangedWord)||strtStack.contains(oneLetterChangedWord)) {
+                        if (dic.contains(oneLetterChangedWord) || strtStack.contains(oneLetterChangedWord)) {
                             if (strtStack.contains(oneLetterChangedWord)) {
                                 return step;
                             }
@@ -187,5 +187,50 @@ public class LeetCode_3_127 {
             }
         }
         return 0;
+    }
+
+    public int ladderLength4(String beginWord, String endWord, List<String> wordList) {
+        HashSet<String> dic = new HashSet<>(wordList);
+        if (!dic.contains(endWord)) {
+            return 0;
+        }
+        HashSet<String> st = new HashSet<>();
+        st.add(beginWord);
+        HashSet<String> ed = new HashSet<>();
+        ed.add(endWord);
+        return doubleBfsOfRecursive(st, ed, dic, 2);
+    }
+
+    private int doubleBfsOfRecursive(HashSet<String> st, HashSet<String> ed, HashSet<String> dic, int step) {
+        if (st.size() == 0 || ed.size() == 0) {
+            return 0;
+        }
+        if (st.size() > ed.size()) {
+            return doubleBfsOfRecursive(ed, st, dic, step);
+        }
+        dic.removeAll(st);
+        HashSet<String> next = new HashSet<>();
+        for (String s : st) {
+            char[] chars = s.toCharArray();
+            for (int i = 0; i < chars.length; i++) {
+                char oldChar = chars[i];
+                for (char c = 'a'; c <= 'z'; c++) {
+                    if (oldChar == c) {
+                        continue;
+                    }
+                    chars[i] = c;
+                    String temp = new String(chars);
+                    if (dic.contains(temp)) {
+                        if (ed.contains(temp)) {
+                            return step;
+                        } else {
+                            next.add(temp);
+                        }
+                    }
+                }
+                chars[i] = oldChar;
+            }
+        }
+        return doubleBfsOfRecursive(next, ed, dic, step + 1);
     }
 }

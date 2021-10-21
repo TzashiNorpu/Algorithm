@@ -1,8 +1,9 @@
 package algo.tzashinorpu;
 
 import java.lang.reflect.Field;
-import java.util.Collections;
+import java.util.Date;
 import java.util.HashMap;
+import java.util.HashSet;
 import java.util.Map;
 
 /**
@@ -10,25 +11,59 @@ import java.util.Map;
  */
 public class App {
     public static void main(String[] args) throws NoSuchFieldException, IllegalAccessException {
-        class User {
-            String name = "Hello";
+        class Test {
+            Date date;
+            int age;
+
+            public Test(Date date, int age) {
+                this.date = date;
+                this.age = age;
+            }
         }
-        HashMap<Object, Object> map = new HashMap<>();
-        User user = new User();
-        map.put(1, user);
-        map.put(2, "Hello");
+        class User {
+            Date date;
+            String s;
+            Test test;
+
+            public User(Date date, String s, Test test) {
+                this.date = date;
+                this.s = s;
+                this.test = test;
+            }
+        }
+        class Transfer {
+            Map m;
+
+            public Transfer(Map m) {
+                this.m = m;
+            }
+        }
+        HashSet<Class> primitive = new HashSet<>();
+        primitive.add(int.class);
+        primitive.add(Integer.class);
+        primitive.add(String.class);
+        primitive.add(boolean.class);
+        primitive.add(Boolean.class);
+        Test test = new Test(new Date(), 20);
+        User user = new User(new Date(2020, 7, 22), "hello", test);
+        HashMap<String, User> hashMap = new HashMap<>();
+        hashMap.put("1", user);
+        Transfer transfer = new Transfer(hashMap);
+        traverse(transfer, primitive);
+    }
+
+    private static void traverse(Object obj, HashSet<Class> primitive) throws IllegalAccessException, NoSuchFieldException {
+        if (primitive.contains(obj.getClass())) {
+            return;
+        }
+        if (obj instanceof Date) {
+            System.out.println(obj);
+        }
+        System.out.println(obj.getClass());
+        for (Field field : obj.getClass().getDeclaredFields()) {
+            Object o = field.get(obj);
+        }
 
 
-        Map map1 = Collections.unmodifiableMap(map);
-        User o = (User) map1.get(1);
-        o.name = "xxxxx";
-        System.out.println(map1.get(1));
-
-        Class c = map1.getClass();
-        Field m = c.getDeclaredField("m");
-        m.setAccessible(true);
-        Map ttt = (Map) m.get(map1);
-        ttt.put(2, "Tzashi");
-        System.out.println("...............");
     }
 }
