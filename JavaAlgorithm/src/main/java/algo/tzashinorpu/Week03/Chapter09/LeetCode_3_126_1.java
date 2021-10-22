@@ -19,9 +19,48 @@ public class LeetCode_3_126_1 {
             return res;
         }
         LinkedList<String> path = new LinkedList<>();
-        path.offerLast(beginWord);
-        dfs(beginWord, endWord, dic, path, letters);
+        path.offer(beginWord);
+
+        LinkedList<String> stack = new LinkedList<>();
+        stack.add(beginWord);
+        dic.remove(beginWord);
+//        dfs(beginWord, endWord, dic, path, letters);
+        bfsOfDfs(endWord, stack, dic, path, letters);
         return res;
+    }
+
+    private void bfsOfDfs(String endWord, LinkedList<String> stack, HashSet<String> dic, LinkedList<String> path, HashSet<Character> letters) {
+        while (stack.size() > 0) {
+            int size = stack.size();
+            for (int j = 0; j < size; j++) {
+                char[] chars = stack.poll().toCharArray();
+                for (int i = 0; i < chars.length; i++) {
+                    char oldChar = chars[i];
+                    for (char c : letters) {
+                        chars[i] = c;
+                        String s = new String(chars);
+                        if (dic.contains(s)) {
+                            if (s.equals(endWord)) {
+                                LinkedList<String> clone = new LinkedList<>();
+                                clone.addAll(path);
+                                clone.add(s);
+                                res.add(clone);
+                                return;
+                            } else {
+                                stack.offer(s);
+                                dic.remove(s);
+                                path.offer(s);
+                                bfsOfDfs(endWord, stack, dic, path, letters);
+                                stack.remove(s);
+                                dic.add(s);
+                                path.remove(s);
+                            }
+                        }
+                    }
+                    chars[i] = oldChar;
+                }
+            }
+        }
     }
 
     private void dfs(String beginWord, String endWord, HashSet<String> dic, LinkedList<String> path, HashSet<Character> letters) {
@@ -63,35 +102,4 @@ public class LeetCode_3_126_1 {
             chars[i] = oldChar;
         }
     }
-
-
-    /*private void bfsOfRecursive(HashSet<String> st, HashSet<String> ed, HashSet<String> dic, LinkedList<String> stPath, LinkedList<String> edPath) {
-        if (st.size() == 0 || ed.size() == 0) {
-            res = new LinkedList<>();
-        }
-        if (st.size() > ed.size()) {
-            bfsOfRecursive(st, ed, dic, stPath, edPath);
-        }
-        HashSet<String> next = new HashSet<>();
-        for (String s : st) {
-            stPath.offerLast(s);
-            char[] chars = s.toCharArray();
-            for (int i = 0; i < chars.length; i++) {
-                char oldChar = chars[i];
-                for (char c = 'a'; c <= 'z'; c++) {
-                    chars[i] = c;
-                    String temp = new String(chars);
-                    if (dic.contains(temp)) {
-                        if (ed.contains(temp)) {
-                        } else {
-                            next.add(temp);
-                        }
-                    }
-                }
-                chars[i] = oldChar;
-            }
-            stPath.pollLast();
-        }
-        bfsOfRecursive(st, ed, dic, stPath, edPath);
-    }*/
 }
