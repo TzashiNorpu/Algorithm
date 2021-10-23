@@ -8,98 +8,88 @@ public class LeetCode_3_126_1 {
     private List<List<String>> res = new LinkedList<>();
 
     public List<List<String>> findLadders(String beginWord, String endWord, List<String> wordList) {
-        HashSet<String> dic = new HashSet<>(wordList);
         HashSet<Character> letters = new HashSet<>();
-        for (String s : wordList) {
-            for (char c : s.toCharArray()) {
+        wordList.forEach(word -> {
+            for (char c : word.toCharArray()) {
                 letters.add(c);
             }
-        }
+        });
+        System.out.println(letters);
+        HashSet<String> dic = new HashSet<>(wordList);
         if (!dic.contains(endWord)) {
             return res;
         }
-        LinkedList<String> path = new LinkedList<>();
-        path.offer(beginWord);
-
-        LinkedList<String> stack = new LinkedList<>();
-        stack.add(beginWord);
-        dic.remove(beginWord);
-//        dfs(beginWord, endWord, dic, path, letters);
-        bfsOfDfs(endWord, stack, dic, path, letters);
+        int targetDepth = bfs(beginWord, endWord, dic, letters);
+        if (targetDepth == 0) {
+            return res;
+        }
+        HashSet<String> dic2 = new HashSet<>(wordList);
+        LinkedList<String> container = new LinkedList<>();
+        container.offer(beginWord);
+        dic2.remove(beginWord);
+        dfs(beginWord, endWord, container, dic2, letters, 0, targetDepth);
         return res;
     }
 
-    private void bfsOfDfs(String endWord, LinkedList<String> stack, HashSet<String> dic, LinkedList<String> path, HashSet<Character> letters) {
-        while (stack.size() > 0) {
-            int size = stack.size();
-            for (int j = 0; j < size; j++) {
-                char[] chars = stack.poll().toCharArray();
-                for (int i = 0; i < chars.length; i++) {
-                    char oldChar = chars[i];
-                    for (char c : letters) {
-                        chars[i] = c;
-                        String s = new String(chars);
-                        if (dic.contains(s)) {
-                            if (s.equals(endWord)) {
-                                LinkedList<String> clone = new LinkedList<>();
-                                clone.addAll(path);
-                                clone.add(s);
-                                res.add(clone);
-                                return;
-                            } else {
-                                stack.offer(s);
-                                dic.remove(s);
-                                path.offer(s);
-                                bfsOfDfs(endWord, stack, dic, path, letters);
-                                stack.remove(s);
-                                dic.add(s);
-                                path.remove(s);
-                            }
-                        }
-                    }
-                    chars[i] = oldChar;
-                }
-            }
+    private void dfs(String beginWord, String endWord, LinkedList<String> container, HashSet<String> dic, HashSet<Character> letters, int level, int targetDepth) {
+        if (level == targetDepth) {
+            return;
         }
-    }
-
-    private void dfs(String beginWord, String endWord, HashSet<String> dic, LinkedList<String> path, HashSet<Character> letters) {
         char[] chars = beginWord.toCharArray();
         for (int i = 0; i < chars.length; i++) {
             char oldChar = chars[i];
-//            for (char c = 'a'; c <= 'z'; c++) {
             for (char c : letters) {
                 chars[i] = c;
-                String temp = new String(chars);
-                if (dic.contains(temp)) {
-                    if (temp.equals(endWord)) {
-                        path.offerLast(temp);
-                        LinkedList<String> clone = new LinkedList<>();
-                        clone.addAll(path);
-                        // 最短路径筛选 begin
-                        if (res.size() > 0) {
-                            if (clone.size() < res.get(0).size()) {
-                                res.removeAll(res);
-                                res.add(clone);
-                            } else if (clone.size() == res.get(0).size()) {
-                                res.add(clone);
-                            }
-                        } else {
-                            res.add(clone);
-                        }
-                        // 最短路径筛选 end
-                        path.pollLast();
-                        return;
+                String s = new String(chars);
+                if (dic.contains(s)) {
+                    if (s.equals(endWord)) {
+                        container.offer(s);
+                        dic.remove(s);
+                        LinkedList<String> clone = (LinkedList<String>) container.clone();
+                        res.add(clone);
                     } else {
-                        path.offerLast(temp);
-                        dic.remove(temp);
-                        dfs(temp, endWord, dic, path, letters);
-                        dic.add(temp);
-                        path.pollLast();
+                        container.offer(s);
+                        dic.remove(s);
+                        dfs(s, endWord, container, dic, letters, level + 1, targetDepth);
+                        dic.add(s);
+                        container.pollLast();
                     }
                 }
             }
             chars[i] = oldChar;
         }
     }
+
+    private int bfs(String beginWord, String endWord, HashSet<String> dic, HashSet<Character> letters) {
+        LinkedList<String> stack = new LinkedList<>();
+        stack.offer(beginWord);
+        dic.remove(beginWord);
+        int level = 0;
+        while (stack.size() > 0) {
+            level++;
+            int size = stack.size();
+            for (int i = 0; i < size; i++) {
+                String poll = stack.poll();
+                char[] chars = poll.toCharArray();
+                for (int j = 0; j < chars.length; j++) {
+                    char oldChar = chars[j];
+                    for (char c : letters) {
+                        chars[j] = c;
+                        String s = new String(chars);
+                        if (dic.contains(s)) {
+                            if (s.equals(endWord)) {
+                                return level;
+                            } else {
+                                stack.offer(s);
+                                dic.remove(s);
+                            }
+                        }
+                    }
+                    chars[j] = oldChar;
+                }
+            }
+        }
+        return 0;
+    }
+
 }
