@@ -5,7 +5,7 @@ import java.util.LinkedList;
 import java.util.List;
 
 public class LeetCode_3_126_1 {
-    private List<List<String>> res = new LinkedList<>();
+    public List<List<String>> res = new LinkedList<>();
 
     public List<List<String>> findLadders(String beginWord, String endWord, List<String> wordList) {
         HashSet<Character> letters = new HashSet<>();
@@ -14,7 +14,7 @@ public class LeetCode_3_126_1 {
                 letters.add(c);
             }
         });
-        System.out.println(letters);
+//        System.out.println(letters);
         HashSet<String> dic = new HashSet<>(wordList);
         if (!dic.contains(endWord)) {
             return res;
@@ -23,6 +23,7 @@ public class LeetCode_3_126_1 {
         if (targetDepth == 0) {
             return res;
         }
+        System.out.println(targetDepth);
         HashSet<String> dic2 = new HashSet<>(wordList);
         LinkedList<String> container = new LinkedList<>();
         container.offer(beginWord);
@@ -47,6 +48,9 @@ public class LeetCode_3_126_1 {
                         dic.remove(s);
                         LinkedList<String> clone = (LinkedList<String>) container.clone();
                         res.add(clone);
+                        dic.add(s);
+                        container.pollLast();
+                        return;
                     } else {
                         container.offer(s);
                         dic.remove(s);
@@ -73,7 +77,9 @@ public class LeetCode_3_126_1 {
                 char[] chars = poll.toCharArray();
                 for (int j = 0; j < chars.length; j++) {
                     char oldChar = chars[j];
-                    for (char c : letters) {
+                    for (char c = 'a';  c<='z'; c++) {
+                   /* }
+                    for (char c : letters) {*/
                         chars[j] = c;
                         String s = new String(chars);
                         if (dic.contains(s)) {
