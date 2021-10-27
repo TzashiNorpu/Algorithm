@@ -15,6 +15,6 @@ class LeetCode_3_126_3Test {
         String endWord = "cog";
         List<String> wordList = new LinkedList<>(List.of(new String[]{"hot", "dot", "dog", "lot", "log", "cog"}));
         LeetCode_3_126_3 instance = new LeetCode_3_126_3();
-        instance.findLadders(beginWord, endWord, wordList);
+        System.out.println(instance.findLadders(beginWord, endWord, wordList));
     }
 }

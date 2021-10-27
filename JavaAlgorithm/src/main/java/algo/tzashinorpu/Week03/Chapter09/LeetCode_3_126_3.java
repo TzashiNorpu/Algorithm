@@ -7,6 +7,8 @@ import java.util.List;
 
 public class LeetCode_3_126_3 {
     public List<List<String>> findLadders(String beginWord, String endWord, List<String> wordList) {
+       /* "hit" -> "hot" -> "dot" -> "dog" -> "cog"
+        "hit" -> "hot" -> "lot" -> "log" -> "cog"*/
 
         List<List<String>> res = new LinkedList<>();
 
@@ -16,16 +18,31 @@ public class LeetCode_3_126_3 {
         HashMap<String, LinkedList<String>> transferPath = new HashMap<>();
 
         HashSet<String> dic = new HashSet<>(wordList);
+        if (!dic.contains(endWord)) {
+            return res;
+        }
         LinkedList<String> stack = new LinkedList<>();
         stack.offer(beginWord);
         dic.remove(beginWord);
         int depth = 0;
-        boolean found = false;
-        PathBuildByBFS(endWord, steps, transferPath, dic, stack, depth, found);
+        pathBuildByBFS(beginWord, endWord, steps, transferPath, dic, stack, depth, res);
         return res;
     }
 
-    private void PathBuildByBFS(String endWord, HashMap<String, Integer> steps, HashMap<String, LinkedList<String>> transferPath, HashSet<String> dic, LinkedList<String> stack, int depth, boolean found) {
+    private void mapLadderBuildByDFS(String beginWord, String endWord, HashMap<String, LinkedList<String>> transferPath, LinkedList<String> temp, List<List<String>> res) {
+        if (endWord.equals(beginWord)) {
+            res.add(new LinkedList<>(temp));
+            return;
+        }
+        for (String s : transferPath.get(endWord)) {
+            temp.offerFirst(s);
+            mapLadderBuildByDFS(beginWord, s, transferPath, temp, res);
+            temp.pollFirst();
+        }
+    }
+
+    private void pathBuildByBFS(String beginWord, String endWord, HashMap<String, Integer> steps, HashMap<String, LinkedList<String>> transferPath, HashSet<String> dic, LinkedList<String> stack, int depth, List<List<String>> res) {
+        boolean found = false;
         while (!stack.isEmpty()) {
             depth++;
             int size = stack.size();
@@ -35,7 +52,7 @@ public class LeetCode_3_126_3 {
                 int length = chars.length;
                 for (int j = 0; j < length; j++) {
                     char oldChar = chars[j];
-                    for (char c = 'a'; c < 'z'; c++) {
+                    for (char c = 'a'; c <= 'z'; c++) {
                         chars[j] = c;
                         String s = new String(chars);
                         if (steps.containsKey(s) && depth == steps.get(s)) {
@@ -55,10 +72,15 @@ public class LeetCode_3_126_3 {
                     }
                     chars[j] = oldChar;
                 }
-                if (found) {
-                    break;
-                }
             }
+            if (found) {
+                break;
+            }
+        }
+        LinkedList<String> temp = new LinkedList<>();
+        temp.offer(endWord);
+        if (found) {
+            mapLadderBuildByDFS(beginWord, endWord, transferPath, temp, res);
         }
     }
 }
