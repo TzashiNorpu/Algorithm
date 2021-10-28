@@ -61,7 +61,6 @@ func minMutation2(start string, end string, bank []string) int {
 	}
 	stack := []string{start}
 	visited := make([]bool, len(bank))
-	visited[0] = true
 	depth := 0
 	for len(stack) > 0 {
 		length := len(stack)
