@@ -1,6 +1,7 @@
 package algo.tzashinorpu.FirstRound.Chapter03.HomeWork;
 
-import algo.tzashinorpu.Week01.Chapter03.LinkedList.ListNode;
+
+import algo.tzashinorpu.FirstRound.Chapter03.LinkedList.ListNode;
 
 public class LeetCode_2_021_1 {
     public ListNode mergeTwoLists1(ListNode l1, ListNode l2) {
@@ -10,7 +11,7 @@ public class LeetCode_2_021_1 {
             if (l1 == null) {
                 concat.next = l2;
                 return dummyNode.next;
-            }else if (l2!=null&&l1.val <=l2.val){
+            } else if (l2 != null && l1.val <= l2.val) {
                 concat.next = l1;
                 concat = concat.next;
                 l1 = l1.next;
@@ -19,10 +20,10 @@ public class LeetCode_2_021_1 {
             if (l2 == null) {
                 concat.next = l1;
                 return dummyNode.next;
-            }else if (l1!=null&&l2.val <=l1.val) {
+            } else if (l1 != null && l2.val <= l1.val) {
                 concat.next = l2;
                 concat = concat.next;
-                l2=l2.next;
+                l2 = l2.next;
             }
         }
         return dummyNode.next;
@@ -35,7 +36,7 @@ public class LeetCode_2_021_1 {
             if (l1.val <= l2.val) {
                 concat.next = l1;
                 l1 = l1.next;
-            }else {
+            } else {
                 concat.next = l2;
                 l2 = l2.next;
             }

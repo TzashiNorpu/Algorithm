@@ -1,6 +1,7 @@
 package algo.tzashinorpu.FirstRound.Chapter03.HomeWork;
 
-import algo.tzashinorpu.Week01.Chapter03.LinkedList.ListNode;
+
+import algo.tzashinorpu.FirstRound.Chapter03.LinkedList.ListNode;
 
 public class LeetCode_2_021 {
     // https://leetcode-cn.com/problems/merge-two-sorted-lists/
