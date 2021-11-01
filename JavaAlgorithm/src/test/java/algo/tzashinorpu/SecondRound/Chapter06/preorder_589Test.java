@@ -6,10 +6,10 @@ import org.junit.jupiter.api.Test;
 import java.util.LinkedList;
 import java.util.List;
 
-class postorder_590Test {
+class preorder_589Test {
 
     @Test
-    void postorder() {
+    void preorder() {
         Node root = new Node(1);
         Node node1_1 = new Node(3);
         Node node1_2 = new Node(2);
@@ -25,8 +25,7 @@ class postorder_590Test {
         level1.add(node1_2);
         level1.add(node1_3);
         root.children = level1;
-
-        postorder_590 instance = new postorder_590();
-        System.out.println(instance.postorder(root));
+        preorder_589 instance = new preorder_589();
+        System.out.println(instance.preorder(root));
     }
 }

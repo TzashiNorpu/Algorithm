@@ -18,10 +18,11 @@ public class postorder_590 {
         if (root == null) {
             return;
         }
-        for (Node node : root.children) {
-            dfs(node, res);
-            res.add(node.val);
+        if (root.children != null) {
+            for (Node node : root.children) {
+                dfs(node, res);
+            }
         }
-
+        res.add(root.val);
     }
 }
