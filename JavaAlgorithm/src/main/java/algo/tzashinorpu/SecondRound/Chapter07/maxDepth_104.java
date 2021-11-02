@@ -5,7 +5,7 @@ import algo.tzashinorpu.SecondRound.TreeNode;
 import java.util.LinkedList;
 
 public class maxDepth_104 {
-    public int maxDepth(TreeNode root) {
+    public int maxDepthBFS(TreeNode root) {
         int level = 0;
         if (root == null) {
             return level;
@@ -26,5 +26,21 @@ public class maxDepth_104 {
             level++;
         }
         return level;
+    }
+
+    private int maxDepth = Integer.MIN_VALUE;
+
+    public int maxDepthDFS(TreeNode root) {
+        dfs(root, 0);
+        return maxDepth;
+    }
+
+    private void dfs(TreeNode root, int level) {
+        if (root == null) {
+            maxDepth = Math.max(level, maxDepth);
+            return;
+        }
+        dfs(root.left, level + 1);
+        dfs(root.right, level + 1);
     }
 }

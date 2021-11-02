@@ -13,12 +13,12 @@ class maxDepth_104Test {
         root.right.left = new TreeNode(15);
         root.right.right = new TreeNode(7);
         maxDepth_104 instance = new maxDepth_104();
-        System.out.println(instance.maxDepth(root));
+        System.out.println(instance.maxDepthBFS(root));
         root = new TreeNode(1);
         root.left = new TreeNode(2);
         root.right = new TreeNode(3);
         root.left.left = new TreeNode(4);
         root.right.right = new TreeNode(5);
-        System.out.println(instance.maxDepth(root));
+        System.out.println(instance.maxDepthDFS(root));
     }
 }
