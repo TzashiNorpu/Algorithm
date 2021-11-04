@@ -4,7 +4,7 @@ import java.util.LinkedList;
 import java.util.List;
 import java.util.Map;
 
-public class letterCombinations_17 {
+public class letterCombinations_017 {
     public List<String> letterCombinations(String digits) {
         Map<Character, String> map = Map.of(
                 '2', "abc", '3', "def", '4', "ghi", '5', "jkl",
