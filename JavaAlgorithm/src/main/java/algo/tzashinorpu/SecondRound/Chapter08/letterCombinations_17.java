@@ -14,24 +14,19 @@ public class letterCombinations_17 {
         if (digits.equals("")) {
             return res;
         }
-        LinkedList<Character> chars = new LinkedList<>();
-        for (char c : digits.toCharArray()) {
-            chars.offerLast(c);
-        }
-
+        char[] chars = digits.toCharArray();
         backTrack(0, digits.length(), map, chars, "", res);
         return res;
     }
 
-    private void backTrack(int level, int depth, Map<Character, String> map, LinkedList<Character> chars, String temp, List<String> res) {
+    private void backTrack(int level, int depth, Map<Character, String> map, char[] chars, String temp, List<String> res) {
         if (level == depth) {
             res.add(temp);
             return;
         }
-        Character c = chars.pollFirst();
+        Character c = chars[level];
         for (char t : map.get(c).toCharArray()) {
             backTrack(level + 1, depth, map, chars, temp + t, res);
         }
-        chars.offerLast(c);
     }
 }
