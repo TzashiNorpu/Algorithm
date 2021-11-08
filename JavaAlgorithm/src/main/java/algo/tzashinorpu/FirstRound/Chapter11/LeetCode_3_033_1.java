@@ -13,7 +13,7 @@ public class LeetCode_3_033_1 {
                 return mid;
             }
             if ((nums[l] < nums[mid] && target >= nums[l] && target <= nums[mid])
-                    || (nums[mid] < nums[r] && target < nums[mid] && nums[mid] > nums[r])) {
+                    || (nums[mid] < nums[r] && (target < nums[mid] || target > nums[r]))) {
                 r = mid - 1;
             } else {
                 l = mid + 1;
