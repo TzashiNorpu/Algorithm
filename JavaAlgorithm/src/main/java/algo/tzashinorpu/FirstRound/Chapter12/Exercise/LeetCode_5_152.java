@@ -33,4 +33,18 @@ public class LeetCode_5_152 {
         }
         return max;
     }
+
+    // dp3
+    public int maxProduct3(int[] nums) {
+        int max = nums[0];
+        int iMax = nums[0];
+        int iMin = nums[0];
+        for (int i = 1; i < nums.length; i++) {
+            int temp = iMax;
+            iMax = Math.max(Math.max(temp * nums[i], iMin * nums[i]), nums[i]);
+            iMin = Math.min(Math.min(temp * nums[i], iMin * nums[i]), nums[i]);
+            max = Math.max(iMax, max);
+        }
+        return max;
+    }
 }
