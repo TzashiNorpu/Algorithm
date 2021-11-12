@@ -3,7 +3,7 @@ package algo.tzashinorpu.FirstRound.Chapter12.HomeWork;
 import java.util.Arrays;
 import java.util.LinkedList;
 
-public class LeetCode_5_312 {
+public class LeetCode_5_322 {
 
     // 栈溢出
     public int coinChangeBFS(int[] coins, int amount) {
@@ -60,7 +60,8 @@ public class LeetCode_5_312 {
     public int coinChangeMemDFS(int[] coins, int amount) {
         int[] mem = new int[amount + 1];
         Arrays.sort(coins);
-        return memDFS(coins, amount, mem);
+        int step = memDFS(coins, amount, mem);
+        return step == Integer.MAX_VALUE ? -1 : step;
     }
 
     private int memDFS(int[] coins, int amount, int[] mem) {
@@ -70,12 +71,17 @@ public class LeetCode_5_312 {
         if (amount < 0) {
             return -1;
         }
+        if (mem[amount] != 0) {
+            return mem[amount];
+        }
         int count = Integer.MAX_VALUE;
         for (int i = 0; i < coins.length; i++) {
-            int temp = memDFS(coins, amount - coins[i], mem);
-            if (temp >= 0 && temp < Integer.MAX_VALUE) {
-                
+            int temp = 1 + memDFS(coins, amount - coins[i], mem);
+            if (temp > 0 && temp < Integer.MAX_VALUE) {
+                count = Math.min(count, temp);
             }
         }
+        mem[amount] = count;
+        return mem[amount];
     }
 }
