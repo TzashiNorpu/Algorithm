@@ -60,8 +60,7 @@ public class LeetCode_5_322 {
     public int coinChangeMemDFS(int[] coins, int amount) {
         int[] mem = new int[amount + 1];
         Arrays.sort(coins);
-        int step = memDFS(coins, amount, mem);
-        return step == Integer.MAX_VALUE ? -1 : step;
+        return memDFS(coins, amount, mem);
     }
 
     private int memDFS(int[] coins, int amount, int[] mem) {
@@ -76,12 +75,44 @@ public class LeetCode_5_322 {
         }
         int count = Integer.MAX_VALUE;
         for (int i = 0; i < coins.length; i++) {
-            int temp = 1 + memDFS(coins, amount - coins[i], mem);
+            /*int temp = 1 + memDFS(coins, amount - coins[i], mem);
             if (temp > 0 && temp < Integer.MAX_VALUE) {
                 count = Math.min(count, temp);
+            }*/
+            // 上下两种方式都可以
+            int temp = memDFS(coins, amount - coins[i], mem);
+            if (temp >= 0 && temp < Integer.MAX_VALUE) {
+                count = Math.min(count, temp + 1);
             }
         }
-        mem[amount] = count;
+        mem[amount] = count == Integer.MAX_VALUE ? -1 : count;
+        return mem[amount];
+    }
+
+    public int coinChangeBottomUp(int[] coins, int amount) {
+        // [2,3]  6
+        // [0,-1,1,2,2,2]
+        // [1,9,10]  18
+        // [0,1,2,3,4,5,6,7,8,1,1,2,3,4,5,6,7,8,2]
+        int[] mem = new int[amount + 1];
+        mem[0] = 0;
+        for (int i = 1; i <= amount; i++) {
+            int min = Integer.MAX_VALUE;
+            for (int j = 0; j < coins.length; j++) {
+                // i == coins[j] : 只用一块
+                // i > coins[j] 时 : 一块 + (i-coins[j])块 {i-coins[j] < 0 时总的为 -1}
+                // i < coins[j] 时 : -1 块
+                int cnt = Integer.MAX_VALUE;
+                if (i == coins[j]) {
+                    cnt = 1;
+                }
+                if (i > coins[j]) {
+                    cnt = mem[i - coins[j]] == -1 ? -1 : 1 + mem[i - coins[j]];
+                }
+                min = Math.min(min, cnt);
+            }
+            mem[i] = min == Integer.MAX_VALUE ? -1 : min;
+        }
         return mem[amount];
     }
 }
