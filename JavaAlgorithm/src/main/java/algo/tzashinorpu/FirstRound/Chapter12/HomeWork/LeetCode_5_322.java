@@ -97,21 +97,27 @@ public class LeetCode_5_322 {
         int[] mem = new int[amount + 1];
         mem[0] = 0;
         for (int i = 1; i <= amount; i++) {
-            int min = Integer.MAX_VALUE;
+            int min = -1;
             for (int j = 0; j < coins.length; j++) {
                 // i == coins[j] : 只用一块
                 // i > coins[j] 时 : 一块 + (i-coins[j])块 {i-coins[j] < 0 时总的为 -1}
                 // i < coins[j] 时 : -1 块
-                int cnt = Integer.MAX_VALUE;
                 if (i == coins[j]) {
-                    cnt = 1;
+                    min = 1;
+                    break;
                 }
                 if (i > coins[j]) {
-                    cnt = mem[i - coins[j]] == -1 ? -1 : 1 + mem[i - coins[j]];
+                    int temp = mem[i - coins[j]] == -1 ? -1 : 1 + mem[i - coins[j]];
+                    if (temp != -1) {
+                        if (min == -1) {
+                            min = temp;
+                        } else {
+                            min = Math.min(temp, min);
+                        }
+                    }
                 }
-                min = Math.min(min, cnt);
             }
-            mem[i] = min == Integer.MAX_VALUE ? -1 : min;
+            mem[i] = min;
         }
         return mem[amount];
     }
