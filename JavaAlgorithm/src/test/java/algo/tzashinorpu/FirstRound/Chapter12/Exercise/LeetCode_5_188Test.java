@@ -12,5 +12,6 @@ class LeetCode_5_188Test {
         int[] prices = { 3, 2, 6, 5, 0, 3 };
         int k = 2;
         System.out.println(ins.maxProfit1(k, prices));
+        System.out.println(ins.maxProfit2(k, prices));
     }
 }
