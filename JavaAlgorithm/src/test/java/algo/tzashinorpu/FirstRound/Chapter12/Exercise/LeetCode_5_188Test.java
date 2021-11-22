@@ -9,8 +9,8 @@ class LeetCode_5_188Test {
     @Test
     void maxProfit() {
         LeetCode_5_188 ins = new LeetCode_5_188();
-        int[] prices = {3, 2, 6, 5, 0, 3};
+        int[] prices = { 3, 2, 6, 5, 0, 3 };
         int k = 2;
-        System.out.println(ins.maxProfit(k, prices));
+        System.out.println(ins.maxProfit1(k, prices));
     }
 }
