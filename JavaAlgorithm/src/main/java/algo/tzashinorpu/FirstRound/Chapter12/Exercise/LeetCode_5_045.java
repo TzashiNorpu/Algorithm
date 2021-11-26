@@ -9,6 +9,9 @@ public class LeetCode_5_045 {
         // 2,3,1,1,4
         for (int i = 0; i < nums.length - 1; i++) {
             furthest = Math.max(furthest, i + nums[i]);
+            if (furthest >= nums.length - 1) {
+                return ++step;
+            }
             if (i == transfer) {
                 transfer = furthest;
                 step++;
