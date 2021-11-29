@@ -46,7 +46,7 @@ public class LeetCode_5_032_1 {
                 if (stack.isEmpty()) {
                     stack.push(i);
                 } else {
-                    max = Math.max(max, i - stack.peek());
+                    max = Math.max(max, i - stack.peekLast());
                 }
             } else {
                 stack.offer(i);
