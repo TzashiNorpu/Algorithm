@@ -1,6 +1,7 @@
 package algo.tzashinorpu.FirstRound.Chapter12.HomeWork;
 
 import java.util.HashMap;
+import java.util.HashSet;
 import java.util.Map;
 
 public class LeetCode_5_403 {
@@ -11,9 +12,6 @@ public class LeetCode_5_403 {
         输出：true*/
         // 数组存放有石块的索引位置
         // 第一步只能跳跃一个单位
-      /*  if (stones[1] != 1) {
-            return false;
-        }*/
         // 上一步跳跃了 k 个单位，那么它接下来的跳跃距离只能选择为 k - 1、k 或 k + 1 个单位
         // 第一步只能跳跃一个单位,第二步 0 1 2
         Map<Integer, Integer> visited = new HashMap<>();
@@ -44,17 +42,24 @@ public class LeetCode_5_403 {
     }
 
     public boolean canCross2(int[] stones) {
-        HashMap<Integer, Integer> visited = new HashMap<>();
-        return helper2(stones, 0, 0, visited);
+        HashSet<Integer> visited = new HashSet<>();
+        return helper2(stones, 1, 1, visited);
     }
 
-    private boolean helper2(int[] stones, int index, int k, HashMap<Integer, Integer> visited) {
-        if (visited.containsKey(index) && visited.get(index) == k) {
+    private boolean helper2(int[] stones, int index, int k, HashSet<Integer> visited) {
+        int key = index * 1000 + k;
+        if (visited.contains(key)) {
             return false;
+        } else {
+            visited.add(key);
         }
-        for (int i = index + 1; i < stones.length; i++) {
+
+        // stones = [0,1,3,5,6,8,12,17]
+        // stones[3] = 5  k=3 stones[5] = 8
+//        for (int i = index + 1; i < stones.length; i++) {
+        int rIndex = Math.min(index + k + 1, stones.length - 1);
+        for (int i = index + 1; i <= rIndex; i++) {
             int gap = stones[i] - stones[index];
-            visited.put(i, gap);
             if (gap >= k - 1 && gap <= k + 1) {
                 if (helper2(stones, i, gap, visited)) {
                     return true;
