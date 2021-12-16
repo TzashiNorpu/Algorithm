@@ -9,17 +9,22 @@ public class LeetCode_5_076 {
         char[] source = s.toCharArray();
         char[] dest = t.toCharArray();
         int lastL = 0, lastR = s.length();
+        boolean contain = false;
         int l = 0, r = 0;
         HashMap<Character, Integer> charCount = new HashMap<>();
+        HashMap<Character, Integer> tmp = new HashMap<>();
         for (int i = 0; i < dest.length; i++) {
             charCount.put(dest[i], 0);
+            tmp.putIfAbsent(dest[i], 0);
+            tmp.put(dest[i], tmp.get(dest[i]) + 1);
         }
         for (l = 0, r = 0; l <= r && r < source.length; ) {
             if (charCount.containsKey(source[r])) {
                 charCount.put(source[r], charCount.get(source[r]) + 1);
             }
             r++;
-            while (cotains(charCount, t)) {
+            while (cotains(charCount, tmp)) {
+                contain = true;
                 if (charCount.containsKey(source[l])) {
                     charCount.put(source[l], charCount.get(source[l]) - 1);
                 }
@@ -30,17 +35,15 @@ public class LeetCode_5_076 {
                 }
             }
         }
-        return s.substring(lastL, lastR + 1);
+        return contain ? s.substring(lastL, lastR + 1) : "";
     }
 
-    private boolean cotains(HashMap<Character, Integer> charCount, String dest) {
-        int cnt = 0;
+    private boolean cotains(HashMap<Character, Integer> charCount, HashMap<Character, Integer> tmp) {
         for (Map.Entry<Character, Integer> entry : charCount.entrySet()) {
-            cnt += entry.getValue();
-            if (entry.getValue() <= 0) {
+            if (entry.getValue() < tmp.get(entry.getKey())) {
                 return false;
             }
         }
-        return cnt >= dest.length();
+        return true;
     }
 }
