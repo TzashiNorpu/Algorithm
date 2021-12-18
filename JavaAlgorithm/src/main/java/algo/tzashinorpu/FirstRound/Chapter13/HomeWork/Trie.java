@@ -1,61 +1,51 @@
 package algo.tzashinorpu.FirstRound.Chapter13.HomeWork;
 
 class Trie {
-    private LeetCode_6_208 root;
+    // root 节点不存数据
+    // 每个节点
+    private Trie[] children;
+    private boolean isEnd;
 
     public Trie() {
-        root = new LeetCode_6_208();
+        children = new Trie[26];
+        isEnd = false;
     }
 
-    // Inserts a word into the trie.
     public void insert(String word) {
-        LeetCode_6_208 node = root;
+        Trie node = this;
         for (int i = 0; i < word.length(); i++) {
-            char currentChar = word.charAt(i);
-            if (!node.containsKey(currentChar)) {
-                node.put(currentChar, new LeetCode_6_208());
+            char ch = word.charAt(i);
+            int index = ch - 'a';
+            if (node.children[index] == null) {
+                // 每个node的children都有26个节点
+                // 节点在有值的索引处新增子节点
+                node.children[index] = new Trie();
             }
-            node = node.get(currentChar);
+            node = node.children[index];
         }
-        node.setEnd();
+        node.isEnd = true;
     }
 
-    // search a prefix or whole key in trie and
-    // returns the node where search ends
-    private LeetCode_6_208 searchPrefix(String word) {
-        LeetCode_6_208 node = root;
-        for (int i = 0; i < word.length(); i++) {
-            char curLetter = word.charAt(i);
-            if (node.containsKey(curLetter)) {
-                node = node.get(curLetter);
-            } else {
+    public boolean search(String word) {
+        Trie node = searchPrefix(word);
+        return node != null && node.isEnd;
+    }
+
+    public boolean startsWith(String prefix) {
+        return searchPrefix(prefix) != null;
+    }
+
+    private Trie searchPrefix(String prefix) {
+        Trie node = this;
+        for (int i = 0; i < prefix.length(); i++) {
+            char ch = prefix.charAt(i);
+            int index = ch - 'a';
+            if (node.children[index] == null) {
                 return null;
             }
+            node = node.children[index];
         }
         return node;
     }
-
-    // Returns if the word is in the trie.
-    public boolean search(String word) {
-        LeetCode_6_208 node = searchPrefix(word);
-        return node != null && node.isEnd();
-    }
-
-
-    // Returns if there is any word in the trie
-    // that starts with the given prefix.
-    public boolean startsWith(String prefix) {
-        LeetCode_6_208 node = searchPrefix(prefix);
-        return node != null;
-    }
-
-    public static void main(String[] args) {
-        Trie test = new Trie();
-        test.insert("hel");
-        test.insert("mama");
-        System.out.println(test.searchPrefix("he").isEnd());
-        System.out.println(test.searchPrefix("hel").isEnd());
-    }
-
 }
 

@@ -1,5 +1,4 @@
-/*
-package algo.tzashinorpu.FirstRound.Week06.Chapter13.HomeWork;
+package algo.tzashinorpu.FirstRound.Chapter13.HomeWork;
 
 import java.util.*;
 
@@ -49,9 +48,9 @@ public class LeetCode_6_212 {
     }
 
     public static void main(String[] args) {
-        String[] s = {*/
-/*"oath", "pea", "eat", "rain","ad","add",*//*
-"ta", "tat"};
+        String[] s = {
+                "oath", "pea", "eat", "rain", "ad", "add",
+                "ta", "tat"};
         LeetCode_6_212 test = new LeetCode_6_212();
 //        Trie trie = algo.tzashinorpu.test.buildTrie(s);
         char[][] board = {
@@ -66,4 +65,3 @@ public class LeetCode_6_212 {
         }
     }
 }
-*/
