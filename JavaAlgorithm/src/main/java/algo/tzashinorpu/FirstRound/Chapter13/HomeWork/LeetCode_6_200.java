@@ -28,6 +28,7 @@ public class LeetCode_6_200 {
                         parent[i * n + j] = i * n + j; //
                         ++count;
                     }
+                    // 加权
                     rank[i * n + j] = 0;
                 }
             }
@@ -88,7 +89,6 @@ public class LeetCode_6_200 {
                         int index2 = (i + 1) * m + j;
                         uf.union(index1, index2);
                     }
-
                 }
             }
         }
