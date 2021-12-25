@@ -12,35 +12,29 @@ public class LeetCode_7_052 {
         count = 0;
         // 1 n=4->size=01111
         size = (1 << n) - 1;
-        solve(0, 0, 0);
+        solve(0, 0, 0, 0);
         return count;
     }
 
     // 放皇后的位置
-    private void solve(int row, int ld, int rd) {
+    private void solve(int row, int ld, int rd, int level) {
         if (row == size) {
             count++;
             return;
         }
         // 当前层能放皇后的位置   撇攻击范围     捺攻击范围
         int pos = size & (~(row | ld | rd));
+     /*   System.out.printf("pos =%4s,row=%4s,ld=%4s,rd=%4s,level=%d\n",
+                Integer.toBinaryString(pos), Integer.toBinaryString(row), Integer.toBinaryString(ld), Integer.toBinaryString(rd), level);*/
         while (pos != 0) {
-            // 当前层放皇后位置
-            // 1100 & 0100
+            // 当前层选一个位置放皇后
             int p = pos & (-pos);
             // 放了皇后后更新当前层能放皇后的位置
             pos -= p;
-//            solve(row | p, (ld | p) << 1, (rd | p) >> 1);
-            solve(row | p, (p << 1) | ld & (-1 >>> 28), rd | (p >> 1) & (-1 >>> 28));
-            //   row=0000     ld=0000  rd=0000  pos=1111 p=0001  new pos=1110  ->2
-            //   row=0001     ld=0010  rd=0000  pos=1100 p=0100  new pos=1000  ->1
-            //   row=0101     ld=1010  rd=0010  pos=0000
-            //1->pos=1000     p=1000   row=0001     ld=0010  rd=0000
-            //   row=1001     ld=0010  rd=0100
-            //   pos=0
-            //2->pos=1110     p=0010   row=0000     ld=0000  rd=0000  new pos=1100
-            //   pos=1100     p=0100   row=0010     ld=0100  rd=0001  new pos=1000
-            //   row=0010     ld=0100  rd=0001  pos=1000 p=0010
+           /* System.out.printf("p=%4s,new pos =%4s,level=%d\n"
+                    , Integer.toBinaryString(p), Integer.toBinaryString(pos), level);*/
+            // 由于是斜线的攻击范围 当前的 ld/rd 在下一行的攻击范围需要 左移/右移
+            solve(row | p, (ld | p) << 1, (rd | p) >> 1, level++);
         }
     }
 }
