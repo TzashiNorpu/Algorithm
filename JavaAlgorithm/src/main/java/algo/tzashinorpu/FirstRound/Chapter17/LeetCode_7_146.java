@@ -50,7 +50,7 @@ public class LeetCode_7_146 {
         return res;
     }
 
-    private Hashtable<Integer, DLinkedNode> cache = new Hashtable<Integer, DLinkedNode>();
+    private Hashtable<Integer, DLinkedNode> cache = new Hashtable<>();
     private int size;
     private int capacity;
     private DLinkedNode head, tail;
