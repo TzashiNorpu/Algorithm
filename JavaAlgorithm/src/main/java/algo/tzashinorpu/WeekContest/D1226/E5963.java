@@ -1,4 +1,4 @@
-package algo.tzashinorpu.WeekCompete.D1226;
+package algo.tzashinorpu.WeekContest.D1226;
 
 public class E5963 {
     public boolean isSameAfterReversals(int num) {

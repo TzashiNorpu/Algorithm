@@ -1,4 +1,4 @@
-package algo.tzashinorpu.WeekCompete.D1226;
+package algo.tzashinorpu.WeekContest.D1226;
 
 import org.junit.jupiter.api.Test;
 
