@@ -9,9 +9,9 @@ public class jump_045 {
         int length = nums.length;
         for (int i = 0; i < length - 1; i++) {
             furthest = Math.max(i + nums[i], furthest);
-            // 3, 0, 2, 0, 0
-            // 在没到上一步的上限前这一步可以到达更远的位置时 更新这个上限  并记住上一次的上限
-            //
+            // step-1 步内更新 step(下一步) 步的最远可达的距离范围(距离范围即i)
+            // 遍历数组时，我们不访问最后一个元素，这是因为在访问最后一个元素之前，我们的边界一定大于等于最后一个位置，否则就无法跳到最后一个位置了。
+            // 如果访问最后一个元素，在边界正好为最后一个位置的情况下，我们会增加一次「不必要的跳跃次数」，因此我们不能访问最后一个元素。
             if (i == preFurthest) {
                 step++;
                 preFurthest = furthest;
