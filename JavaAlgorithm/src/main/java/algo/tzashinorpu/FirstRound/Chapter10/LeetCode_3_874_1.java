@@ -1,10 +1,12 @@
 package algo.tzashinorpu.FirstRound.Chapter10;
 
 public class LeetCode_3_874_1 {
+
     public int robotSim(int[] commands, int[][] obstacles) {
         int[] start = {0, 0};
         // 0:N 1:S 2:E 3:W
         int dir = 0;
+
         for (int i = 0; i < commands.length; i++) {
             if (commands[i] == -1 || commands[i] == -2) {
                 dir = getDir(commands, dir, i);

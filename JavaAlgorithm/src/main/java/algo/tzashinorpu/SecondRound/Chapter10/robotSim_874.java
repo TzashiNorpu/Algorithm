@@ -12,16 +12,23 @@ public class robotSim_874 {
          -1 ：向右转 90 度
         */
         int dir = 0;
+        int ans = 0;
         int[] pos = new int[2];
         for (int i = 0; i < commands.length; i++) {
             int v = commands[i];
             if (v == -1 || v == -2) {
                 dir = getDir(dir, v);
-                continue;
+            } else {
+                for (int j = 0; j < v; j++) {
+                    boolean b = crossObstacle(dir, pos, 1, obstacles);
+                    ans = Math.max(ans, pos[0] * pos[0] + pos[1] * pos[1]);
+                    if (b) {
+                        break;
+                    }
+                }
             }
-            crossObstacle(dir, pos, v, obstacles);
         }
-        return pos[0] * pos[0] + pos[1] * pos[1];
+        return ans;
     }
 
     private boolean crossObstacle(int dir, int[] pos, int steps, int[][] obstacles) {
@@ -42,16 +49,8 @@ public class robotSim_874 {
                 break;
         }
         for (int i = 0; i < obstacles.length; i++) {
-            if (pos[0] == obstacles[i][0]) {
-                if ((pos[1] < obstacles[i][1] && tempY >= obstacles[i][1]) || (pos[1] > obstacles[i][1] && tempY <= obstacles[i][1])) {
-                    return true;
-                }
-            }
-
-            if (pos[1] == obstacles[i][1]) {
-                if ((pos[0] < obstacles[i][0] && tempX >= obstacles[i][0]) || (pos[0] > obstacles[i][0] && tempX <= obstacles[i][0])) {
-                    return true;
-                }
+            if (tempX == obstacles[i][0] && tempY == obstacles[i][1]) {
+                return true;
             }
         }
         pos[0] = tempX;
