@@ -38,11 +38,10 @@ public class LeetCode_5_032_1 {
         char[] chars = s.toCharArray();
         int max = 0;
         LinkedList<Integer> stack = new LinkedList<>();
-        int temp = 0;
         stack.offer(-1);
         for (int i = 0; i < chars.length; i++) {
             if (chars[i] == ')') {
-                Integer pop = stack.pollLast();
+                stack.pollLast();
                 if (stack.isEmpty()) {
                     stack.push(i);
                 } else {
