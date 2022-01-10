@@ -10,10 +10,10 @@ class cherryPickup_1463Test {
     void cherryPickup() {
         cherryPickup_1463 ins = new cherryPickup_1463();
         int[][] grid = {
-                {1, 0, 0, 3},
-                {0, 0, 0, 3},
-                {0, 0, 3, 3},
-                {9, 0, 3, 3}
+                {3, 1, 1},
+                {2, 5, 1},
+                {1, 5, 5},
+                {2, 1, 1}
         };
         System.out.println(ins.cherryPickup(grid));
     }
