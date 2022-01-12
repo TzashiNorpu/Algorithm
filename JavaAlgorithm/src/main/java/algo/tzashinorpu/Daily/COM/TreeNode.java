@@ -17,4 +17,13 @@ public class TreeNode {
         this.left = left;
         this.right = right;
     }
+
+    public static void traverse(TreeNode node) {
+        if (node == null) {
+            return;
+        }
+        System.out.println(node.val);
+        traverse(node.left);
+        traverse(node.right);
+    }
 }
