@@ -15,10 +15,25 @@
     </Filter>
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="src\Chapter3\twoSum_1.cpp">
+    <ClCompile Include="src\Chapter3\TwoSum_1.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="src\Chapter3\reverseKGroup_25.cpp">
+    <ClCompile Include="src\Chapter3\ReverseKGroup_25.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="src\Chapter3\RemoveDuplicates_26.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="src\Chapter3\Rotate_189.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="src\Chapter3\MergeTwoList_21.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="src\Chapter3\Merge_88.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="src\Chapter3\MoveZeros_283.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
   </ItemGroup>

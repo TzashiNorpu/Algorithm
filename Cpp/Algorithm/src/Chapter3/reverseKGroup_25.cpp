@@ -26,7 +26,6 @@ ListNode* myAlgo::ReverseKGroup_25::reverseKGroup(ListNode* head, int k)
 		kStart = nxtKstart;
 		kEnd = kStart;
 	}
-	delete dummyHead;
 	return dummyHead->next;
 }
 

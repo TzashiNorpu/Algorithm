@@ -14,4 +14,29 @@ namespace myAlgo {
 	public:
 		ListNode* reverseKGroup(ListNode* head, int k);
 	};
+	class RemoveDuplicates_26 {
+	public:
+		int removeDuplicates(vector<int>& nums);
+	};
+	class Rotate_189 {
+		void reverse(vector<int>& nums,int start,int end);
+	public:
+		void rotate(vector<int>& nums, int k);
+	};
+	class MergeTwoLists_21 {
+	public:
+		ListNode* mergeTwoLists(ListNode* list1, ListNode* list2);
+	};
+	class Merge_88 {
+	public:
+		void merge(vector<int>& nums1, int m, vector<int>& nums2, int n);
+	};
+	class MoveZeros_283 {
+	public:
+		void moveZeroes(vector<int>& nums);
+	};
+	class PlusOne_66 {
+	public:
+		vector<int> plusOne(vector<int>& digits);
+	};
 }
