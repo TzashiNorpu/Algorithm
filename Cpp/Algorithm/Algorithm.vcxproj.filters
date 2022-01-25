@@ -18,9 +18,15 @@
     <ClCompile Include="src\Chapter3\twoSum_1.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="src\Chapter3\reverseKGroup_25.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="src\Chapter3\chapter3.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="src\ListNode.h">
       <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>
