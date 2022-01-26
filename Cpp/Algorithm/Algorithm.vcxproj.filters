@@ -36,12 +36,21 @@
     <ClCompile Include="src\Chapter3\MoveZeros_283.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="src\Chapter4\IsValid_20.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="src\Chapter3\PlusOne_66.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="src\Chapter3\chapter3.h">
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="src\ListNode.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="src\Chapter4\chapter4.h">
       <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>

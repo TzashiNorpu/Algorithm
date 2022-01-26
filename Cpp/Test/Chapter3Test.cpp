@@ -75,11 +75,6 @@ namespace myTest {
 		EXPECT_EQ(nums1, nums2);
 	}
 
-
-	int main(int argc, char** argv) {
-		::testing::InitGoogleTest(&argc, argv);
-		return RUN_ALL_TESTS();
-	}
 }
 
 
