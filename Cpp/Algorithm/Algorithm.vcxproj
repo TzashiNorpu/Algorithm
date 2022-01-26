@@ -148,6 +148,7 @@
     <ClCompile Include="src\Chapter3\Rotate_189.cpp" />
     <ClCompile Include="src\Chapter3\TwoSum_1.cpp" />
     <ClCompile Include="src\Chapter4\IsValid_20.cpp" />
+    <ClCompile Include="src\Chapter4\MinStack.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="src\Chapter3\chapter3.h" />
