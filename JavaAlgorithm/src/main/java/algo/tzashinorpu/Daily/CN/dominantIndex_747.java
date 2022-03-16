@@ -1,7 +1,5 @@
 package algo.tzashinorpu.Daily.CN;
 
-import java.util.Arrays;
-
 public class dominantIndex_747 {
     public int dominantIndex(int[] nums) {
         if (nums.length == 1) {

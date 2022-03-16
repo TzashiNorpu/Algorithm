@@ -6,6 +6,7 @@ public class deleteAndEarn_740 {
         for (int i = 0; i < nums.length; i++) {
             max = Math.max(max, nums[i]);
         }
+//        Arrays.stream(nums).max().getAsInt();
         int[] all = new int[max + 1];
         for (int i = 0; i < nums.length; i++) {
             all[nums[i]]++;
