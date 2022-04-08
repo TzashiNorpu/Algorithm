@@ -75,6 +75,14 @@ namespace myTest {
 		EXPECT_EQ(nums1, nums2);
 	}
 
+	TEST(ThreeSumTest, postive) {
+		vector<int> nums = { -1,0,1,2,-1,-4 };
+		vector<vector<int>> exp = {{-1, -1, 2},{ -1, 0, 1}	};
+		myAlgo::ThreeSum_15 ins;
+		vector<vector<int>> res=ins.threeSum(nums);
+		EXPECT_EQ(exp, res);
+	}
+
 }
 
 

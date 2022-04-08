@@ -139,6 +139,8 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClCompile Include="src\Chapter3\DetectCycle_142.cpp" />
+    <ClCompile Include="src\Chapter3\HasCycle_121.cpp" />
     <ClCompile Include="src\Chapter3\MergeTwoList_21.cpp" />
     <ClCompile Include="src\Chapter3\Merge_88.cpp" />
     <ClCompile Include="src\Chapter3\MoveZeros_283.cpp" />
@@ -146,9 +148,12 @@
     <ClCompile Include="src\Chapter3\RemoveDuplicates_26.cpp" />
     <ClCompile Include="src\Chapter3\ReverseKGroup_25.cpp" />
     <ClCompile Include="src\Chapter3\Rotate_189.cpp" />
+    <ClCompile Include="src\Chapter3\SwapPairs_24.cpp" />
+    <ClCompile Include="src\Chapter3\ThreeSum_15.cpp" />
     <ClCompile Include="src\Chapter3\TwoSum_1.cpp" />
     <ClCompile Include="src\Chapter4\IsValid_20.cpp" />
     <ClCompile Include="src\Chapter4\MinStack.cpp" />
+    <ClCompile Include="src\Chapter3\ReverseList_206.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="src\Chapter3\chapter3.h" />

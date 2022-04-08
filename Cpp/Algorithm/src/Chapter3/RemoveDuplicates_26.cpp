@@ -1,18 +1,14 @@
 #include "chapter3.h"
 int myAlgo::RemoveDuplicates_26::removeDuplicates(vector<int>& nums)
 {
+	int i = 0;
 	int size=nums.size();
-	if (size!=0)
+	for (size_t j = 1; j < size; j++)
 	{
-		int loc = 0;
-		for (size_t i = loc+1; i < size; i++)
+		if (nums[i]!=nums[j])
 		{
-			if (nums[loc]!=nums[i])
-			{
-				nums[++loc] = nums[i];
-			}
+			nums[++i] = nums[j];
 		}
-		return loc + 1;
 	}
-	return 0;
+	return i + 1;
 }

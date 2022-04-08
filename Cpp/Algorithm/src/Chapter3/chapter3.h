@@ -39,4 +39,28 @@ namespace myAlgo {
 	public:
 		vector<int> plusOne(vector<int>& digits);
 	};
+	class ThreeSum_15 {
+	public:
+		vector<vector<int>> threeSum(vector<int>& nums);
+	};
+	class ReverseList_206 {
+	public:
+		ListNode* reverseList(ListNode* head);
+	};
+	class SwapPairs_24 {
+	public:
+		ListNode* swapPairs(ListNode* head);
+	};
+	class HasCycle_121 {
+	public:
+		bool hasCycle(ListNode* head);
+	};
+	class DetectCycle_142 {
+	public:
+		ListNode* detectCycle(ListNode* head);
+	};
+	class ReverseKGroup_25 {
+	public:
+		ListNode* reverseKGroup(ListNode* head, int k);
+	};
 }
