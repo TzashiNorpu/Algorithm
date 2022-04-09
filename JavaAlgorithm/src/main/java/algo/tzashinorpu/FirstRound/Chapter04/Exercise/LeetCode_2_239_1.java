@@ -32,7 +32,8 @@ public class LeetCode_2_239_1 {
             }
         }
         return res;*/
-
+        // 3,1,-1,-3,5,3,6,7  3
+        // 3,1,5,5,6,7
         int[] stack = new int[length];
         int maxIndex = 0;
         int minIndex = 0;
@@ -43,7 +44,7 @@ public class LeetCode_2_239_1 {
             }
             stack[minIndex] = i;
             minIndex++;
-            if (i - stack[maxIndex] >= k) {
+            if (i - k >= stack[maxIndex]) {
                 stack[maxIndex] = 0;
                 maxIndex++;
             }
