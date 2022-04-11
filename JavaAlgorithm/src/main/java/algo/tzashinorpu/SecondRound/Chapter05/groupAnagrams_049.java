@@ -19,7 +19,7 @@ public class groupAnagrams_049 {
             countMap.putIfAbsent(s, new ArrayList<>());
             countMap.get(s).add(strs[i]);
         }
-        return new ArrayList<List<String>>(countMap.values());
+        return new ArrayList<>(countMap.values());
     }
 
     private String calcKey(String str) {

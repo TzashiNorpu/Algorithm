@@ -14,7 +14,7 @@ public class trap_042 {
                 Integer popIndex = queue.pollLast();
                 Integer leftIndex = queue.peekLast();
                 int h = Math.min(height[leftIndex], height[i]) - height[popIndex];
-                res += (i - leftIndex - 1) * (h < 0 ? 0 : h);
+                res += (i - leftIndex - 1) * (Math.max(h, 0));
             }
             queue.offerLast(i);
         }
@@ -26,7 +26,7 @@ public class trap_042 {
         int lMax = height[0];
         int rMax = height[height.length - 1];
         for (int i = 0, j = height.length - 1; i < j; ) {
-            if (lMax < rMax) {
+            if (lMax <= rMax) {
                 res += (lMax - height[i]);
                 lMax = Math.max(lMax, height[++i]);
             } else {
