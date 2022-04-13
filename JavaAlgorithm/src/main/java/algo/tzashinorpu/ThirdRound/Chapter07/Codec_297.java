@@ -2,6 +2,9 @@ package algo.tzashinorpu.ThirdRound.Chapter07;
 
 import algo.tzashinorpu.ThirdRound.TreeNode;
 
+import java.util.ArrayDeque;
+import java.util.List;
+
 public class Codec_297 {
     public String serialize(TreeNode root) {
         StringBuilder builder = new StringBuilder();
@@ -22,19 +25,21 @@ public class Codec_297 {
     // Decodes your encoded data to tree.
     public TreeNode deserialize(String data) {
         String[] split = data.split(",");
-        return deser(split, 0);
+        ArrayDeque<String> dequeue = new ArrayDeque<>(List.of(split));
+        return deser(dequeue);
     }
 
-    private TreeNode deser(String[] split, int index) {
-        if (index == split.length) {
+    private TreeNode deser(ArrayDeque<String> dequeue) {
+        if (dequeue.isEmpty()) {
             return null;
         }
-        if (split[index].equals("x")) {
+        String s = dequeue.pollFirst();
+        if (s.equals("x")) {
             return null;
         }
-        TreeNode node = new TreeNode(Integer.parseInt(split[index]));
-        node.left = deser(split, index++);
-        node.right = deser(split, index++);
+        TreeNode node = new TreeNode(Integer.parseInt(s));
+        node.left = deser(dequeue);
+        node.right = deser(dequeue);
         return node;
     }
 }
