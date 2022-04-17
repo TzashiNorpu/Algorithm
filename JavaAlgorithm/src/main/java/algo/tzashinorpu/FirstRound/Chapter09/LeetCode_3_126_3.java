@@ -9,14 +9,10 @@ public class LeetCode_3_126_3 {
     public List<List<String>> findLadders(String beginWord, String endWord, List<String> wordList) {
        /* "hit" -> "hot" -> "dot" -> "dog" -> "cog"
         "hit" -> "hot" -> "lot" -> "log" -> "cog"*/
-
         List<List<String>> res = new LinkedList<>();
-
         HashMap<String, Integer> steps = new HashMap<>();
         steps.put(beginWord, 0);
-
         HashMap<String, LinkedList<String>> transferPath = new HashMap<>();
-
         HashSet<String> dic = new HashSet<>(wordList);
         if (!dic.contains(endWord)) {
             return res;
