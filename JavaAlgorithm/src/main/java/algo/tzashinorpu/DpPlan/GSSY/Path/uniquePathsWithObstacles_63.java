@@ -1,4 +1,4 @@
-package algo.tzashinorpu.DpPlan.GSSY;
+package algo.tzashinorpu.DpPlan.GSSY.Path;
 
 public class uniquePathsWithObstacles_63 {
     public int uniquePathsWithObstacles(int[][] obstacleGrid) {
