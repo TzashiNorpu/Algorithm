@@ -1,4 +1,4 @@
-package algo.tzashinorpu.DpPlan.GSSY.Path;
+package algo.tzashinorpu.DpPlan.GSSY.Package;
 
 import java.util.Arrays;
 

@@ -1,5 +1,6 @@
 package algo.tzashinorpu.DpPlan.GSSY.Path;
 
+import algo.tzashinorpu.DpPlan.GSSY.Package.numSquares_279;
 import org.junit.jupiter.api.Test;
 
 class numSquares_279Test {

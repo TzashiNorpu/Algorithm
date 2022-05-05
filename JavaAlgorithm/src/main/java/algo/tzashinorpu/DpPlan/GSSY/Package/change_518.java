@@ -1,4 +1,4 @@
-package algo.tzashinorpu.DpPlan.GSSY.Path;
+package algo.tzashinorpu.DpPlan.GSSY.Package;
 
 public class change_518 {
     public int change1(int amount, int[] coins) {
@@ -62,6 +62,4 @@ public class change_518 {
         }
         return dp[amount];
     }
-
-
 }

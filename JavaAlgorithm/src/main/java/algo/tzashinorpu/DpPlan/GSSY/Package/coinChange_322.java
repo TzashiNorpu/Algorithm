@@ -1,4 +1,4 @@
-package algo.tzashinorpu.DpPlan.GSSY.Path;
+package algo.tzashinorpu.DpPlan.GSSY.Package;
 
 public class coinChange_322 {
     public int coinChange1(int[] coins, int amount) {

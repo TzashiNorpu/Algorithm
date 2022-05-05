@@ -1,5 +1,6 @@
 package algo.tzashinorpu.DpPlan.GSSY.Path;
 
+import algo.tzashinorpu.DpPlan.GSSY.Package.coinChange_322;
 import org.junit.jupiter.api.Test;
 
 class coinChange_322Test {

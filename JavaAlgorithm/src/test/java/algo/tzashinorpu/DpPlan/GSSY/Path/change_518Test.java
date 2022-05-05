@@ -1,8 +1,7 @@
 package algo.tzashinorpu.DpPlan.GSSY.Path;
 
+import algo.tzashinorpu.DpPlan.GSSY.Package.change_518;
 import org.junit.jupiter.api.Test;
-
-import static org.junit.jupiter.api.Assertions.*;
 
 class change_518Test {
 

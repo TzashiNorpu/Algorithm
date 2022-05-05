@@ -1,4 +1,4 @@
-package algo.tzashinorpu.DpPlan.GSSY.Path;
+package algo.tzashinorpu.DpPlan.GSSY.Package;
 
 public class numSquares_279 {
     // 给定了若干个数字，每个数字可以被使用无限次，求凑出目标值n所需要用到的是最少数字个数是多少。
