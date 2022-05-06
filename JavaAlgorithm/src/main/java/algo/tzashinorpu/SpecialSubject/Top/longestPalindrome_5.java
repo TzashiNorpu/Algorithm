@@ -1,6 +1,6 @@
 package algo.tzashinorpu.SpecialSubject.Top;
 
-public class longestPalindrome_005 {
+public class longestPalindrome_5 {
     public String longestPalindrome(String s) {
         char[] chars = s.toCharArray();
         int start = 0, end = 0;
@@ -16,11 +16,11 @@ public class longestPalindrome_005 {
         return s.substring(start, end + 1);
     }
 
-    private int findPalindrom(char[] s, int left, int right) {
-        while (left >= 0 && right < s.length && s[left] == s[right]) {
-            --left;
-            ++right;
+    private int findPalindrom(char[] chars, int l, int r) {
+        while (l >= 0 && r < chars.length && chars[l] == chars[r]) {
+            l--;
+            r++;
         }
-        return right - left - 1;
+        return r - l - 1;
     }
 }
