@@ -154,11 +154,15 @@
     <ClCompile Include="src\Chapter4\IsValid_20.cpp" />
     <ClCompile Include="src\Chapter4\MinStack.cpp" />
     <ClCompile Include="src\Chapter3\ReverseList_206.cpp" />
+    <ClCompile Include="src\SpecialSubject\AddTwoNumbers_2.cpp" />
+    <ClCompile Include="src\SpecialSubject\FindMedianSortedArrays_4.cpp" />
+    <ClCompile Include="src\SpecialSubject\LengthOfLongestSubstring_3.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="src\Chapter3\chapter3.h" />
     <ClInclude Include="src\Chapter4\chapter4.h" />
     <ClInclude Include="src\ListNode.h" />
+    <ClInclude Include="src\SpecialSubject\ss.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
