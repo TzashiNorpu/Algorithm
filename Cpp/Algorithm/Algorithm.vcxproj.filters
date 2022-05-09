@@ -69,13 +69,13 @@
     <ClCompile Include="src\SpecialSubject\LongestPalindrome_5.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="src\SpecialSubject\main.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
     <ClCompile Include="src\SpecialSubject\Reverse_7.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
     <ClCompile Include="src\SpecialSubject\MyAtoi_8.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="src\main.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
   </ItemGroup>

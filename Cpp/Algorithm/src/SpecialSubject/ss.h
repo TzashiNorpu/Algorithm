@@ -22,6 +22,8 @@ namespace myAlgo {
 	class LongestPalindrome_5 {
 	public:
 		string longestPalindrome(string s);
+	private:
+		int findPalindrome(string s, int l, int r);
 	};
 	class Reverse_7 {
 	public:
