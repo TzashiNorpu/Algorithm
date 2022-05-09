@@ -59,8 +59,4 @@ namespace myAlgo {
 	public:
 		ListNode* detectCycle(ListNode* head);
 	};
-	class ReverseKGroup_25 {
-	public:
-		ListNode* reverseKGroup(ListNode* head, int k);
-	};
 }

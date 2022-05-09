@@ -78,6 +78,7 @@
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
     <LinkIncremental>true</LinkIncremental>
+    <LibraryPath>$(LibraryPath)</LibraryPath>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
     <LinkIncremental>false</LinkIncremental>
@@ -120,7 +121,11 @@
     <Link>
       <SubSystem>Console</SubSystem>
       <GenerateDebugInformation>true</GenerateDebugInformation>
+      <AdditionalDependencies>%(AdditionalDependencies)</AdditionalDependencies>
     </Link>
+    <ProjectReference>
+      <UseLibraryDependencyInputs>true</UseLibraryDependencyInputs>
+    </ProjectReference>
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
     <ClCompile>
@@ -152,11 +157,14 @@
     <ClCompile Include="src\Chapter3\ThreeSum_15.cpp" />
     <ClCompile Include="src\Chapter3\TwoSum_1.cpp" />
     <ClCompile Include="src\Chapter4\IsValid_20.cpp" />
-    <ClCompile Include="src\Chapter4\MinStack.cpp" />
     <ClCompile Include="src\Chapter3\ReverseList_206.cpp" />
     <ClCompile Include="src\SpecialSubject\AddTwoNumbers_2.cpp" />
     <ClCompile Include="src\SpecialSubject\FindMedianSortedArrays_4.cpp" />
     <ClCompile Include="src\SpecialSubject\LengthOfLongestSubstring_3.cpp" />
+    <ClCompile Include="src\SpecialSubject\LongestPalindrome_5.cpp" />
+    <ClCompile Include="src\SpecialSubject\main.cpp" />
+    <ClCompile Include="src\SpecialSubject\MyAtoi_8.cpp" />
+    <ClCompile Include="src\SpecialSubject\Reverse_7.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="src\Chapter3\chapter3.h" />
