@@ -161,10 +161,15 @@
     <ClCompile Include="src\main.cpp" />
     <ClCompile Include="src\SpecialSubject\AddTwoNumbers_2.cpp" />
     <ClCompile Include="src\SpecialSubject\FindMedianSortedArrays_4.cpp" />
+    <ClCompile Include="src\SpecialSubject\IsMatch_10.cpp" />
     <ClCompile Include="src\SpecialSubject\LengthOfLongestSubstring_3.cpp" />
+    <ClCompile Include="src\SpecialSubject\LetterCombinations_17.cpp" />
+    <ClCompile Include="src\SpecialSubject\LongestCommonPrefix_14.cpp" />
     <ClCompile Include="src\SpecialSubject\LongestPalindrome_5.cpp" />
+    <ClCompile Include="src\SpecialSubject\LongestSubarray_1438.cpp" />
     <ClCompile Include="src\SpecialSubject\MyAtoi_8.cpp" />
     <ClCompile Include="src\SpecialSubject\Reverse_7.cpp" />
+    <ClCompile Include="src\SpecialSubject\ThreeSum_15.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="src\Chapter3\chapter3.h" />

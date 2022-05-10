@@ -3,7 +3,6 @@ using namespace myAlgo;
 #include<iostream>
 int main()
 {
-	LongestPalindrome_5 ins;
-	cout << ins.longestPalindrome("abad") << endl;
-	cin.get();
+	IsMatch_10 ins;
+	cout<<ins.isMatch("aab", "c*a*b")<<endl;
 }

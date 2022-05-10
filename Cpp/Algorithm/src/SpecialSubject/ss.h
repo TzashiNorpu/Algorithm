@@ -32,4 +32,24 @@ namespace myAlgo {
 	class MyAtoi_8 {
 		int myAtoi(string s);
 	};
+	class LongestSubarray_1438 {
+	public:
+		int longestSubarray(vector<int>& nums, int limit);
+	};
+	class LongestCommonPrefix_14 {
+	public:
+		string longestCommonPrefix(vector<string>& strs);
+	};
+	class IsMatch_10 {
+	public:
+		bool isMatch(string s, string p);
+	};
+	class ThreeSum_15 {
+	public:
+		vector<vector<int>> threeSum(vector<int>& nums);
+	};
+	class LetterCombinations_17 {
+	public:
+		vector<string> letterCombinations(string digits);
+	};
 }

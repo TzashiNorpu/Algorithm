@@ -1,5 +1,6 @@
 #include "chapter3.h"
-vector<int> myAlgo::TwoSum_1::twoSum(vector<int>& nums, int target)
+using namespace myAlgo;
+vector<int> TwoSum_1::twoSum(vector<int>& nums, int target)
 {
 	unordered_map<int, int> hashtable;
 	for (int i = 0; i < nums.size(); ++i) {
@@ -11,5 +12,7 @@ vector<int> myAlgo::TwoSum_1::twoSum(vector<int>& nums, int target)
 	}
 	return {};
 }
+
+
 
 
