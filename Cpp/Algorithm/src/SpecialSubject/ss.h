@@ -1,6 +1,6 @@
 #pragma once
 #include "../ListNode.h"
-#include<vector>
+#include <vector>
 #include <string>
 #include <unordered_map>
 #include <math.h>
@@ -49,7 +49,23 @@ namespace myAlgo {
 		vector<vector<int>> threeSum(vector<int>& nums);
 	};
 	class LetterCombinations_17 {
+	private:
+		void recursive(int level, int deep, unordered_map<char, string>& map, vector<string>& res, string& temp, string digits);
 	public:
 		vector<string> letterCombinations(string digits);
+	};
+	class RemoveNthFromEnd_19 {
+	public:
+		ListNode* removeNthFromEnd(ListNode* head, int n);
+	};
+	class GenerateParenthesis_22 {
+	private:
+		void backtrack(vector<string>& res, string& temp, int l, int r, int n);
+	public:
+		vector<string> generateParenthesis(int n);
+	};
+	class MergeKLists_23 {
+	public:
+		ListNode* mergeKLists(vector<ListNode*>& lists);
 	};
 }

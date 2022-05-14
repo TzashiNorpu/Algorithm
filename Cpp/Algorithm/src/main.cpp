@@ -1,8 +1,11 @@
 #include "SpecialSubject/ss.h"
+#include "GSSY/gssy.h"
 using namespace myAlgo;
+using namespace GSSY;
 #include<iostream>
 int main()
 {
-	IsMatch_10 ins;
-	cout<<ins.isMatch("aab", "c*a*b")<<endl;
+	LongestSubstring_395 ins;
+	int res=ins.longestSubstring("weitong", 2);
+	cout << res << endl;
 }

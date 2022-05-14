@@ -1,29 +1,41 @@
 #include "ss.h"
-unordered_map<char, vector<char>> map = {
-		{'2',{'a','b','c'}},
-		{'3',{'d','e','f'}},
-		{'4',{'g','h','i'}},
-		{'5',{'j','k','l'}},
-		{'6',{'m','n','o'}},
-		{'7',{'p','r','q','s'}},
-		{'8',{'t','u','v'}},
-		{'9',{'w','x','y','z'}},
-};
+//Input: digits = "23"
+//Output : ["ad", "ae", "af", "bd", "be", "bf", "cd", "ce", "cf"]
+
 
 vector<string> myAlgo::LetterCombinations_17::letterCombinations(string digits)
 {
 	int deep=digits.size();
 	vector<string> res;
-	recursive(0,deep,res,"",digits);
+	unordered_map<char, string> map = {
+		{'2',"abc"},
+		{'3',"def"},
+		{'4',"ghi"},
+		{'5',"jkl"},
+		{'6',"mno"},
+		{'7',"pqrs"},
+		{'8',"tuv"},
+		{'9',"wxyz"},
+	};
+	string combination;
+	recursive(0,deep,map,res,combination,digits);
 	return res;
 }
 
-void recursive(int level, int deep, vector<string>& res, string temp, string digits)
+void myAlgo::LetterCombinations_17::recursive(int level, int deep, unordered_map<char, string>& map,vector<string>& res, string& temp, string digits)
 {
 	if (level == deep)
 	{
 		res.push_back(temp);
 		return;
 	}
-	recursive(level + 1, deep, res, temp.append(digits[level] + ""), digits);
+	char c = digits[level]; 
+	const string& letters = map.at(c);
+	for (const char& letter:letters)
+	{
+		temp.push_back(letter);
+		recursive(level + 1, deep, map,res,temp , digits);
+		temp.pop_back();
+	}
+	
 }

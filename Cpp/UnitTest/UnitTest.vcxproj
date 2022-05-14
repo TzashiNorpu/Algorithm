@@ -40,6 +40,7 @@
     <ClInclude Include="pch.h" />
   </ItemGroup>
   <ItemGroup>
+    <ClCompile Include="SpecialSubjectTest.cpp" />
     <ClCompile Include="test.cpp" />
     <ClCompile Include="pch.cpp">
       <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">Create</PrecompiledHeader>
@@ -91,7 +92,7 @@
     <Link>
       <GenerateDebugInformation>true</GenerateDebugInformation>
       <SubSystem>Console</SubSystem>
-      <AdditionalDependencies>..\Algorithm\x64\Debug\TwoSum_1.obj;%(AdditionalDependencies)</AdditionalDependencies>
+      <AdditionalDependencies>..\Algorithm\x64\Debug\TwoSum_1.obj;..\Algorithm\x64\Debug\LetterCombinations_17.obj;%(AdditionalDependencies)</AdditionalDependencies>
       <AdditionalLibraryDirectories>%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
     </Link>
     <ProjectReference>

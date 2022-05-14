@@ -93,6 +93,33 @@
     <ClCompile Include="src\SpecialSubject\LetterCombinations_17.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="src\SpecialSubject\RemoveNthFromEnd_19.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="src\SpecialSubject\GenerateParenthesis_22.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="src\SpecialSubject\MergeKLists_23.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="src\GSSY\SlideWindow\LongestSubstring_395.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="src\GSSY\SlideWindow\ThreeSum_15.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="src\GSSY\SlideWindow\ThreeSumClosest_16.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="src\GSSY\SlideWindow\LongestSubarray_1438.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="src\GSSY\SlideWindow\MaxArea_11.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="src\GSSY\SlideWindow\FourSum_18.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="src\Chapter3\chapter3.h">
@@ -105,6 +132,9 @@
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="src\SpecialSubject\ss.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="src\GSSY\gssy.h">
       <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>
