@@ -16,6 +16,7 @@ public class longestSubstring_395 {
                 cnt[u]++;
                 if (cnt[u] == 1) tot++;
                 if (cnt[u] == k) sum++;
+                // 当前区间内字符种类大于预定的种类
                 while (tot > p) {
                     int t = cs[j++] - 'a';
                     cnt[t]--;
@@ -33,7 +34,7 @@ public class longestSubstring_395 {
         int ans = 0;
         int n = s.length();
         char[] cs = s.toCharArray();
-        
+
         return ans;
     }
 }
