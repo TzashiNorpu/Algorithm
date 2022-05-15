@@ -1,4 +1,4 @@
-package algo.tzashinorpu.DpPlan.GSSY.DoublePoint;
+package algo.tzashinorpu.GSSY.DoublePoint;
 
 public class numberOfArithmeticSlices_413 {
     public int numberOfArithmeticSlices(int[] nums) {

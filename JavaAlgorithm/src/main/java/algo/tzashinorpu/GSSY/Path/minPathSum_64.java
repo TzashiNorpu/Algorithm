@@ -1,4 +1,4 @@
-package algo.tzashinorpu.DpPlan.GSSY.Path;
+package algo.tzashinorpu.GSSY.Path;
 
 public class minPathSum_64 {
     public int minPathSum(int[][] grid) {

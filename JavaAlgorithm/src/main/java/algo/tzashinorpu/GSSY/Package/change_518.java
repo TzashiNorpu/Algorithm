@@ -1,4 +1,4 @@
-package algo.tzashinorpu.DpPlan.GSSY.Package;
+package algo.tzashinorpu.GSSY.Package;
 
 public class change_518 {
     public int change1(int amount, int[] coins) {

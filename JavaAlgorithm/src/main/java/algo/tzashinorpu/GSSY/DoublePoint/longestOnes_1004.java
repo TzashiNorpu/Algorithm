@@ -1,4 +1,4 @@
-package algo.tzashinorpu.DpPlan.GSSY.DoublePoint;
+package algo.tzashinorpu.GSSY.DoublePoint;
 
 public class longestOnes_1004 {
     public int longestOnes(int[] nums, int k) {

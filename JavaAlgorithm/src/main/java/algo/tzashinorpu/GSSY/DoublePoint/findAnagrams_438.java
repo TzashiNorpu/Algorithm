@@ -1,4 +1,4 @@
-package algo.tzashinorpu.DpPlan.GSSY.DoublePoint;
+package algo.tzashinorpu.GSSY.DoublePoint;
 
 import java.util.ArrayList;
 import java.util.List;

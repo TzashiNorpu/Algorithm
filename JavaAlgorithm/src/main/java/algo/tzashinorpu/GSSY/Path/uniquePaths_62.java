@@ -1,4 +1,4 @@
-package algo.tzashinorpu.DpPlan.GSSY.Path;
+package algo.tzashinorpu.GSSY.Path;
 
 public class uniquePaths_62 {
     public int uniquePaths(int m, int n) {

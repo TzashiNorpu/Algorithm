@@ -1,12 +1,11 @@
 package algo.tzashinorpu.DpPlan.GSSY.Path;
 
+import algo.tzashinorpu.GSSY.Path.pathsWithMaxScore_1301;
 import org.junit.jupiter.api.Test;
 
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
-
-import static org.junit.jupiter.api.Assertions.*;
 
 class pathsWithMaxScore_1301Test {
 

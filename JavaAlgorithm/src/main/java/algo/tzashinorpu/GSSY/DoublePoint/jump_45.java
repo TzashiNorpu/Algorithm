@@ -1,4 +1,4 @@
-package algo.tzashinorpu.DpPlan.GSSY.DoublePoint;
+package algo.tzashinorpu.GSSY.DoublePoint;
 
 public class jump_45 {
     public int jump(int[] nums) {

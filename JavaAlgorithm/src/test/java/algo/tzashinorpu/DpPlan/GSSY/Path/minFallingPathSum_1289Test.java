@@ -1,8 +1,7 @@
 package algo.tzashinorpu.DpPlan.GSSY.Path;
 
+import algo.tzashinorpu.GSSY.Path.minFallingPathSum_1289;
 import org.junit.jupiter.api.Test;
-
-import static org.junit.jupiter.api.Assertions.*;
 
 class minFallingPathSum_1289Test {
 

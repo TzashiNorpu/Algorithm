@@ -1,4 +1,4 @@
-package algo.tzashinorpu.DpPlan.GSSY.DoublePoint;
+package algo.tzashinorpu.GSSY.DoublePoint;
 
 public class characterReplacement_424 {
     public int characterReplacement(String s, int k) {

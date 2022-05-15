@@ -1,4 +1,4 @@
-package algo.tzashinorpu.DpPlan.GSSY.Path;
+package algo.tzashinorpu.GSSY.Path;
 
 
 public class findPaths_576 {
