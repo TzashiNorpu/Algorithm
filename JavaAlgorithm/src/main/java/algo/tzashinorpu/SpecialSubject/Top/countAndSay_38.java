@@ -3,6 +3,7 @@ package algo.tzashinorpu.SpecialSubject.Top;
 public class countAndSay_38 {
     public String countAndSay(int n) {
         String str = "1";
+        // 5 <-> 111221
         for (int i = 2; i <= n; i++) {
             StringBuilder sb = new StringBuilder();
             int start = 0;
@@ -11,7 +12,7 @@ public class countAndSay_38 {
                 while (pos < str.length() && str.charAt(pos) == str.charAt(start)) {
                     pos++;
                 }
-                sb.append(Integer.toString(pos - start)).append(str.charAt(start));
+                sb.append((pos - start)).append(str.charAt(start));
                 start = pos;
             }
             str = sb.toString();
