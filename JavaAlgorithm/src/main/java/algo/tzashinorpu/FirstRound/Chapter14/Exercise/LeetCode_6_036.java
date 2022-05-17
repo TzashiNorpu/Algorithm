@@ -11,7 +11,6 @@ public class LeetCode_6_036 {
                         return false;
                     }
                 }
-
             }
         }
         return true;
