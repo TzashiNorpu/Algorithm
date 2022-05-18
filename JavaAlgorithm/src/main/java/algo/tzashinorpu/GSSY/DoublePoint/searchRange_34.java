@@ -20,11 +20,11 @@ public class searchRange_34 {
             return new int[]{-1, -1};
         }
         int m = idx, n = idx;
-        for (; m > 0; ) {
+        while (m > 0) {
             if (nums[m - 1] == nums[idx]) m--;
             else break;
         }
-        for (; n < nums.length - 1; ) {
+        while (n < nums.length - 1) {
             if (nums[n + 1] == nums[idx]) n++;
             else break;
         }

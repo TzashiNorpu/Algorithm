@@ -72,7 +72,6 @@ public class numFriendRequests_825 {
     boolean check(int x, int y) {
         if (y <= 0.5 * x + 7) return false;
         if (y > x) return false;
-        if (y > 100 && x < 100) return false;
         return true;
     }
 
