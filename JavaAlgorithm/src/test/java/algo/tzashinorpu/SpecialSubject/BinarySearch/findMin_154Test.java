@@ -14,5 +14,6 @@ class findMin_154Test {
         System.out.println(ins.findMin(new int[]{1, 1}));
         System.out.println(ins.findMin(new int[]{1}));
         System.out.println(ins.findMin(new int[]{10, 1, 10, 10, 10}));
+        System.out.println(ins.findMin(new int[]{3, 4, 5, 6, 1, 2}));
     }
 }

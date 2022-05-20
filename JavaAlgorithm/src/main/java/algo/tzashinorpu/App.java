@@ -5,14 +5,14 @@ import java.util.Date;
 import java.util.HashMap;
 import java.util.HashSet;
 import java.util.Map;
+import java.util.concurrent.ConcurrentHashMap;
 
 /**
  * Hello world!
  */
 public class App {
     public static void main(String[] args) throws NoSuchFieldException, IllegalAccessException {
-        int[] test = new int[10];
-        System.out.println(test[0] = 4);
-        System.out.println('9' - '0');
+        ConcurrentHashMap<Integer, Integer> test = new ConcurrentHashMap<Integer, Integer>();
+
     }
 }
