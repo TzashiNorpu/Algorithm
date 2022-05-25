@@ -12,15 +12,7 @@ public class subarraySum_560 {
         // 1,2,3   3
         // -1,-1,1  0
         for (int i = 0, j = 1; j <= len; ) {
-            if (preSum[j] - preSum[i] == k) {
-                res++;
-                i++;
-                j++;
-            } else if (preSum[j] - preSum[i] > k) {
-                i++;
-            } else {
-                j++;
-            }
+            
         }
         return res;
     }
