@@ -1,6 +1,7 @@
 package algo.tzashinorpu;
 
 import java.lang.reflect.Field;
+import java.text.SimpleDateFormat;
 import java.util.Date;
 import java.util.HashMap;
 import java.util.HashSet;
@@ -12,7 +13,9 @@ import java.util.concurrent.ConcurrentHashMap;
  */
 public class App {
     public static void main(String[] args) throws NoSuchFieldException, IllegalAccessException {
-        ConcurrentHashMap<Integer, Integer> test = new ConcurrentHashMap<Integer, Integer>();
-
+        SimpleDateFormat simpleDateFormat = new SimpleDateFormat("yyyyMMdd");
+        String dateString = simpleDateFormat.format(new Date());
+        System.out.println(Integer.parseInt(dateString));
+        System.out.println(Integer.parseInt(dateString) + 100);
     }
 }
