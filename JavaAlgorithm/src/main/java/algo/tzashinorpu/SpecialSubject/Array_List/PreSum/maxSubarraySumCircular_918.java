@@ -1,27 +1,17 @@
 package algo.tzashinorpu.SpecialSubject.Array_List.PreSum;
 
-import java.util.Arrays;
-
 public class maxSubarraySumCircular_918 {
     public int maxSubarraySumCircular(int[] nums) {
         int len = nums.length;
-        int[] temp = new int[2 * len];
-        System.arraycopy(nums, 0, temp, 0, len);
-        System.arraycopy(nums, 0, temp, len, len);
-        int ans = 0;
-        for (int i = 0, j = 0; j < 2 * len; ) {
-            if (nums[j] > 0) {
-                if (j - i + 1 <= len)
-                    ans += nums[j++];
-                else {
-                    ans -= nums[i++];
-                }
-            } else {
-                i++;
-                j++;
-            }
-
+        int max = nums[0], curMax = nums[0], min = nums[0], curMin = nums[0], sum = nums[0];
+        // 1,-2,3,-2
+        for (int i = 1; i < len; i++) {
+            sum += nums[i];
+            curMax = Math.max(curMax + nums[i], nums[i]);
+            max = Math.max(max, curMax);
+            curMin = Math.min(curMin + nums[i], nums[i]);
+            min = Math.min(min, curMin);
         }
-        return ans;
+        return max < 0 ? max : Math.max(max, sum - min);
     }
 }
