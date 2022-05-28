@@ -1,6 +1,6 @@
 package algo.tzashinorpu.SpecialSubject.Array_List.PreSum;
 
-import algo.tzashinorpu.ThirdRound.TreeNode;
+import algo.tzashinorpu.SpecialSubject.TreeNode;
 import org.junit.jupiter.api.Test;
 
 class pathSum_437Test {
@@ -17,7 +17,7 @@ class pathSum_437Test {
         root.left.left.left = new TreeNode(3);
         root.left.left.right = new TreeNode(-2);
         root.left.right.right = new TreeNode(1);
-//        System.out.println(ins.pathSum_1(root, 8));
+        System.out.println(ins.pathSum_1(root, 8));
         System.out.println(ins.pathSum_2(root, 8));
     }
 }

@@ -1,6 +1,7 @@
 package algo.tzashinorpu.SpecialSubject.Array_List.PreSum;
 
-import algo.tzashinorpu.ThirdRound.TreeNode;
+
+import algo.tzashinorpu.SpecialSubject.TreeNode;
 
 import java.util.HashMap;
 
