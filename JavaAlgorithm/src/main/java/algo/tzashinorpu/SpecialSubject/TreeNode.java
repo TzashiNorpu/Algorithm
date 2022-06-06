@@ -17,4 +17,18 @@ public class TreeNode {
         this.left = left;
         this.right = right;
     }
+
+    @Override
+    public String toString() {
+        String f = "-->";
+        String s = dfs(this, f);
+        return s.substring(0, s.lastIndexOf(f));
+    }
+
+    private String dfs(TreeNode treeNode, String f) {
+        if (treeNode == null) return "";
+        String l = dfs(treeNode.left, f);
+        String r = dfs(treeNode.right, f);
+        return l + (treeNode.val + f) + r;
+    }
 }
