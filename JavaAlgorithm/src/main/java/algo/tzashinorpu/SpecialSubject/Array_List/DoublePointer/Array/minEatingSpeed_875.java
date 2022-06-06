@@ -3,6 +3,8 @@ package algo.tzashinorpu.SpecialSubject.Array_List.DoublePointer.Array;
 import java.util.Arrays;
 
 public class minEatingSpeed_875 {
+    // [312884470]  -> 312884469
+    // 左边界是 1 ，不是数组的最小值
     public int minEatingSpeed_1(int[] piles, int h) {
         Arrays.sort(piles);
         int l = 1, r = piles[piles.length - 1];

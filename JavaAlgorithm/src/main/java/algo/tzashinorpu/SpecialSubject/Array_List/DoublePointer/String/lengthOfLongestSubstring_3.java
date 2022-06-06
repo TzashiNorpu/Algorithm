@@ -3,7 +3,7 @@ package algo.tzashinorpu.SpecialSubject.Array_List.DoublePointer.String;
 import java.util.HashMap;
 
 public class lengthOfLongestSubstring_3 {
-    public int lengthOfLongestSubstring(String s) {
+    public int lengthOfLongestSubstring_1(String s) {
         int res = 0;
         int begin = 0;
         HashMap<Character, Integer> map = new HashMap<>();
@@ -17,4 +17,22 @@ public class lengthOfLongestSubstring_3 {
         }
         return res;
     }
+
+    public int lengthOfLongestSubstring_2(String s) {
+        int len = 0;
+        int l = 0, r = 0;
+        HashMap<Character, Integer> map = new HashMap<>();
+        char[] chars = s.toCharArray();
+        while (r < chars.length) {
+            char rChar = chars[r++];
+            map.put(rChar, map.getOrDefault(rChar, 0) + 1);
+            while (map.get(rChar) > 1) {
+                char lChar = chars[l++];
+                map.put(lChar, map.get(lChar) - 1);
+            }
+            len = Math.max(len, r - l);
+        }
+        return len;
+    }
+
 }

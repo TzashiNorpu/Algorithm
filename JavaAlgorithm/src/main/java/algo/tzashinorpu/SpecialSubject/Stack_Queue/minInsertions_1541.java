@@ -7,7 +7,7 @@ public class minInsertions_1541 {
             // ()
             if (s.charAt(i) == '(') {
                 rightNeed += 2;
-                // 当遇到左括号时，若对右括号的需求量为奇数，需要插⼊1 个右括号
+                // 当遇到左括号时，若对右括号的需求量为奇数，需要插⼊ 1 个右括号
                 if (rightNeed % 2 == 1) {
                     leftNeed++;
                     rightNeed--;
