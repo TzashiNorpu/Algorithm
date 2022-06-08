@@ -18,6 +18,8 @@ public class flipMatchVoyage_971 {
         return dfs(root, voyage) ? res : Arrays.asList(-1);
     }
 
+    // 先用左子树匹配 voyage 的元素 左子树匹配完后再用右子树匹配
+    // 左子树匹配失败时用右子树匹配 voyage 的元素 并将此时的父节点认为是一个解放入结果集中
     private Boolean dfs(TreeNode node, int[] voyage) {
         if (node == null) return true;
         if (node.val != voyage[i++]) return false;
