@@ -1,6 +1,5 @@
 package algo.tzashinorpu.SpecialSubject;
 
-import java.util.List;
 
 public class Node {
     public int val;
