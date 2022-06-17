@@ -169,6 +169,7 @@
     <ClCompile Include="src\SpecialSubject\FindMedianSortedArrays_4.cpp" />
     <ClCompile Include="src\SpecialSubject\GenerateParenthesis_22.cpp" />
     <ClCompile Include="src\SpecialSubject\IsMatch_10.cpp" />
+    <ClCompile Include="src\SpecialSubject\LargestRectangleArea_84.cpp" />
     <ClCompile Include="src\SpecialSubject\LengthOfLongestSubstring_3.cpp" />
     <ClCompile Include="src\SpecialSubject\LetterCombinations_17.cpp" />
     <ClCompile Include="src\SpecialSubject\LongestCommonPrefix_14.cpp" />
@@ -179,6 +180,8 @@
     <ClCompile Include="src\SpecialSubject\RemoveNthFromEnd_19.cpp" />
     <ClCompile Include="src\SpecialSubject\Reverse_7.cpp" />
     <ClCompile Include="src\SpecialSubject\ThreeSum_15.cpp" />
+    <ClCompile Include="src\SpecialSubject\TotalSteps_2289.cpp" />
+    <ClCompile Include="src\SpecialSubject\Trap_42.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="src\Chapter3\chapter3.h" />

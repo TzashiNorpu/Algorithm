@@ -3,9 +3,11 @@
 using namespace myAlgo;
 using namespace GSSY;
 #include<iostream>
+#include <map>
 int main()
 {
-	LongestSubstring_395 ins;
-	int res=ins.longestSubstring("weitong", 2);
+	LargestRectangleArea_84 ins;
+	vector<int> h = { 2,1,5,6,2,3 };
+	int res=ins.largestRectangleArea(h);
 	cout << res << endl;
 }
