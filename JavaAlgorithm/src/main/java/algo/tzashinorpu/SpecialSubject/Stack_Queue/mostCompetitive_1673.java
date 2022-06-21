@@ -1,9 +1,8 @@
 package algo.tzashinorpu.SpecialSubject.Stack_Queue;
 
-import java.util.Arrays;
 import java.util.Stack;
 
-public class mostCompetitive_1671 {
+public class mostCompetitive_1673 {
     public int[] mostCompetitive(int[] nums, int k) {
         int[] res = new int[k];
         Stack<Integer> stack = new Stack<>();

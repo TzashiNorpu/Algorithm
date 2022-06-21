@@ -17,6 +17,7 @@ public class constrainedSubsetSum_1425 {
         q.addLast(0);
         int ans = nums[0];
         for (int i = 1; i < n; ++i) {
+            // 栈里维护 i-k 到当前的单调递减队列
             // 如果队首的 j 与 i 的差值大于 k，则不满足要求，弹出
             while (!q.isEmpty() && i - q.peekFirst() > k) {
                 q.removeFirst();
