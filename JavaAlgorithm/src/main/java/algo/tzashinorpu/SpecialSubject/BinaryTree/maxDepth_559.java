@@ -1,6 +1,6 @@
 package algo.tzashinorpu.SpecialSubject.BinaryTree;
 
-import algo.tzashinorpu.SpecialSubject.Top.NNode;
+import algo.tzashinorpu.SpecialSubject.TopInterview1Round.NNode;
 
 import java.util.ArrayDeque;
 

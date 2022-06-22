@@ -1,6 +1,7 @@
 package algo.tzashinorpu.SpecialSubject.Stack_Queue;
 
 import java.util.Arrays;
+import java.util.HashSet;
 
 public class carFleet_853 {
     //    如果车 x 排在 车 y 前面，且 x 到达终点所需时间比 y 少，则 x 必然会被 y 卡住，形成车队。
