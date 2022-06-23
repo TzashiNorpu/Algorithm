@@ -6,7 +6,7 @@ public class isMatch_10 {
         boolean first_match = (!s.isEmpty() && s.charAt(0) == p.charAt(0) || p.charAt(0) == '.');
         // b a*b
         // aaaab a*b
-        if (s.length() >= 2 && p.charAt(1) == '*') {
+        if (p.length() >= 2 && p.charAt(1) == '*') {
             // 重复0次 | 重复多次
             return (isMatchRecursive(s, p.substring(2)) || (first_match && isMatchRecursive(s.substring(1), p)));
         } else {
