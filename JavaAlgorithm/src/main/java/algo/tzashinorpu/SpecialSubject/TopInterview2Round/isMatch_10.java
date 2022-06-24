@@ -5,17 +5,17 @@ public class isMatch_10 {
         /*
         '.' Matches any single character
         '*' Matches zero or more of the preceding element
-        aa a*
+        aaa a*
+        b  a*b
+        a .*
         */
         if (p.isEmpty()) return s.isEmpty();
-        boolean firstMatch = !s.isEmpty() && (s.charAt(0) == p.charAt(0) || p.charAt(0) == '.');
-        // b a*b
-        // aaaab a*b
-        if (p.length() >= 2 && p.charAt(1) == '*') {
-            // 重复0次 | 重复多次
-            return (isMatch_dfs(s, p.substring(2)) || (firstMatch && isMatch_dfs(s.substring(1), p)));
+        boolean first_match = !s.isEmpty() && (p.charAt(0) == s.charAt(0) || p.charAt(0) == '.');
+        if (p.length() > 1 && p.charAt(1) == '*') {
+            // 0 次 | 多次
+            return (first_match && isMatch_dfs(s.substring(1), p)) || isMatch_dfs(s, p.substring(2));
         } else {
-            return firstMatch && isMatch_dfs(s.substring(1), p.substring(1));
+            return first_match && isMatch_dfs(s.substring(1), p.substring(1));
         }
     }
 }
