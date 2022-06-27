@@ -1,13 +1,20 @@
 #include "graph.h"
 #include <set>
 #include <algorithm>
+// 超时
 int myAlgo::MinimumScore_2322::minimumScore(vector<int>& nums, vector<vector<int>>& edges) {
 	int n = nums.size();
 	int m = edges.size();
 	// nums = [1,5,5,4,11], edges = [[0,1],[1,2],[1,3],[3,4]]
 	vector<vector<int>> graph;
+	for (int i = 0; i < n; i++) {
+		graph.push_back(vector<int>());
+	}
 	// 每个节点的度
 	vector<int> degree;
+	for (int i = 0; i < n; i++) {
+		degree.push_back(0);
+	}
 
 	for (vector<int> e : edges) {
 		int x = e[0], y = e[1];
@@ -24,6 +31,10 @@ int myAlgo::MinimumScore_2322::minimumScore(vector<int>& nums, vector<vector<int
 	vector<int> dq;
 	set<int> seen;
 	vector<set<int>> children;
+	for (size_t i = 0; i < n; i++)
+	{
+		children.push_back(set<int>());
+	}
 	for (size_t i = 0; i < n; i++)
 	{
 		V = V ^ nums[i];
@@ -59,6 +70,7 @@ int myAlgo::MinimumScore_2322::minimumScore(vector<int>& nums, vector<vector<int
 		}
 	}
 	int ans = INT_MAX;
+	// i 只到 m - 1 是因为如果到了 m 则 j 就没有办法选择第二条 remove 的边
 	for (size_t i = 0; i < m - 1; i++) {
 		for (size_t j = i + 1; j < m; j++) {
 			// Let a, c be the lower break points
