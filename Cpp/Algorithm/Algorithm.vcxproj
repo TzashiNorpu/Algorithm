@@ -168,6 +168,7 @@
     <ClCompile Include="src\SpecialSubject\AddTwoNumbers_2.cpp" />
     <ClCompile Include="src\SpecialSubject\FindMedianSortedArrays_4.cpp" />
     <ClCompile Include="src\SpecialSubject\GenerateParenthesis_22.cpp" />
+    <ClCompile Include="src\SpecialSubject\Graph\MinimumScore_2322.cpp" />
     <ClCompile Include="src\SpecialSubject\IsMatch_10.cpp" />
     <ClCompile Include="src\SpecialSubject\LargestRectangleArea_84.cpp" />
     <ClCompile Include="src\SpecialSubject\LengthOfLongestSubstring_3.cpp" />
@@ -188,6 +189,7 @@
     <ClInclude Include="src\Chapter4\chapter4.h" />
     <ClInclude Include="src\GSSY\gssy.h" />
     <ClInclude Include="src\ListNode.h" />
+    <ClInclude Include="src\SpecialSubject\Graph\graph.h" />
     <ClInclude Include="src\SpecialSubject\ss.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
