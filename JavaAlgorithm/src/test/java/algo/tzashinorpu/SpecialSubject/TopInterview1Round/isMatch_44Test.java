@@ -2,11 +2,11 @@ package algo.tzashinorpu.SpecialSubject.TopInterview1Round;
 
 import org.junit.jupiter.api.Test;
 
-class isMatch_40Test {
+class isMatch_44Test {
 
     @Test
     void isMatch() {
-        isMatch_40 ins = new isMatch_40();
+        isMatch_44 ins = new isMatch_44();
         System.out.println(ins.isMatch("aa", "a"));
         System.out.println(ins.isMatchDp("aa", "a"));
         System.out.println(ins.isMatch("aa", "*"));

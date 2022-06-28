@@ -132,6 +132,9 @@
     <ClCompile Include="src\SpecialSubject\Graph\MinimumScore_2322.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="src\TopInterview\FirstMissingPositive_41.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="src\Chapter3\chapter3.h">
@@ -150,6 +153,9 @@
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="src\SpecialSubject\Graph\graph.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="src\TopInterview\Header.h">
       <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>

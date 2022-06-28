@@ -1,6 +1,6 @@
 package algo.tzashinorpu.SpecialSubject.TopInterview1Round;
 
-public class isMatch_40 {
+public class isMatch_44 {
     public boolean isMatch(String s, String p) {
         // 超时
         if (s.equals(p)) return true;
