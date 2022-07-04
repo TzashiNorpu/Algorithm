@@ -7,6 +7,6 @@ class peopleAwareOfSecret_6109Test {
     @Test
     void peopleAwareOfSecret() {
         peopleAwareOfSecret_6109 ins = new peopleAwareOfSecret_6109();
-        System.out.println(ins.peopleAwareOfSecret(4, 1, 3));
+        System.out.println(ins.peopleAwareOfSecret(684, 18, 496));
     }
 }
