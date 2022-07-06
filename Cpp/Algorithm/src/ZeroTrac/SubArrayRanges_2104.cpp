@@ -8,8 +8,7 @@ long long maxSum(vector<int>& nums) {
 	stack.push_back(-1);
 	for (size_t i = 0; i < nums.size(); i++)
 	{
-		// µ¥µ÷µÝ¼õ
-		while (stack.size()>1 && nums[i]>nums[stack.front()])
+		while (stack.size() > 1 && nums[i] > nums[stack.front()])
 		{
 
 		}

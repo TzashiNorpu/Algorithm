@@ -184,6 +184,7 @@
     <ClCompile Include="src\SpecialSubject\TotalSteps_2289.cpp" />
     <ClCompile Include="src\SpecialSubject\Trap_42.cpp" />
     <ClCompile Include="src\TopInterview\FirstMissingPositive_41.cpp" />
+    <ClCompile Include="src\ZeroTrac\SubArrayRanges_2104.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="src\Chapter3\chapter3.h" />
@@ -193,6 +194,7 @@
     <ClInclude Include="src\SpecialSubject\Graph\graph.h" />
     <ClInclude Include="src\SpecialSubject\ss.h" />
     <ClInclude Include="src\TopInterview\Header.h" />
+    <ClInclude Include="src\ZeroTrac\Header.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
