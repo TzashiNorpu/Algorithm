@@ -5,7 +5,7 @@
 
 using namespace ZeroTrac;
 
-bool Solution::checkPowersOfThree(int n) {
+bool CheckPowersOfThree::checkPowersOfThree(int n) {
     vector<int> vec;
     for (int i = 0; i <= 15; i++) {
         vec.push_back(pow(3, i));
@@ -13,7 +13,7 @@ bool Solution::checkPowersOfThree(int n) {
     return helper(0, n, 0, vec);
 }
 
-bool Solution::helper(int sum, int n, int chooseIdx, vector<int> nums) {
+bool CheckPowersOfThree::helper(int sum, int n, int chooseIdx, vector<int> nums) {
     if (chooseIdx == nums.size()) return false;
     if (sum > n) return false;
     if (sum == n) return true;
