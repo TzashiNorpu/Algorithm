@@ -3,4 +3,4 @@ project(Clion)
 
 set(CMAKE_CXX_STANDARD 14)
 
-add_executable(Clion main.cpp ZeroTrac/1500_1600/header.h ZeroTrac/1500_1600/checkPowersOfThree_1780.cpp ZeroTrac/1500_1600/countVowelStrings_1641.cpp)
+add_executable(Clion main.cpp ZeroTrac/1500_1600/header.h ZeroTrac/1500_1600/checkPowersOfThree_1780.cpp ZeroTrac/1500_1600/countVowelStrings_1641.cpp ZeroTrac/1500_1600/longestNiceSubstring_1763.cpp ZeroTrac/1500_1600/maximalNetworkRank_1615.cpp ZeroTrac/1500_1600/getMaximumXor_1829.cpp ZeroTrac/1500_1600/canFormArray_1640.cpp ZeroTrac/1500_1600/countTriplets_1442.cpp ZeroTrac/1500_1600/digArtifacts_2201.cpp ZeroTrac/1500_1600/eliminateMaximum_1921.cpp)
