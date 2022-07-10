@@ -5,9 +5,14 @@ import java.util.Arrays;
 public class fillCups_6112 {
     public int fillCups(int[] amount) {
         Arrays.sort(amount);
-        if (amount[0] == 0) return amount[2];
-        int sum = Arrays.stream(amount).sum() / 2;
-        if (sum % 2 != 0) return sum / 2 + 1;
-        return sum / 2;
+        int res = 0;
+        while (amount[1] != 0) {
+            Arrays.sort(amount);
+            amount[2]--;
+            amount[1]--;
+            res++;
+        }
+        Arrays.sort(amount);
+        return res + amount[2];
     }
 }
