@@ -123,7 +123,7 @@ namespace ZeroTrac {
     public:
         int countPalindromicSubsequence(string s);
 
-        int countApha(int start_index, int end_index, string basicString);
+        int countAlphabet(int start_index, int end_index, string basicString);
     };
 
     class closestDivisors_1362 {
@@ -134,11 +134,12 @@ namespace ZeroTrac {
     class subtreeWithAllDeepest_865 {
     public:
         TreeNode *subtreeWithAllDeepest(TreeNode *root);
-
-        TreeNode *helper(TreeNode *pNode);
     };
 
     class AuthenticationManager_1797 {
+    private:
+        int ttl;
+        unordered_map<string, int> map;
     public:
         AuthenticationManager_1797(int timeToLive);
 
@@ -152,6 +153,37 @@ namespace ZeroTrac {
     class rotateTheBox_1861 {
     public:
         vector<vector<char>> rotateTheBox(vector<vector<char>> &box);
+    };
+
+    class camelMatch_1023 {
+    public:
+        vector<bool> camelMatch(vector<string> &queries, string pattern);
+    };
+
+    class maximumEvenSplit_2178 {
+    public:
+        vector<long long> maximumEvenSplit(long long finalSum);
+    };
+
+    class findFarmland_1992 {
+    public:
+        vector<vector<int>> findFarmland(vector<vector<int>> &land);
+    };
+
+    class balanceBST_1382 {
+    private:
+        vector<int> nums;
+    public:
+        TreeNode *balanceBST(TreeNode *root);
+
+        void inorder(TreeNode *root);
+
+        TreeNode *build(vector<int> inorder, int l, int r);
+    };
+
+    class minDominoRotations_1007 {
+    public:
+        int minDominoRotations(vector<int> &tops, vector<int> &bottoms);
     };
 
 

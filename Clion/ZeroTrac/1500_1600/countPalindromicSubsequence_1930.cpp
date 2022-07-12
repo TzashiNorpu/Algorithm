@@ -10,12 +10,12 @@ int countPalindromicSubsequence_1930::countPalindromicSubsequence(string s) {
     for (char c = 'a'; c <= 'z'; c++) {
         int left_index = s.find_first_of(c);
         int right_index = s.find_last_of(c);
-        res += countApha(left_index, right_index, s);
+        res += countAlphabet(left_index, right_index, s);
     }
     return res;
 }
 
-int countPalindromicSubsequence_1930::countApha(int start_index, int end_index, string s) {
+int countPalindromicSubsequence_1930::countAlphabet(int start_index, int end_index, string s) {
     unordered_set<char> set;
     for (int i = start_index + 1; i < end_index; i++)
         set.insert(s[i]);
