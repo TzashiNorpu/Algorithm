@@ -186,6 +186,50 @@ namespace ZeroTrac {
         int minDominoRotations(vector<int> &tops, vector<int> &bottoms);
     };
 
+    class removeDuplicates_1209 {
+    public:
+        string removeDuplicatesBy2Pointers(string s, int k);
+
+        string removeDuplicatesByStack(string s, int k);
+    };
+
+    class removeDuplicates_1047 {
+    public:
+        string removeDuplicatesBy2Pointers(string s);
+
+        string removeDuplicatesByStack(string s);
+    };
+
+    class maxAbsoluteSum_1749 {
+    public:
+        int maxAbsoluteSum(vector<int> &nums);
+    };
+
+    class intervalIntersection_986 {
+    public:
+        vector<vector<int>> intervalIntersection(vector<vector<int>> &firstList, vector<vector<int>> &secondList);
+    };
+
+    class smallestDivisor_1283 {
+    public:
+        int smallestDivisor(vector<int> &nums, int threshold);
+    };
+
+    class largestTriangleArea_812 {
+    public:
+        double largestTriangleArea(vector<vector<int>> &points);
+    };
+
+    class validTicTacToe_794 {
+    public:
+        bool validTicTacToe(vector<string> &board);
+    };
+
+    class removeSubfolders_1233 {
+    public:
+        vector<string> removeSubfolders(vector<string> &folder);
+    };
+
 
 }
 
