@@ -3,9 +3,8 @@
 
 
 int main() {
-    ZeroTrac::minDominoRotations_1007 ins;
-    vector<int> tops = {2, 1, 2, 4, 2, 2};
-    vector<int> bottoms = {5, 2, 6, 2, 3, 2};
-    ins.minDominoRotations(tops, bottoms);
+    ZeroTrac::longestPalindrome_2131 ins;
+    vector<string> words = {"cc", "ll", "ll"};
+    ins.longestPalindrome(words);
     return 0;
 }

@@ -13,6 +13,8 @@
 #include "unordered_set"
 #include "map"
 #include "algorithm"
+#include "queue"
+#include "numeric"
 
 using namespace std;
 namespace ZeroTrac {
@@ -230,6 +232,75 @@ namespace ZeroTrac {
         vector<string> removeSubfolders(vector<string> &folder);
     };
 
+    class pathInZigZagTree_1104 {
+    public:
+        vector<int> pathInZigZagTree(int label);
+    };
+
+    class canReorderDoubled_954 {
+    public:
+        bool canReorderDoubled(vector<int> &arr);
+    };
+
+    class minOperationsMaxProfit_1599 {
+    public:
+        int minOperationsMaxProfit(vector<int> &customers, int boardingCost, int runningCost);
+    };
+
+    class diagonalSort_1329 {
+    public:
+        vector<vector<int>> diagonalSort(vector<vector<int>> &mat);
+    };
+
+    class halveArray_2208 {
+    public:
+        int halveArray(vector<int> &nums);
+    };
+
+    class maximumSubsequenceCount_2207 {
+    public:
+        long long maximumSubsequenceCount(string text, string pattern);
+    };
+
+    class longestPalindrome_2131 {
+    public:
+        int longestPalindrome(vector<string> &words);
+    };
+
+    class findOriginalArray_2007 {
+    public:
+        vector<int> findOriginalArray(vector<int> &changed);
+    };
+
+    class movesToMakeZigzag_1144 {
+    public:
+        int movesToMakeZigzag(vector<int> &nums);
+    };
+
+    class minimumNumbers_2310 {
+    public:
+        int minimumNumbers(int num, int k);
+    };
+
+    class numOfMinutes_1376 {
+    public:
+        int numOfMinutes(int n, int headID, vector<int> &manager, vector<int> &informTime);
+    };
+
+    class scoreOfParentheses_856 {
+    public:
+        int scoreOfParentheses(string s);
+    };
+
+    class peopleIndexes_1452 {
+    public:
+        vector<int> peopleIndexes(vector<vector<string>> &favoriteCompanies);
+    };
+
+    class bstFromPreorder_1008 {
+    public:
+        TreeNode *bstFromPreorder(vector<int> &preorder);
+    };
 
 }
 
