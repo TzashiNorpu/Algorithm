@@ -30,6 +30,17 @@ namespace ZeroTrac {
         TreeNode(int x, TreeNode *left, TreeNode *right) : val(x), left(left), right(right) {}
     };
 
+    struct ListNode {
+        int val;
+        ListNode *next;
+
+        ListNode() : val(0), next(nullptr) {}
+
+        ListNode(int x) : val(x), next(nullptr) {}
+
+        ListNode(int x, ListNode *next) : val(x), next(next) {}
+    };
+
     class CountVowelStrings {
     public:
         int countVowelStrings(int n);
@@ -93,6 +104,11 @@ namespace ZeroTrac {
     };
 
     class tupleSameProduct_1726 {
+    private:
+        int res = 0;
+
+        void helper(vector<int> &nums, vector<int> &choose, vector<bool> chooseIdx);
+
     public:
         int tupleSameProduct(vector<int> &nums);
     };
@@ -301,6 +317,67 @@ namespace ZeroTrac {
     public:
         TreeNode *bstFromPreorder(vector<int> &preorder);
     };
+
+    class nextLargerNodes_1019 {
+    public:
+        vector<int> nextLargerNodes(ListNode *head);
+    };
+
+    class isNStraightHand_846 {
+    public:
+        bool isNStraightHand(vector<int> &hand, int groupSize);
+    };
+
+    class maxChunksToSorted_769 {
+    public:
+        int maxChunksToSorted(vector<int> &arr);
+    };
+
+    class countMaxOrSubsets_2044 {
+    private:
+        int res = 0;
+
+        void helper(int m, int n, int index, vector<int> &nums);
+
+    public:
+        int countMaxOrSubsets(vector<int> &nums);
+    };
+
+    class corpFlightBookings_1109 {
+    public:
+        vector<int> corpFlightBookings(vector<vector<int>> &bookings, int n);
+    };
+
+    class kthGrammar_779 {
+    public:
+        int kthGrammar(int n, int k);
+    };
+
+    class minFallingPathSum_931 {
+    private:
+        int res = 2000000;
+
+        void helper(int colIndex, int rowIndex, int sum, vector<vector<int>> &matrix);
+
+    public:
+        int minFallingPathSum(vector<vector<int>> &matrix);
+    };
+
+    class suggestedProducts_1268 {
+    public:
+        vector<vector<string>> suggestedProducts(vector<string> &products, string searchWord);
+    };
+
+    class minCost_1578 {
+    public:
+        int minCost(string colors, vector<int> &neededTime);
+    };
+
+    class maxScore_1423 {
+    public:
+        int maxScore(vector<int> &cardPoints, int k);
+    };
+
 
 }
 

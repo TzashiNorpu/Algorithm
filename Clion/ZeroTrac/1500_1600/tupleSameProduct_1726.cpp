@@ -4,7 +4,6 @@
 #include "header.h"
 
 using namespace ZeroTrac;
-int res = 0;
 
 bool valid(vector<int> &nums) {
     int a = nums[0];
@@ -14,7 +13,7 @@ bool valid(vector<int> &nums) {
     return (a * b == c * d) && (a != b && b != c && c != d);
 }
 
-void helper(vector<int> &nums, vector<int> &choose, vector<bool> chooseIdx) {
+void tupleSameProduct_1726::helper(vector<int> &nums, vector<int> &choose, vector<bool> chooseIdx) {
     if (choose.size() == 4) {
         if (valid(choose)) {
             res++;

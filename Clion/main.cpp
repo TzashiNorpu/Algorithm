@@ -3,8 +3,9 @@
 
 
 int main() {
-    ZeroTrac::longestPalindrome_2131 ins;
-    vector<string> words = {"cc", "ll", "ll"};
-    ins.longestPalindrome(words);
+    ZeroTrac::suggestedProducts_1268 ins;
+    vector<string> products = {"moxbile", "mouse", "moneypot", "monitor", "mousepad"};
+    string searchWord = "moxuse";
+    ins.suggestedProducts(products, searchWord);
     return 0;
 }
