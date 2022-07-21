@@ -3,9 +3,10 @@
 
 
 int main() {
-    ZeroTrac::suggestedProducts_1268 ins;
-    vector<string> products = {"moxbile", "mouse", "moneypot", "monitor", "mousepad"};
-    string searchWord = "moxuse";
-    ins.suggestedProducts(products, searchWord);
+    ZeroTrac::restoreArray_1743 ins;
+    vector<vector<int>> pairs = {{2, 1},
+                                 {3, 4},
+                                 {3, 2}};
+    ins.restoreArray(pairs);
     return 0;
 }

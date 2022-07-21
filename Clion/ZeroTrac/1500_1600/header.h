@@ -378,6 +378,38 @@ namespace ZeroTrac {
         int maxScore(vector<int> &cardPoints, int k);
     };
 
+    class TimeMap_981 {
+    private:
+        unordered_map<string, map<int, string>> m;
+
+    public:
+        TimeMap_981();
+
+        void set(string key, string value, int timestamp);
+
+        string get(string key, int timestamp);
+    };
+
+    class getHappyString_1415 {
+    public:
+        string getHappyString(int n, int k);
+    };
+
+    class discountPrices_2288 {
+    public:
+        string discountPrices(string sentence, int discount);
+    };
+
+    class colorBorder_1034 {
+    public:
+        vector<vector<int>> colorBorder(vector<vector<int>> &grid, int row, int col, int color);
+    };
+
+    class restoreArray_1743 {
+    public:
+        vector<int> restoreArray(vector<vector<int>> &adjacentPairs);
+    };
+
 
 }
 
