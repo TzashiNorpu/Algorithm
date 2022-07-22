@@ -410,7 +410,40 @@ namespace ZeroTrac {
         vector<int> restoreArray(vector<vector<int>> &adjacentPairs);
     };
 
+    class countCollisions_2211 {
+    public:
+        int countCollisions(string directions);
+    };
 
+    class allCellsDistOrder_1030 {
+    public:
+        vector<vector<int>> allCellsDistOrder(int rows, int cols, int rCenter, int cCenter);
+    };
+
+    class areSentencesSimilar_1813 {
+    public:
+        bool areSentencesSimilar(string sentence1, string sentence2);
+    };
+
+    class canChoose_1764 {
+    public:
+        bool canChoose(vector<vector<int>> &groups, vector<int> &nums);
+    };
+
+    class stoneGame_877 {
+    public:
+        bool stoneGame(vector<int> &piles);
+    };
+
+    class numSpecialEquivGroups_893 {
+    public:
+        int numSpecialEquivGroups(vector<string> &words);
+    };
+
+    class waysToMakeFair_1664 {
+    public:
+        int waysToMakeFair(vector<int> &nums);
+    };
 }
 
 

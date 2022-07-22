@@ -3,10 +3,9 @@
 
 
 int main() {
-    ZeroTrac::restoreArray_1743 ins;
-    vector<vector<int>> pairs = {{2, 1},
-                                 {3, 4},
-                                 {3, 2}};
-    ins.restoreArray(pairs);
+    ZeroTrac::canChoose_1764 ins;
+    vector<vector<int>> groups = {{21, 22, 21, 22, 21, 30}};
+    vector<int> nums = {21, 22, 21, 22, 21, 22, 21, 30};
+    ins.canChoose(groups, nums);
     return 0;
 }
