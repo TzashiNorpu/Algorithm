@@ -444,6 +444,25 @@ namespace ZeroTrac {
     public:
         int waysToMakeFair(vector<int> &nums);
     };
+    class pancakeSort_969{
+    public:
+        vector<int> pancakeSort(vector<int>& arr) ;
+    };
+    class CombinationIterator_1286{
+    private:
+        int curr;
+        int sz;
+        int maxCnt;
+        string key;
+    public:
+        CombinationIterator_1286(string characters, int combinationLength);
+        string next() ;
+        bool hasNext() ;
+    };
+    class numSubarraysWithSum_930{
+    public:
+        int numSubarraysWithSum(vector<int>& nums, int goal);
+    };
 }
 
 
