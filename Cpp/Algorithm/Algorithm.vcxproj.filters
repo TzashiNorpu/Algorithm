@@ -105,13 +105,13 @@
     <ClCompile Include="src\GSSY\SlideWindow\LongestSubstring_395.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="src\GSSY\SlideWindow\ThreeSum_15.cpp">
+    <ClCompile Include="src\GSSY\SlideWindow\ThreeSum_1_15.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
     <ClCompile Include="src\GSSY\SlideWindow\ThreeSumClosest_16.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="src\GSSY\SlideWindow\LongestSubarray_1438.cpp">
+    <ClCompile Include="src\GSSY\SlideWindow\LongestSubarray_1_1438.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
     <ClCompile Include="src\GSSY\SlideWindow\MaxArea_11.cpp">
@@ -136,6 +136,12 @@
       <Filter>Source Files</Filter>
     </ClCompile>
     <ClCompile Include="src\ZeroTrac\SubArrayRanges_2104.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="src\ZeroTrac\longestBeautifulSubstring_1839.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="src\ZeroTrac\numWays_1573.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
   </ItemGroup>

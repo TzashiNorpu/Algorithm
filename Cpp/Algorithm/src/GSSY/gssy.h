@@ -7,7 +7,7 @@ namespace GSSY{
 	public:
 		int longestSubstring(string s, int k);
 	};
-	class ThreeSum_15 {
+	class ThreeSum_1_15 {
 	public:
 		vector<vector<int>> threeSum(vector<int>& nums);
 	};
@@ -15,7 +15,7 @@ namespace GSSY{
 	public:
 		int threeSumClosest(vector<int>& nums, int target);
 	};
-	class LongestSubarray_1438 {
+	class LongestSubarray_1_1438 {
 	public:
 		int longestSubarray(vector<int>& nums, int limit);
 	};

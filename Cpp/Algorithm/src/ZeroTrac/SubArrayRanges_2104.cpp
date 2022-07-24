@@ -1,7 +1,4 @@
 #include "Header.h"
-long long myAlgo::SubArrayRangers_2104::subArrayRanges(vector<int>& nums) {
-	return maxSum(nums) - minSum(nums);
-}
 long long maxSum(vector<int>& nums) {
 	vector<int> stack;
 	long long sum = 0;
@@ -19,5 +16,8 @@ long long maxSum(vector<int>& nums) {
 }
 
 long long minSum(vector<int>& nums) {
-
+	return 0;
+}
+long long myAlgo::SubArrayRangers_2104::subArrayRanges(vector<int>& nums) {
+	return maxSum(nums) - minSum(nums);
 }

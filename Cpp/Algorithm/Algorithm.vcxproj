@@ -159,9 +159,9 @@
     <ClCompile Include="src\Chapter4\IsValid_20.cpp" />
     <ClCompile Include="src\Chapter3\ReverseList_206.cpp" />
     <ClCompile Include="src\GSSY\SlideWindow\FourSum_18.cpp" />
-    <ClCompile Include="src\GSSY\SlideWindow\LongestSubarray_1438.cpp" />
+    <ClCompile Include="src\GSSY\SlideWindow\LongestSubarray_1_1438.cpp" />
     <ClCompile Include="src\GSSY\SlideWindow\MaxArea_11.cpp" />
-    <ClCompile Include="src\GSSY\SlideWindow\ThreeSum_15.cpp" />
+    <ClCompile Include="src\GSSY\SlideWindow\ThreeSum_1_15.cpp" />
     <ClCompile Include="src\GSSY\SlideWindow\LongestSubstring_395.cpp" />
     <ClCompile Include="src\GSSY\SlideWindow\ThreeSumClosest_16.cpp" />
     <ClCompile Include="src\main.cpp" />
@@ -184,6 +184,8 @@
     <ClCompile Include="src\SpecialSubject\TotalSteps_2289.cpp" />
     <ClCompile Include="src\SpecialSubject\Trap_42.cpp" />
     <ClCompile Include="src\TopInterview\FirstMissingPositive_41.cpp" />
+    <ClCompile Include="src\ZeroTrac\longestBeautifulSubstring_1839.cpp" />
+    <ClCompile Include="src\ZeroTrac\numWays_1573.cpp" />
     <ClCompile Include="src\ZeroTrac\SubArrayRanges_2104.cpp" />
   </ItemGroup>
   <ItemGroup>

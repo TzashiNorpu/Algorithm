@@ -1,7 +1,7 @@
 #include"../gssy.h"
 #include <deque>
 using namespace GSSY;
-int longestSubarray(vector<int>& nums, int limit) {
+int LongestSubarray_1_1438::longestSubarray(vector<int>& nums, int limit) {
 	deque<int> max_idx, min_idx;
 	int len = nums.size();
 	int res = 0;

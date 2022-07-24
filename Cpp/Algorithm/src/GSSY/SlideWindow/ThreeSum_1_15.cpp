@@ -1,7 +1,7 @@
 #include "../gssy.h"
 #include <algorithm>
 using namespace GSSY;
-vector<vector<int>> ThreeSum_15::threeSum(vector<int>& nums) {
+vector<vector<int>> ThreeSum_1_15::threeSum(vector<int>& nums) {
 	// 确保第一个数和第二个数不会重复，即可保证三元组不重复
 	int len=nums.size();
 	vector<vector<int>> res;

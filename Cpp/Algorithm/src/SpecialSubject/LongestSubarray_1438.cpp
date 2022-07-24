@@ -1,7 +1,7 @@
 #include "ss.h"
 #include <deque>
 using namespace myAlgo;
-int LongestSubarray_1438::longestSubarray(vector<int>& nums, int limit)
+int LongestSubarray_1438::longestSubarray_1(vector<int>& nums, int limit)
 {
 	int maxLen = 0;
 	deque<int> maxDeque, minDeque;

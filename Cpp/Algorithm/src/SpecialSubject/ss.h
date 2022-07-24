@@ -43,7 +43,7 @@ namespace myAlgo
 	class LongestSubarray_1438
 	{
 	public:
-		int longestSubarray(vector<int> &nums, int limit);
+		int longestSubarray_1(vector<int> &nums, int limit);
 	};
 	class LongestCommonPrefix_14
 	{
