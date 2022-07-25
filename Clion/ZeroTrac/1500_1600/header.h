@@ -444,11 +444,13 @@ namespace ZeroTrac {
     public:
         int waysToMakeFair(vector<int> &nums);
     };
-    class pancakeSort_969{
+
+    class pancakeSort_969 {
     public:
-        vector<int> pancakeSort(vector<int>& arr) ;
+        vector<int> pancakeSort(vector<int> &arr);
     };
-    class CombinationIterator_1286{
+
+    class CombinationIterator_1286 {
     private:
         int curr;
         int sz;
@@ -456,12 +458,40 @@ namespace ZeroTrac {
         string key;
     public:
         CombinationIterator_1286(string characters, int combinationLength);
-        string next() ;
-        bool hasNext() ;
+
+        string next();
+
+        bool hasNext();
     };
-    class numSubarraysWithSum_930{
+
+    class numSubarraysWithSum_930 {
     public:
-        int numSubarraysWithSum(vector<int>& nums, int goal);
+        int numSubarraysWithSum(vector<int> &nums, int goal);
+    };
+
+    class numTriplets_1577 {
+    public:
+        int numTriplets(vector<int> &nums1, vector<int> &nums2);
+    };
+
+    class flipgame_822 {
+    public:
+        int flipgame(vector<int> &fronts, vector<int> &backs);
+    };
+
+    class minimumSwap_1247 {
+    public:
+        int minimumSwap(string s1, string s2);
+    };
+
+    class longestSubsequence_1218 {
+    public:
+        int longestSubsequence(vector<int> &arr, int difference);
+    };
+
+    class longestStrChain_1048 {
+    public:
+        int longestStrChain(vector<string> &words);
     };
 }
 

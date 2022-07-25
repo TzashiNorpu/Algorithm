@@ -3,9 +3,8 @@
 
 
 int main() {
-    ZeroTrac::canChoose_1764 ins;
-    vector<vector<int>> groups = {{21, 22, 21, 22, 21, 30}};
-    vector<int> nums = {21, 22, 21, 22, 21, 22, 21, 30};
-    ins.canChoose(groups, nums);
+    ZeroTrac::longestStrChain_1048 ins;
+    vector<string> arr = {"xbc", "pcxbcf", "xb", "cxbc", "pcxbc"};
+    ins.longestStrChain(arr);
     return 0;
 }
