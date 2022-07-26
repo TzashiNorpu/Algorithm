@@ -1,10 +1,12 @@
 #include <iostream>
-#include "ZeroTrac/1500_1600/header.h"
+#include "ZeroTrac/1600_1800/header.h"
 
 
 int main() {
-    ZeroTrac::longestStrChain_1048 ins;
-    vector<string> arr = {"xbc", "pcxbcf", "xb", "cxbc", "pcxbc"};
-    ins.longestStrChain(arr);
+    ZeroTrac::Solution ins;
+    vector<int> arr = {4, 9, 3};
+    int target = 10;
+    ins.findBestValue_1300(arr, target);
     return 0;
+
 }

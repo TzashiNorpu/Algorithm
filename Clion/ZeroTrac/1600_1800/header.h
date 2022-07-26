@@ -15,6 +15,8 @@
 #include "algorithm"
 #include "queue"
 #include "numeric"
+#include "data.h"
+#include "functional"
 
 using namespace std;
 namespace ZeroTrac {
@@ -25,6 +27,16 @@ namespace ZeroTrac {
         int minFlipsMonoIncr_926(string s);
 
         int countLatticePoints_2249(vector<vector<int>> &circles);
+
+        long long countPairs_2316(int n, vector<vector<int>> &edges);
+
+        int expressiveWords_809(string s, vector<string> &words);
+
+        vector<string> alertNames_1604(vector<string> &keyName, vector<string> &keyTime);
+
+        int findBestValue_1300(vector<int> &arr, int target);
+
+        TreeNode *lcaDeepestLeaves_1123(TreeNode *root);
     };
 }
 #endif //CLION_HEADER_H
