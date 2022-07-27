@@ -3,10 +3,9 @@
 
 
 int main() {
-    ZeroTrac::Solution ins;
-    vector<int> arr = {4, 9, 3};
-    int target = 10;
-    ins.findBestValue_1300(arr, target);
+    ZeroTrac::FrontMiddleBackQueue ins;
+    ins.pushBack(10);
+    ins.popMiddle();
     return 0;
 
 }
