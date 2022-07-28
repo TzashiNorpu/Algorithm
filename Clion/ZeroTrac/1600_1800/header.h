@@ -46,6 +46,16 @@ namespace ZeroTrac {
         int numOfSubarrays_1524(vector<int> &arr);
 
         bool escapeGhosts_789(vector<vector<int>> &ghosts, vector<int> &target);
+
+        string minimizeResult_2232(string expression);
+
+        int countSquares_1277(vector<vector<int>> &matrix);
+
+        int numberOfArrays_2145(vector<int> &differences, int lower, int upper);
+
+        int numEnclaves_1020(vector<vector<int>> &grid);
+
+        int getLastMoment_1503(int n, vector<int> &left, vector<int> &right);
     };
 
     class FrontMiddleBackQueue {
@@ -74,6 +84,17 @@ namespace ZeroTrac {
         int popMiddle();
 
         int popBack();
+    };
+
+    class ATM {
+    private:
+        long long bank[5] = {}, val[5] = {20, 50, 100, 200, 500};
+    public:
+        ATM();
+
+        void deposit(vector<int> banknotesCount);
+
+        vector<int> withdraw(int amount);
     };
 }
 #endif //CLION_HEADER_H
