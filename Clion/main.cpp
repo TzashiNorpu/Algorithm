@@ -3,10 +3,9 @@
 
 
 int main() {
-    ZeroTrac::Solution ins;
-    vector<int> arr = {1,2,3,1};
-    int k=2;
-    int res = ins.subarraysWithKDistinct_992(arr,k);
-    printf("res=%d", res);
-    return 0;
+  ZeroTrac::Solution ins;
+  vector<string> arr1 = {"amazon", "apple", "facebook", "google", "leetcode"};
+  vector<string> arr2 = {"e", "o"};
+  ins.wordSubsets(arr1, arr2);
+  return 0;
 }

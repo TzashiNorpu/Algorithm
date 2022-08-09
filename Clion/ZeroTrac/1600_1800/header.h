@@ -58,10 +58,16 @@ namespace ZeroTrac {
         int getLastMoment_1503(int n, vector<int> &left, vector<int> &right);
 
         int minimumBuckets_2086(string street);
-        
-        int numberOfSubarrays_1248(vector<int>& nums, int k) ;
 
-        int subarraysWithKDistinct_992(vector<int>& nums, int k);
+        int numberOfSubarrays_1248(vector<int> &nums, int k);
+
+        int numberOfSubarraysWithK(vector<int> &nums, int k);
+
+        int subarraysWithKDistinct_992(vector<int> &nums, int k);
+
+        vector<string> wordSubsets(vector<string> &words1, vector<string> &words2);
+
+        bool isBipartite(vector<vector<int>> &graph);
     };
 
     class FrontMiddleBackQueue {
@@ -69,11 +75,11 @@ namespace ZeroTrac {
         deque<int> a, b;
 
         void a2b() {
-            if (a.size() > b.size()) b.push_front(a.back()), a.pop_back();
+          if (a.size() > b.size()) b.push_front(a.back()), a.pop_back();
         }
 
         void b2a() {
-            if (b.size() > a.size() + 1) a.push_back(b.front()), b.pop_front();
+          if (b.size() > a.size() + 1) a.push_back(b.front()), b.pop_front();
         }
 
     public:
