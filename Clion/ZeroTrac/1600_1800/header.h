@@ -56,6 +56,12 @@ namespace ZeroTrac {
         int numEnclaves_1020(vector<vector<int>> &grid);
 
         int getLastMoment_1503(int n, vector<int> &left, vector<int> &right);
+
+        int minimumBuckets_2086(string street);
+        
+        int numberOfSubarrays_1248(vector<int>& nums, int k) ;
+
+        int subarraysWithKDistinct_992(vector<int>& nums, int k);
     };
 
     class FrontMiddleBackQueue {

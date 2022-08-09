@@ -4,10 +4,9 @@
 
 int main() {
     ZeroTrac::Solution ins;
-    vector<int> left = {4, 3};
-    vector<int> right = {0, 1};
-    int res = ins.getLastMoment_1503(4, left, right);
+    vector<int> arr = {1,2,3,1};
+    int k=2;
+    int res = ins.subarraysWithKDistinct_992(arr,k);
     printf("res=%d", res);
     return 0;
-
 }

@@ -7,4 +7,5 @@ using namespace ZeroTrac;
 
 string discountPrices_2288::discountPrices(string sentence, int discount) {
     //
+    return "";
 }
