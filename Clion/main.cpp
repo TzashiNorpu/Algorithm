@@ -4,8 +4,8 @@
 
 int main() {
   ZeroTrac::Solution ins;
-  vector<string> arr1 = {"amazon", "apple", "facebook", "google", "leetcode"};
-  vector<string> arr2 = {"e", "o"};
-  ins.wordSubsets(arr1, arr2);
+  vector<string> arr = {"a==b", "a==c", "b!=a"};
+  ins.equationsPossible(arr);
+
   return 0;
 }

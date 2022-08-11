@@ -68,6 +68,31 @@ namespace ZeroTrac {
         vector<string> wordSubsets(vector<string> &words1, vector<string> &words2);
 
         bool isBipartite(vector<vector<int>> &graph);
+
+        string rankTeams(vector<string> &votes);
+
+        int removePalindromeSub(string s);
+
+        int concatenatedBinary(int n);
+
+        bool canConvertString(string s, string t, int k);
+
+        int minimumLengthEncoding(vector<string> &words);
+
+        int makeConnected(int n, vector<vector<int>> &connections);
+
+        vector<int> prevPermOpt1(vector<int> &arr);
+
+        int minReorder(int n, vector<vector<int>> &connections);
+
+        bool mergeTriplets(vector<vector<int>> &triplets, vector<int> &target);
+
+        int maxNumberOfFamilies(int n, vector<vector<int>> &reservedSeats);
+
+        int minOperations(vector<int> &nums);
+
+        bool equationsPossible(vector<string> &equations);
+
     };
 
     class FrontMiddleBackQueue {
