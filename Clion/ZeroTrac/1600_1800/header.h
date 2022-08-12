@@ -93,6 +93,18 @@ namespace ZeroTrac {
 
         bool equationsPossible(vector<string> &equations);
 
+        string pushDominoes(string dominoes);
+
+        int nearestExit(vector<vector<char>> &maze, vector<int> &entrance);
+
+        int minOperations(vector<int> &nums, vector<int> &numsDivide);
+
+        long long minimumTime(vector<int> &time, int totalTrips);
+
+        int largestCombination(vector<int> &candidates);
+
+        int maxConsecutiveAnswers(string answerKey, int k);
+
     };
 
     class FrontMiddleBackQueue {

@@ -4,8 +4,8 @@
 
 int main() {
   ZeroTrac::Solution ins;
-  vector<string> arr = {"a==b", "a==c", "b!=a"};
-  ins.equationsPossible(arr);
-
+  vector<int> times = {1, 1, 1, 1, 1};
+  int trips = 10;
+  ins.minimumTime(times, trips);
   return 0;
 }
