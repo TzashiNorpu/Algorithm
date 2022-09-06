@@ -105,6 +105,17 @@ namespace ZeroTrac {
 
         int maxConsecutiveAnswers(string answerKey, int k);
 
+        TreeNode *createBinaryTree(vector<vector<int>> &descriptions);
+
+        int maximumCandies(vector<int> &candies, long long k);
+
+        int numberOfSubstrings(string s);
+
+        long long maxMatrixSum(vector<vector<int>> &matrix);
+
+        vector<int> advantageCount(vector<int> &nums1, vector<int> &nums2);
+
+        bool isSubPath(ListNode *head, TreeNode *root);
     };
 
     class FrontMiddleBackQueue {
