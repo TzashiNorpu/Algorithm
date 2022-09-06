@@ -116,6 +116,20 @@ namespace ZeroTrac {
         vector<int> advantageCount(vector<int> &nums1, vector<int> &nums2);
 
         bool isSubPath(ListNode *head, TreeNode *root);
+
+        vector<int> smallestTrimmedNumbers(vector<string> &nums, vector<vector<int>> &queries);
+
+        vector<string>
+        watchedVideosByFriends(vector<vector<string>> &watchedVideos, vector<vector<int>> &friends, int id, int level);
+
+        int minDifference(vector<int> &nums);
+
+        int numRollsToTarget(int n, int k, int target);
+
+        int longestOnes(vector<int> &nums, int k);
+
+        long long numberOfWays(string s);
+
     };
 
     class FrontMiddleBackQueue {
