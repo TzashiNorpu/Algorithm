@@ -130,6 +130,12 @@ namespace ZeroTrac {
 
         long long numberOfWays(string s);
 
+        string minRemoveToMakeValid(string s);
+
+        int unhappyFriends(int n, vector<vector<int>> &preferences, vector<vector<int>> &pairs);
+
+        int shortestPathBinaryMatrix(vector<vector<int>> &grid);
+
     };
 
     class FrontMiddleBackQueue {
