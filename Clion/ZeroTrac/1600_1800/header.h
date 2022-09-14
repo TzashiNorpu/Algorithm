@@ -136,6 +136,9 @@ namespace ZeroTrac {
 
         int shortestPathBinaryMatrix(vector<vector<int>> &grid);
 
+        bool hasValidPath(vector<vector<int>> &grid);
+
+
     };
 
     class FrontMiddleBackQueue {
