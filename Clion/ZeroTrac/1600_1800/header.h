@@ -138,6 +138,22 @@ namespace ZeroTrac {
 
         bool hasValidPath(vector<vector<int>> &grid);
 
+        int numFriendRequests(vector<int> &ages);
+
+        vector<string> getFolderNames(vector<string> &names);
+
+        ListNode *reverseEvenLengthGroups(ListNode *head);
+
+        vector<vector<int>> spiralMatrixIII(int rows, int cols, int rStart, int cStart);
+
+        int carFleet(int target, vector<int> &position, vector<int> &speed);
+
+        int subarraysDivByK(vector<int> &nums, int k);
+
+        vector<vector<int>> verticalTraversal(TreeNode *root);
+
+        int minSpeedOnTime(vector<int> &dist, double hour);
+
 
     };
 
