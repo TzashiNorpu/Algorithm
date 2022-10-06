@@ -4,9 +4,7 @@
 int main()
 {
   ZeroTrac::Solution ins;
-  vector<int> times = {1, 1, 1, 1, 1};
-  int trips = 10;
-  ins.minimumTime(times, trips);
-  printf("Hello\n");
+  int res = ins.countGoodNumbers(50);
+  printf("res=%d\n", res);
   return 0;
 }

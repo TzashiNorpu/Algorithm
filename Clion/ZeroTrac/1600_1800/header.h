@@ -20,8 +20,10 @@
 #include "stack"
 
 using namespace std;
-namespace ZeroTrac {
-    class Solution {
+namespace ZeroTrac
+{
+    class Solution
+    {
     public:
         int minSwaps_1864(string s);
 
@@ -154,19 +156,26 @@ namespace ZeroTrac {
 
         int minSpeedOnTime(vector<int> &dist, double hour);
 
+        int countGoodNumbers(long long n);
 
+        int maxProduct(TreeNode *root);
     };
 
-    class FrontMiddleBackQueue {
+    class FrontMiddleBackQueue
+    {
     private:
         deque<int> a, b;
 
-        void a2b() {
-          if (a.size() > b.size()) b.push_front(a.back()), a.pop_back();
+        void a2b()
+        {
+            if (a.size() > b.size())
+                b.push_front(a.back()), a.pop_back();
         }
 
-        void b2a() {
-          if (b.size() > a.size() + 1) a.push_back(b.front()), b.pop_front();
+        void b2a()
+        {
+            if (b.size() > a.size() + 1)
+                a.push_back(b.front()), b.pop_front();
         }
 
     public:
@@ -185,9 +194,11 @@ namespace ZeroTrac {
         int popBack();
     };
 
-    class ATM {
+    class ATM
+    {
     private:
         long long bank[5] = {}, val[5] = {20, 50, 100, 200, 500};
+
     public:
         ATM();
 
@@ -196,4 +207,4 @@ namespace ZeroTrac {
         vector<int> withdraw(int amount);
     };
 }
-#endif //CLION_HEADER_H
+#endif // CLION_HEADER_H
