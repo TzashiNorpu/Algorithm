@@ -5,18 +5,21 @@
 
 using namespace ZeroTrac;
 
-ListNode *Solution::reverseEvenLengthGroups(ListNode *head) {
-  function<ListNode *(ListNode *)> reverse = [&](ListNode *) -> ListNode * {
-      if (!head)
-        return head;
-      ListNode *prev = NULL;
-      while (head) {
-        ListNode *temp = head->next;
-        head->next = prev;
-        prev = head;
-        head = temp;
-      }
-      return prev;
+ListNode *Solution::reverseEvenLengthGroups(ListNode *head)
+{
+  function<ListNode *(ListNode *)> reverse = [&](ListNode *) -> ListNode *
+  {
+    if (!head)
+      return head;
+    ListNode *prev = NULL;
+    while (head)
+    {
+      ListNode *temp = head->next;
+      head->next = prev;
+      prev = head;
+      head = temp;
+    }
+    return prev;
   };
   // Creating a dummy node to avoid adding checks for the first node
   ListNode *dummy = new ListNode();
@@ -25,14 +28,16 @@ ListNode *Solution::reverseEvenLengthGroups(ListNode *head) {
   ListNode *prev = dummy;
 
   // Loop to determine the lengths of groups
-  for (int len = 1; len < 1e5 && head; len++) {
+  for (int len = 1; len < 1e5 && head; len++)
+  {
     ListNode *tail = head;
     ListNode *nextHead;
 
     // Determining the length of the current group
     // Its maximum length can be equal to len
     int j = 1;
-    while (j < len && tail && tail->next) {
+    while (j < len && tail && tail->next)
+    {
       tail = tail->next;
       j++;
     }
@@ -40,15 +45,18 @@ ListNode *Solution::reverseEvenLengthGroups(ListNode *head) {
     // Head of the next group
     nextHead = tail->next;
 
-    if ((j % 2) == 0) {
+    if ((j % 2) == 0)
+    {
       // If even sized group is found
       // Reversing the group and setting prev and head appropriately
       tail->next = NULL;
-      prev->next = reverseList(head);
+      prev->next = reverse(head);
       prev = head;
       head->next = nextHead;
       head = nextHead;
-    } else {
+    }
+    else
+    {
       // If group is odd sized, then simply going towards the next group
       prev = tail;
       head = nextHead;
@@ -57,6 +65,4 @@ ListNode *Solution::reverseEvenLengthGroups(ListNode *head) {
 
   // Returning the head
   return dummy->next;
-}
-
 }
