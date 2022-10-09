@@ -162,6 +162,10 @@ namespace ZeroTrac {
 
         int constrainedSubsetSum(vector<int> &nums, int k);
 
+        int kthLargestValue(vector<vector<int>> &matrix, int k);
+
+        int maxDistance(vector<vector<int>> &grid);
+
     };
 
     class FrontMiddleBackQueue {
