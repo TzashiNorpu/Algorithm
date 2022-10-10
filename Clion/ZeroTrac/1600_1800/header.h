@@ -166,6 +166,18 @@ namespace ZeroTrac {
 
         int maxDistance(vector<vector<int>> &grid);
 
+        vector<int> bestCoordinate(vector<vector<int>> &towers, int radius);
+
+        long long countVowels(string word);
+
+        int getMaximumGold(vector<vector<int>> &grid);
+
+        vector<int> distanceK(TreeNode *root, TreeNode *target, int k);
+
+        int minimumOperations(vector<int> &nums);
+
+        long long minimalKSum(vector<int> &nums, int k);
+
     };
 
     class FrontMiddleBackQueue {
