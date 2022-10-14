@@ -1,9 +1,16 @@
 #include <iostream>
-#include "ZeroTrac/header/1800_1900.h"
+#include "disjoint_set.h"
 
 int main() {
-  ZeroTrac::Solution ins;
-  vector<int> edges = {3, 3, 4, 2, 3};
-  printf("res=%d\n", ins.longestCycle(edges));
+  DS::Solution ins;
+
+  vector<vector<char>> board = {{'X', 'X', 'X', 'X'},
+                                {
+                                 'X', 'O', 'O', 'X'},
+                                {
+                                 'X', 'X', 'O', 'X'},
+                                {
+                                 'X', 'O', 'X', 'X'}};
+  ins.solve(board);
   return 0;
 }

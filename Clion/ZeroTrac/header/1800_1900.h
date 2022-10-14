@@ -18,6 +18,7 @@
 #include "numeric"
 #include "functional"
 #include "stack"
+#include <cstring>
 
 using namespace std;
 namespace ZeroTrac {
@@ -34,6 +35,13 @@ namespace ZeroTrac {
         int nthMagicalNumber(int n, int a, int b);
 
         bool canReach(string s, int minJump, int maxJump);
+
+        int peopleAwareOfSecret(int n, int delay, int forget);
+
+        int minimumHammingDistance(vector<int> &source, vector<int> &target, vector<vector<int>> &allowedSwaps);
+
+        string smallestStringWithSwaps(string s, vector<vector<int>> &pairs);
+
     };
 }
 
