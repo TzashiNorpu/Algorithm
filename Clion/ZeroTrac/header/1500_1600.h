@@ -2,7 +2,7 @@
 // Created by TzashiNorpu on 7/6/2022.
 //
 
-#ifndef CLION_HEADER_H
+#ifndef CLION_1600_1800_H
 #define CLION_HEADER_H
 
 #include "vector"
@@ -496,4 +496,4 @@ namespace ZeroTrac {
 }
 
 
-#endif //CLION_HEADER_H
+#endif //CLION_1600_1800_H

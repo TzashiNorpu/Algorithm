@@ -2,8 +2,8 @@
 // Created by TzashiNorpu on 7/25/2022.
 //
 
-#ifndef CLION_HEADER_H
-#define CLION_HEADER_H
+#ifndef CLION_1600_1800_H
+#define CLION_1600_1800_H
 
 #include "vector"
 #include <cmath>
@@ -159,7 +159,34 @@ namespace ZeroTrac
         int countGoodNumbers(long long n);
 
         int maxProduct(TreeNode *root);
-        int constrainedSubsetSum(vector<int> &A, int k);
+
+        vector<int> maxSlidingWindow(vector<int> &nums, int k);
+
+        int constrainedSubsetSum(vector<int> &nums, int k);
+
+        int kthLargestValue(vector<vector<int>> &matrix, int k);
+
+        int maxDistance(vector<vector<int>> &grid);
+
+        vector<int> bestCoordinate(vector<vector<int>> &towers, int radius);
+
+        long long countVowels(string word);
+
+        int getMaximumGold(vector<vector<int>> &grid);
+
+        vector<int> distanceK(TreeNode *root, TreeNode *target, int k);
+
+        int minimumOperations(vector<int> &nums);
+
+        long long minimalKSum(vector<int> &nums, int k);
+
+        int closedIsland(vector<vector<int>> &grid);
+
+        vector<string> invalidTransactions(vector<string> &transactions);
+
+        bool checkMove(vector<vector<char>> &board, int rMove, int cMove, char color);
+
+        int minPathCost(vector<vector<int>> &grid, vector<vector<int>> &moveCost);
     };
 
     class FrontMiddleBackQueue
@@ -208,4 +235,4 @@ namespace ZeroTrac
         vector<int> withdraw(int amount);
     };
 }
-#endif // CLION_HEADER_H
+#endif // CLION_1600_1800_H

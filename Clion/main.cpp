@@ -1,10 +1,16 @@
 #include <iostream>
-#include "ZeroTrac/1600_1800/header.h"
+#include "disjoint_set.h"
 
-int main()
-{
-  ZeroTrac::Solution ins;
-  int res = ins.countGoodNumbers(50);
-  printf("res=%d\n", res);
+int main() {
+  DS::Solution ins;
+
+  vector<vector<char>> board = {{'X', 'X', 'X', 'X'},
+                                {
+                                 'X', 'O', 'O', 'X'},
+                                {
+                                 'X', 'X', 'O', 'X'},
+                                {
+                                 'X', 'O', 'X', 'X'}};
+  ins.solve(board);
   return 0;
 }

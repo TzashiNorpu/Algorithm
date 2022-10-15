@@ -1,7 +1,7 @@
 //
 // Created by TzashiNorpu on 9/15/2022.
 //
-#include "header.h"
+#include "../header/binary.h"
 
 using namespace BinarySearch;
 
