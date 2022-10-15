@@ -159,6 +159,7 @@ namespace ZeroTrac
         int countGoodNumbers(long long n);
 
         int maxProduct(TreeNode *root);
+        int constrainedSubsetSum(vector<int> &A, int k);
     };
 
     class FrontMiddleBackQueue
