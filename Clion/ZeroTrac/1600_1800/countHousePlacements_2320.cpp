@@ -1,14 +1,14 @@
 //
 // Created by TzashiNorpu on 7/27/2022.
 //
-#include "header.h"
+#include "../header/1600_1800.h"
 
 using namespace ZeroTrac;
 const int MOD = 1e9 + 7, MX = 1e4 + 1;
 int f[MX] = {1, 2};
 int init = []() {
     for (int i = 2; i < MX; ++i)
-        f[i] = (f[i - 1] + f[i - 2]) % MOD;
+      f[i] = (f[i - 1] + f[i - 2]) % MOD;
     return 0;
 }();
 
@@ -23,5 +23,5 @@ int init = []() {
         f[1]=2，放与不放两种方案。*/
 
 int Solution::countHousePlacements_2320(int n) {
-    return (long) f[n] * f[n] % MOD;
+  return (long) f[n] * f[n] % MOD;
 }

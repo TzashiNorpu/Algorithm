@@ -2,8 +2,8 @@
 // Created by TzashiNorpu on 7/25/2022.
 //
 
-#ifndef CLION_HEADER_H
-#define CLION_HEADER_H
+#ifndef CLION_1600_1800_H
+#define CLION_1600_1800_H
 
 #include "vector"
 #include <cmath>
@@ -138,6 +138,54 @@ namespace ZeroTrac {
 
         bool hasValidPath(vector<vector<int>> &grid);
 
+        int numFriendRequests(vector<int> &ages);
+
+        vector<string> getFolderNames(vector<string> &names);
+
+        ListNode *reverseEvenLengthGroups(ListNode *head);
+
+        vector<vector<int>> spiralMatrixIII(int rows, int cols, int rStart, int cStart);
+
+        int carFleet(int target, vector<int> &position, vector<int> &speed);
+
+        int subarraysDivByK(vector<int> &nums, int k);
+
+        vector<vector<int>> verticalTraversal(TreeNode *root);
+
+        int minSpeedOnTime(vector<int> &dist, double hour);
+
+        int countGoodNumbers(long long n);
+
+        int maxProduct(TreeNode *root);
+
+        vector<int> maxSlidingWindow(vector<int> &nums, int k);
+
+        int constrainedSubsetSum(vector<int> &nums, int k);
+
+        int kthLargestValue(vector<vector<int>> &matrix, int k);
+
+        int maxDistance(vector<vector<int>> &grid);
+
+        vector<int> bestCoordinate(vector<vector<int>> &towers, int radius);
+
+        long long countVowels(string word);
+
+        int getMaximumGold(vector<vector<int>> &grid);
+
+        vector<int> distanceK(TreeNode *root, TreeNode *target, int k);
+
+        int minimumOperations(vector<int> &nums);
+
+        long long minimalKSum(vector<int> &nums, int k);
+
+        int closedIsland(vector<vector<int>> &grid);
+
+        vector<string> invalidTransactions(vector<string> &transactions);
+
+        bool checkMove(vector<vector<char>> &board, int rMove, int cMove, char color);
+
+        int minPathCost(vector<vector<int>> &grid, vector<vector<int>> &moveCost);
+
 
     };
 
@@ -146,11 +194,13 @@ namespace ZeroTrac {
         deque<int> a, b;
 
         void a2b() {
-          if (a.size() > b.size()) b.push_front(a.back()), a.pop_back();
+          if (a.size() > b.size())
+            b.push_front(a.back()), a.pop_back();
         }
 
         void b2a() {
-          if (b.size() > a.size() + 1) a.push_back(b.front()), b.pop_front();
+          if (b.size() > a.size() + 1)
+            a.push_back(b.front()), b.pop_front();
         }
 
     public:
@@ -172,6 +222,7 @@ namespace ZeroTrac {
     class ATM {
     private:
         long long bank[5] = {}, val[5] = {20, 50, 100, 200, 500};
+
     public:
         ATM();
 
@@ -180,4 +231,4 @@ namespace ZeroTrac {
         vector<int> withdraw(int amount);
     };
 }
-#endif //CLION_HEADER_H
+#endif // CLION_1600_1800_H

@@ -1,11 +1,16 @@
 #include <iostream>
-#include "ZeroTrac/1600_1800/header.h"
-
+#include "disjoint_set.h"
 
 int main() {
-  ZeroTrac::Solution ins;
-  vector<int> times = {1, 1, 1, 1, 1};
-  int trips = 10;
-  ins.minimumTime(times, trips);
+  DS::Solution ins;
+
+  vector<vector<char>> board = {{'X', 'X', 'X', 'X'},
+                                {
+                                 'X', 'O', 'O', 'X'},
+                                {
+                                 'X', 'X', 'O', 'X'},
+                                {
+                                 'X', 'O', 'X', 'X'}};
+  ins.solve(board);
   return 0;
 }
