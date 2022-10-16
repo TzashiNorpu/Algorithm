@@ -5,7 +5,8 @@
 
 using namespace ZeroTrac;
 
-int Solution::constrainedSubsetSum(vector<int> &nums, int k) {
+int Solution::constrainedSubsetSum(vector<int> &nums, int k)
+{
   /*
    * Input: nums = [-2,-10,6,-5,10,20], k = 2
    */
@@ -13,13 +14,18 @@ int Solution::constrainedSubsetSum(vector<int> &nums, int k) {
   int res = nums[0];
   int n = nums.size();
   vector<int> sum(n);
-  for (int i = 0; i < n; ++i) {
+  for (int i = 0; i < n; ++i)
+  {
     sum[i] = nums[i];
-    if (!dq.empty()) sum[i] += sum[dq.front()];
+    if (!dq.empty())
+      sum[i] += sum[dq.front()];
     res = max(res, sum[i]);
-    if (!dq.empty() && dq.front() < (i - k + 1)) dq.pop_front();
-    while (!dq.empty() && sum[i] >= sum[dq.back()]) dq.pop_back();
-    if (sum[i] > 0) dq.push_back(i);
+    if (!dq.empty() && dq.front() < (i - k + 1))
+      dq.pop_front();
+    while (!dq.empty() && sum[i] >= sum[dq.back()])
+      dq.pop_back();
+    if (sum[i] > 0)
+      dq.push_back(i);
   }
   return res;
 }

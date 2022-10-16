@@ -20,8 +20,10 @@
 #include "stack"
 
 using namespace std;
-namespace ZeroTrac {
-    class Solution {
+namespace ZeroTrac
+{
+    class Solution
+    {
     public:
         int minSwaps_1864(string s);
 
@@ -185,22 +187,23 @@ namespace ZeroTrac {
         bool checkMove(vector<vector<char>> &board, int rMove, int cMove, char color);
 
         int minPathCost(vector<vector<int>> &grid, vector<vector<int>> &moveCost);
-
-
     };
 
-    class FrontMiddleBackQueue {
+    class FrontMiddleBackQueue
+    {
     private:
         deque<int> a, b;
 
-        void a2b() {
-          if (a.size() > b.size())
-            b.push_front(a.back()), a.pop_back();
+        void a2b()
+        {
+            if (a.size() > b.size())
+                b.push_front(a.back()), a.pop_back();
         }
 
-        void b2a() {
-          if (b.size() > a.size() + 1)
-            a.push_back(b.front()), b.pop_front();
+        void b2a()
+        {
+            if (b.size() > a.size() + 1)
+                a.push_back(b.front()), b.pop_front();
         }
 
     public:
@@ -219,7 +222,8 @@ namespace ZeroTrac {
         int popBack();
     };
 
-    class ATM {
+    class ATM
+    {
     private:
         long long bank[5] = {}, val[5] = {20, 50, 100, 200, 500};
 
