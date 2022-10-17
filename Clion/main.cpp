@@ -1,16 +1,16 @@
 #include <iostream>
-#include "disjoint_set.h"
+#include "ZeroTrac/header/g"
 
-int main() {
-  DS::Solution ins;
+int main()
+{
+  G::Solution ins;
 
-  vector<vector<char>> board = {{'X', 'X', 'X', 'X'},
-                                {
-                                 'X', 'O', 'O', 'X'},
-                                {
-                                 'X', 'X', 'O', 'X'},
-                                {
-                                 'X', 'O', 'X', 'X'}};
-  ins.solve(board);
+  vector<vector<char>> board = {
+      {'1', '1', '1', '1', '0'},
+      {'1', '1', '0', '1', '0'},
+      {'1', '1', '0', '0', '0'},
+      {'0', '0', '0', '0', '0'}};
+  int res = ins.numIslands(board);
+  printf("res=%d\n", res);
   return 0;
 }

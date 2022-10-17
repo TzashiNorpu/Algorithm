@@ -9,6 +9,8 @@ aux_source_directory(ZeroTrac/1800_1900 SOURCES2)
 aux_source_directory(ZeroTrac/1600_1800 SOURCES3)
 aux_source_directory(ZeroTrac/BinarySearch SOURCES4)
 aux_source_directory(ZeroTrac/DisjointSet SOURCES5)
+aux_source_directory(ZeroTrac/Graph SOURCES6)
+aux_source_directory(ZeroTrac/array_list SOURCES7)
 
 add_executable(Clion main.cpp
         ${SOURCES1}
@@ -16,5 +18,7 @@ add_executable(Clion main.cpp
         ${SOURCES3}
         ${SOURCES4}
         ${SOURCES5}
+        ${SOURCES6}
+        ${SOURCES7}
         )
 

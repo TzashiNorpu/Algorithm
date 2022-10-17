@@ -1,0 +1,223 @@
+//
+// Created by TzashiNorpu on 10/14/2022.
+//
+
+#ifndef CLION_DISJOINT_SET_H
+#define CLION_DISJOINT_SET_H
+
+#include <queue>
+#include "vector"
+#include "stdio.h"
+#include "string"
+#include "functional"
+#include "unordered_set"
+
+using namespace std;
+namespace G {
+
+    class Node {
+    public:
+        int val;
+        vector<Node *> neighbors;
+
+        Node() {
+          val = 0;
+          neighbors = vector<Node *>();
+        }
+
+        Node(int _val) {
+          val = _val;
+          neighbors = vector<Node *>();
+        }
+
+        Node(int _val, vector<Node *> _neighbors) {
+          val = _val;
+          neighbors = _neighbors;
+        }
+    };
+
+    class Graph {
+    private:
+        int num = 0;
+        vector<vector<int>> dependencies;
+        vector<vector<int>> g;
+        bool cycled = false;
+
+        void traverse(int s) {
+          vector<bool> on_path(this->num, false);
+          vector<bool> visited(this->num, false);
+          function<void(int)> dfs = [&](int index) -> void {
+              if (on_path[s])
+                this->cycled = true;
+              if (visited[s] || this->cycled)
+                return;
+              visited[s] = true;
+              on_path[s] = true;
+              for (auto v: this->g[s])
+                traverse(v);
+              on_path[s] = false;
+          };
+          dfs(s);
+        };
+
+    public:
+        Graph(int num, vector<vector<int>> &dependency) {
+          this->dependencies = dependency;
+          this->num = num;
+          g = *new vector(num, vector<int>());
+          for (auto &d: dependency)
+            g[d[1]].push_back(d[0]);
+        }
+
+        bool get_cycled_dfs() {
+          for (int i = 0; i < this->num; i++)
+            traverse(i);
+          return this->cycled;
+        }
+
+        vector<int> find_order_dfs() {
+          vector<bool> path(this->num, false);
+          vector<bool> visited(this->num, false);
+          bool cy = false;
+          vector<int> res;
+          function<void(int)> dfs = [&](int index) -> void {
+              if (path[index]) cy = true;
+              if (path[index] || cy) return;
+              path[index] = true;
+              visited[index] = true;
+              for (auto v: this->g[index])
+                dfs(v);
+              res.push_back(index);
+              path[index] = false;
+          };
+          for (int i = 0; i < this->num; i++)
+            dfs(i);
+          if (cy) return vector<int>();
+          reverse(res.begin(), res.end());
+          return res;
+        }
+
+        bool get_cycled_bfs() {
+          vector<int> indegree(this->num, 0);
+          for (auto edge: this->dependencies) {
+            int from = edge[0], to = edge[1];
+            indegree[to]++;
+          }
+          queue<int> q;
+          for (int i = 0; i < this->num; ++i)
+            if (indegree[i] == 0) q.push(i);
+          int count = 0;
+          while (!q.empty()) {
+            int curr = q.front();
+            q.pop();
+            count++;
+            for (int next: this->g[curr]) {
+              indegree[next]--;
+              if (indegree[next] == 0) q.push(next);
+            }
+          }
+          return count == this->num;
+        }
+
+        bool is_bipartite_dfs() {
+          vector<bool> color(this->num, false);
+          vector<bool> visited(this->num, false);
+          bool is_bi_partite = true;
+          function<void(int)> dfs = [&](int i) -> void {
+              if (!is_bi_partite)return;
+              visited[i] = true;
+              for (auto v: this->g[i]) {
+                if (!visited[v]) {
+                  color[v] = !color[i];
+                  dfs(v);
+                } else {
+                  if (color[v] == color[i]) {
+                    is_bi_partite = false;
+                    return;
+                  }
+                }
+              }
+          };
+          for (int i = 0; i < this->num; ++i) {
+            if (!visited[i]) dfs(i);
+          }
+          return is_bi_partite;
+        }
+
+        bool is_bipartite_bfs() {
+          vector<bool> color(this->num, false);
+          vector<bool> visited(this->num, false);
+          bool is_bi_partite = true;
+          auto bfs = [&](int index) -> void {
+              queue<int> q;
+              q.push(index);
+              visited[index] = true;
+              while (!q.empty() && is_bi_partite) {
+                int curr = q.front();
+                q.pop();
+                for (auto next: this->g[curr]) {
+                  if (!visited[next]) {
+                    color[next] = !color[curr];
+                    visited[next] = true;
+                    q.push(next);
+                  } else {
+                    if (color[next] == color[curr]) {
+                      is_bi_partite = false;
+                      return;
+                    }
+                  }
+                }
+              }
+          };
+          for (int i = 0; i < this->num; ++i) {
+            if (!visited[i]) bfs(i);
+          }
+          return is_bi_partite;
+        }
+
+        vector<vector<int>> *get_graph() {
+          return &this->g;
+        };
+
+        vector<int> find_order_bfs() {
+          vector<int> res;
+          vector<int> indeg(this->num, 0);
+          for (auto d: this->dependencies)
+            indeg[d[1]]++;
+          queue<int> q;
+          int count = 0;
+          for (int i = 0; i < this->num; ++i)
+            if (indeg[i] == 0) q.push(i);
+          while (!q.empty()) {
+            int curr = q.front();
+            q.pop();
+            res[count++] = curr;
+            for (auto next: this->g[curr])
+              if (--indeg[next] == 0) q.push(next);
+          }
+          if (count != this->num) return vector<int>();
+          return res;
+        }
+    };
+
+    class Solution {
+    public:
+        vector<vector<int>> allPathsSourceTarget(vector<vector<int>> &graph);
+
+        Node *cloneGraph(Node *node);
+
+        int numIslands(vector<vector<char>> &grid);
+
+        int countHighestScoreNodes(vector<int> &parents);
+
+        bool canFinish(int numCourses, vector<vector<int>> &prerequisites);
+
+        vector<int> findOrder(int numCourses, vector<vector<int>> &prerequisites);
+
+        bool isBipartite(vector<vector<int>> &graph);
+
+        bool possibleBipartition(int n, vector<vector<int>> &dislikes);
+    };
+
+}
+#endif // CLION_DISJOINT_SET_H

@@ -1,26 +1,19 @@
 //
 // Created by TzashiNorpu on 10/14/2022.
 //
-#include "disjoint_set.h"
+
+#include "../header/disjoint_set.h"
 
 using namespace DS;
 
 bool Solution::equationsPossible(vector<string> &equations) {
   UF uf = *new UF(26);
-  for (auto eq: equations) {
-    if (eq[1] == '=') {
-      char x = eq[0];
-      char y = eq[3];
-      uf.connect(x - 'a', y - 'a');
-    }
-  }
-  for (auto eq: equations) {
-    if (eq[1] == '!') {
-      char x = eq[0];
-      char y = eq[3];
-      if (uf.connected(x - 'a', y - 'a'))
+  for (auto &s: equations)
+    if (s[1] == '=')
+      uf.connect(s[0] - 'a', s[3] - 'a');
+  for (auto &s: equations)
+    if (s[1] == '!')
+      if (uf.connected(s[0] - 'a', s[3] - 'a'))
         return false;
-    }
-  }
   return true;
 }
