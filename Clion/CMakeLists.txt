@@ -11,6 +11,7 @@ aux_source_directory(ZeroTrac/BinarySearch SOURCES4)
 aux_source_directory(ZeroTrac/DisjointSet SOURCES5)
 aux_source_directory(ZeroTrac/Graph SOURCES6)
 aux_source_directory(ZeroTrac/array_list SOURCES7)
+aux_source_directory(ZeroTrac/Tree SOURCES8)
 
 add_executable(Clion main.cpp
         ${SOURCES1}
@@ -20,5 +21,6 @@ add_executable(Clion main.cpp
         ${SOURCES5}
         ${SOURCES6}
         ${SOURCES7}
-        )
+        ${SOURCES8}
+        ZeroTrac/Tree/maxPathSum_124.cpp)
 

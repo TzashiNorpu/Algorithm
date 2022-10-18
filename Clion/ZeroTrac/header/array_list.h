@@ -8,6 +8,7 @@
 #include "vector"
 #include "queue"
 #include "unordered_set"
+#include "string"
 
 struct ListNode {
     int val;
@@ -42,6 +43,20 @@ namespace Array_List {
         ListNode *getIntersectionNode(ListNode *headA, ListNode *headB);
 
         ListNode *addTwoNumbers(ListNode *l1, ListNode *l2);
+
+        int removeDuplicates(vector<int> &nums);
+
+        ListNode *deleteDuplicates(ListNode *head);
+
+        int removeElement(vector<int> &nums, int val);
+
+        void moveZeroes(vector<int> &nums);
+
+        vector<int> twoSum(vector<int> &numbers, int target);
+
+        string longestPalindrome(string s);
+
+        int removeDuplicates_80(vector<int> &nums);
     };
 }
 #endif //CLION_ARRAY_LIST_H
