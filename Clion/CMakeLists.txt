@@ -21,6 +21,5 @@ add_executable(Clion main.cpp
         ${SOURCES5}
         ${SOURCES6}
         ${SOURCES7}
-        ${SOURCES8}
-        ZeroTrac/Tree/maxPathSum_124.cpp)
+        ${SOURCES8})
 

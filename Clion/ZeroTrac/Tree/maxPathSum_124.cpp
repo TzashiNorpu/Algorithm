@@ -8,12 +8,11 @@ using namespace Tree;
 int Solution::maxPathSum(TreeNode *root) {
   int res = -10000;
   function<int(TreeNode *node)> dfs = [&](TreeNode *node) -> int {
-      if (!node) return -1;
-      int l = dfs(node->left);
-      int r = dfs(node->right);
-      int v = max({node->val, node->val + l, node->val + r});
-      res = max(res, v);
-      return v;
+      if (!node) return 0;
+      int l = max(0,dfs(node->left));
+      int r = max(0,dfs(node->right));
+      res = max(res, l+r+node->val);
+      return node->val+max(l,r);
   };
   dfs(root);
   return res;
