@@ -7,6 +7,7 @@
 
 #include "functional"
 #include "deque"
+#include <set>
 
 using namespace std;
 namespace Tree {
@@ -39,6 +40,8 @@ namespace Tree {
         int maxAncestorDiff(TreeNode *root);
 
         TreeNode *sufficientSubset(TreeNode *root, int limit);
+        bool isBalanced(TreeNode* root);
+        vector<TreeNode*> delNodes(TreeNode* root, vector<int>& to_delete);
     };
 }
 #endif //CLION_TREE_H
