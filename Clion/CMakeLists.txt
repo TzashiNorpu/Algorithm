@@ -21,5 +21,6 @@ add_executable(Clion main.cpp
         ${SOURCES5}
         ${SOURCES6}
         ${SOURCES7}
-        ${SOURCES8})
+        ${SOURCES8}
+        )
 

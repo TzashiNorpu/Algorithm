@@ -6,6 +6,7 @@
 #define CLION_TREE_H
 
 #include "functional"
+#include "deque"
 
 using namespace std;
 namespace Tree {
@@ -28,6 +29,16 @@ namespace Tree {
         int diameterOfBinaryTree(TreeNode *root);
 
         int maxPathSum(TreeNode *root);
+
+        vector<int> largestValues(TreeNode *root);
+
+        TreeNode *bstFromPreorder(vector<int> &preorder);
+
+        int sumRootToLeaf(TreeNode *root);
+
+        int maxAncestorDiff(TreeNode *root);
+
+        TreeNode *sufficientSubset(TreeNode *root, int limit);
     };
 }
 #endif //CLION_TREE_H
