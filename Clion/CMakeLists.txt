@@ -22,5 +22,5 @@ add_executable(Clion main.cpp
         ${SOURCES6}
         ${SOURCES7}
         ${SOURCES8}
-        )
+        ZeroTrac/Tree/maxProduct_1339.cpp ZeroTrac/Tree/isSubPath_1367.cpp ZeroTrac/Tree/longestZigZag_1372.cpp ZeroTrac/Tree/maxSumBST_1373.cpp ZeroTrac/Tree/getTargetCopy_1379.cpp ZeroTrac/Tree/goodNodes_1448.cpp)
 

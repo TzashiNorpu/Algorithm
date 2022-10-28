@@ -23,6 +23,17 @@ namespace Tree {
         TreeNode(int x, TreeNode *left, TreeNode *right) : val(x), left(left), right(right) {}
     };
 
+    struct ListNode {
+        int val;
+        ListNode *next;
+
+        ListNode() : val(0), next(nullptr) {}
+
+        ListNode(int x) : val(x), next(nullptr) {}
+
+        ListNode(int x, ListNode *next) : val(x), next(next) {}
+    };
+
     class Node {
     public:
         int val;
@@ -71,6 +82,18 @@ namespace Tree {
         int sumEvenGrandparent(TreeNode *root);
 
         TreeNode *removeLeafNodes(TreeNode *root, int target);
+
+        int maxProduct(TreeNode *root);
+
+        bool isSubPath(ListNode *head, TreeNode *root);
+
+        int longestZigZag(TreeNode *root);
+
+        int maxSumBST(TreeNode *root);
+
+        TreeNode *getTargetCopy(TreeNode *original, TreeNode *cloned, TreeNode *target);
+
+        int goodNodes(TreeNode *root);
     };
 }
 #endif //CLION_TREE_H
