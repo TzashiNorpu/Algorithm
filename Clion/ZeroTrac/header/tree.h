@@ -8,6 +8,8 @@
 #include "functional"
 #include "deque"
 #include <set>
+#include "string"
+#include "cstdlib"
 
 using namespace std;
 namespace Tree {
@@ -48,6 +50,24 @@ namespace Tree {
         Node(int _val, Node *_left, Node *_right, Node *_next)
                 : val(_val), left(_left), right(_right), next(_next) {}
     };
+
+    class NthNode {
+    public:
+        int val;
+        vector<NthNode *> children;
+
+        NthNode() {}
+
+        NthNode(int _val) {
+          val = _val;
+        }
+
+        NthNode(int _val, vector<NthNode *> _children) {
+          val = _val;
+          children = _children;
+        }
+    };
+
 
     class Solution {
     public:
@@ -94,6 +114,38 @@ namespace Tree {
         TreeNode *getTargetCopy(TreeNode *original, TreeNode *cloned, TreeNode *target);
 
         int goodNodes(TreeNode *root);
+
+        vector<int> postorderTraversal(TreeNode *root);
+
+        int pseudoPalindromicPaths(TreeNode *root);
+
+        int countHighestScoreNodes(vector<int> &parents);
+
+        TreeNode *invertTree(TreeNode *root);
+
+        vector<string> binaryTreePaths(TreeNode *root);
+
+        int sumOfLeftLeaves(TreeNode *root);
+
+        vector<int> findMode(TreeNode *root);
+
+        vector<int> findFrequentTreeSum(TreeNode *root);
+
+        int findBottomLeftValue(TreeNode *root);
+
+        int getMinimumDifference(TreeNode *root);
+
+        TreeNode *convertBST(TreeNode *root);
+
+        int maxDepth(NthNode *root);
+
+        int findTilt(TreeNode *root);
+
+        bool isSubtree(TreeNode *root, TreeNode *subRoot);
+
+        TreeNode *mergeTrees(TreeNode *root1, TreeNode *root2);
+
+        string tree2str(TreeNode *root);
     };
 }
 #endif //CLION_TREE_H
