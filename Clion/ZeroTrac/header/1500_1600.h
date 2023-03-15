@@ -15,6 +15,7 @@
 #include "algorithm"
 #include "queue"
 #include "numeric"
+#include "climits"
 
 using namespace std;
 namespace ZeroTrac {

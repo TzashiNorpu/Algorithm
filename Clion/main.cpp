@@ -1,14 +1,10 @@
 #include <iostream>
-#include "ZeroTrac/header/tree.h"
+#include "tree_r1.h"
 
 int main() {
-  Tree::Solution ins = *new Tree::Solution;
-  Tree::TreeNode *t = new Tree::TreeNode(2);
-  t->left = new Tree::TreeNode(3);
-  t->right = new Tree::TreeNode(1);
-  t->left->left = new Tree::TreeNode(3);
-  t->left->right = new Tree::TreeNode(1);
-  t->right->right = new Tree::TreeNode(1);
-  ins.pseudoPalindromicPaths(t);
+  Tree::Solution *test = new Tree::Solution();
+  vector<int> pre = {3, 9, 8, 7, 11, 12, 20};
+  vector<int> in = {11, 7, 12, 8, 9, 20, 3};
+  test->buildTree_105(pre, in);
   return 0;
 }

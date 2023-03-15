@@ -10,6 +10,7 @@
 #include <set>
 #include "string"
 #include "cstdlib"
+#include "climits"
 
 using namespace std;
 namespace Tree {
