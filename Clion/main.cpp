@@ -3,8 +3,8 @@
 
 int main() {
   Tree::Solution *test = new Tree::Solution();
-  vector<int> pre = {3, 9, 8, 7, 11, 12, 20};
-  vector<int> in = {11, 7, 12, 8, 9, 20, 3};
-  test->buildTree_105(pre, in);
+  vector<int> pre = {1, 2, 4, 5, 3, 6, 7};
+  vector<int> post = {4, 5, 2, 6, 7, 3, 1};
+  TreeNode *res = test->constructFromPrePost(pre, post);
   return 0;
 }

@@ -13,7 +13,7 @@ aux_source_directory(ZeroTrac/Graph SOURCES6)
 aux_source_directory(ZeroTrac/array_list SOURCES7)
 aux_source_directory(ZeroTrac/Tree SOURCES8)
 aux_source_directory(ZeroTrac/DP SOURCES9)
-aux_source_directory(ZeroTrac/Tree/R1 SOURCES10)
+aux_source_directory(ZeroTrac/Tree/labuladong SOURCES10)
 
 add_executable(Clion main.cpp
         ${SOURCES1}
