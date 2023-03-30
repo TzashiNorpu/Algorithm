@@ -44,6 +44,14 @@ namespace Tree {
         TreeNode *constructFromPrePost(vector<int> &preorder, vector<int> &postorder);
 
         vector<TreeNode *> findDuplicateSubtrees(TreeNode *root);
+
+        vector<vector<int>> permute(vector<int> &nums);
+
+        vector<vector<int>> combinationSum3(int k, int n);
+
+        vector<vector<int>> combinationSum(vector<int> &candidates, int target);
+
+        vector<vector<int>> combinationSum2(vector<int> &index, int target);
     };
 
 }

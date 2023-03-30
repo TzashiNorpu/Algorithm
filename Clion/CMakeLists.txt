@@ -25,5 +25,5 @@ add_executable(Clion main.cpp
         ${SOURCES7}
         ${SOURCES8}
         ${SOURCES9}
-        ${SOURCES10})
+        ${SOURCES10} ZeroTrac/labuladong/combinationSum2_40.cpp)
 
