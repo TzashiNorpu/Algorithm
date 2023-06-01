@@ -36,6 +36,12 @@ namespace labuladong {
 
         ListNode *middleNode(ListNode *head);
 
+        ListNode* getKthFromEnd(ListNode* head, int k);
+
+        vector<int> twoSum(vector<int>& numbers, int target);
+
+        int removeDuplicates(vector<int>& nums);
+
     };
 }
 

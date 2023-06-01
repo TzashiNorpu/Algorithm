@@ -30,5 +30,5 @@ add_executable(Clion main.cpp
         ${SOURCES10}
         ${SOURCES11}
         ${SOURCES12}
-        labuladong/chapter0/linklist/removeNthFromEnd_19.cpp)
+        labuladong/chapter0/linklist/removeNthFromEnd_19.cpp labuladong/chapter0/linklist/getKthFromEnd_offer22.cpp labuladong/chapter0/array/twoSum_167.cpp labuladong/chapter0/array/removeDuplicates_26.cpp)
 

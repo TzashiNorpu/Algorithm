@@ -6,8 +6,10 @@
 using namespace labuladong;
 
 ListNode *Solution::middleNode(ListNode *head) {
-  auto slow = head;
-  auto fast = head;
+    auto dummy = new ListNode(0);
+    dummy->next = head;
+    auto slow = dummy;
+  auto fast = dummy;
   while (fast) {
     slow = slow->next;
     fast = fast->next;
