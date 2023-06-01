@@ -14,6 +14,8 @@ aux_source_directory(ZeroTrac/array_list SOURCES7)
 aux_source_directory(ZeroTrac/Tree SOURCES8)
 aux_source_directory(ZeroTrac/DP SOURCES9)
 aux_source_directory(ZeroTrac/labuladong SOURCES10)
+aux_source_directory(labuladong SOURCES11)
+aux_source_directory(zero SOURCES12)
 
 add_executable(Clion main.cpp
         ${SOURCES1}
@@ -25,5 +27,8 @@ add_executable(Clion main.cpp
         ${SOURCES7}
         ${SOURCES8}
         ${SOURCES9}
-        ${SOURCES10} ZeroTrac/labuladong/combinationSum2_40.cpp)
+        ${SOURCES10}
+        ${SOURCES11}
+        ${SOURCES12}
+        labuladong/chapter0/linklist/removeNthFromEnd_19.cpp)
 
