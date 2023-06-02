@@ -9,6 +9,7 @@ using namespace std;
 #include "unordered_set"
 #include "vector"
 #include "queue"
+#include "string"
 
 namespace labuladong {
     struct ListNode {
@@ -36,11 +37,21 @@ namespace labuladong {
 
         ListNode *middleNode(ListNode *head);
 
-        ListNode* getKthFromEnd(ListNode* head, int k);
+        ListNode *getKthFromEnd(ListNode *head, int k);
 
-        vector<int> twoSum(vector<int>& numbers, int target);
+        vector<int> twoSum(vector<int> &numbers, int target);
 
-        int removeDuplicates(vector<int>& nums);
+        int removeDuplicates(vector<int> &nums);
+
+        int removeElement(vector<int> &nums, int val);
+
+        void moveZeroes(vector<int> &nums);
+
+        void reverseString(vector<char> &s);
+
+        string longestPalindrome(string s);
+
+        ListNode *deleteDuplicates(ListNode *head);
 
     };
 }
