@@ -25,6 +25,19 @@ namespace zero {
         long long waysToBuyPensPencils(int total, int cost1, int cost2);
 
         int longestStrChain(vector<string> &words);
+
+        int countSeniors(vector<string>& details);
+
+        vector<vector<int>> minimumAbsDifference(vector<int>& arr);
+
+        vector<int> sumEvenAfterQueries(vector<int>& nums, vector<vector<int>>& queries);
+
+        int maximumCount(vector<int>& nums);
+
+        bool uniqueOccurrences(vector<int>& arr);
+        int maximum69Number (int num);
+
+        bool kLengthApart(vector<int>& nums, int k);
     };
 }
 

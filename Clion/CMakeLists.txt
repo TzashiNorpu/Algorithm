@@ -30,5 +30,5 @@ add_executable(Clion main.cpp
         ${SOURCES10}
         ${SOURCES11}
         ${SOURCES12}
-        labuladong/chapter0/linklist/removeNthFromEnd_19.cpp labuladong/chapter0/linklist/getKthFromEnd_offer22.cpp labuladong/chapter0/array/twoSum_167.cpp labuladong/chapter0/array/removeDuplicates_26.cpp)
+        labuladong/chapter0/linklist/removeNthFromEnd_19.cpp labuladong/chapter0/linklist/getKthFromEnd_offer22.cpp labuladong/chapter0/array/twoSum_167.cpp labuladong/chapter0/array/removeDuplicates_26.cpp labuladong/chapter0/binary_tree/maxDepth_104.cpp labuladong/chapter0/binary_tree/preorderTraversal_144.cpp labuladong/chapter0/binary_tree/diameterOfBinaryTree_543.cpp zero/1000_1200/countSeniors_2678.cpp zero/1000_1200/minimumAbsDifference_1200.cpp zero/1000_1200/sumEvenAfterQueries_985.cpp zero/1000_1200/maximumCount_2529.cpp zero/1000_1200/uniqueOccurrences_1207.cpp zero/1000_1200/maximum69Number_1323.cpp zero/1000_1200/kLengthApart_1437.cpp)
 
