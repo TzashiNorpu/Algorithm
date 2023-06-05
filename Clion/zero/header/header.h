@@ -10,6 +10,7 @@ using namespace std;
 #include "algorithm"
 #include "unordered_set"
 #include "unordered_map"
+#include "numeric"
 
 namespace zero {
     class Solution {
@@ -26,18 +27,32 @@ namespace zero {
 
         int longestStrChain(vector<string> &words);
 
-        int countSeniors(vector<string>& details);
+        int countSeniors(vector<string> &details);
 
-        vector<vector<int>> minimumAbsDifference(vector<int>& arr);
+        vector<vector<int>> minimumAbsDifference(vector<int> &arr);
 
-        vector<int> sumEvenAfterQueries(vector<int>& nums, vector<vector<int>>& queries);
+        vector<int> sumEvenAfterQueries(vector<int> &nums, vector<vector<int>> &queries);
 
-        int maximumCount(vector<int>& nums);
+        int maximumCount(vector<int> &nums);
 
-        bool uniqueOccurrences(vector<int>& arr);
-        int maximum69Number (int num);
+        bool uniqueOccurrences(vector<int> &arr);
 
-        bool kLengthApart(vector<int>& nums, int k);
+        int maximum69Number(int num);
+
+        bool kLengthApart(vector<int> &nums, int k);
+
+        string gcdOfStrings(string str1, string str2);
+
+        int rotatedDigits(int n);
+
+        int numSteps(string s);
+
+        bool checkXMatrix(vector<vector<int>> &grid);
+
+        double average(vector<int> &salary);
+
+        int findJudge(int n, vector<vector<int>> &trust);
+
     };
 }
 
