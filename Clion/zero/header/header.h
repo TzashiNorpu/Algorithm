@@ -53,6 +53,14 @@ namespace zero {
 
         int findJudge(int n, vector<vector<int>> &trust);
 
+        bool checkString(string s);
+
+        int countElements(vector<int>& nums);
+
+        int arithmeticTriplets(vector<int>& nums, int diff);
+
+        int numberOfMatches(int n);
+
     };
 }
 
