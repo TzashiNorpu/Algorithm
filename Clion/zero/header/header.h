@@ -11,6 +11,7 @@ using namespace std;
 #include "unordered_set"
 #include "unordered_map"
 #include "numeric"
+#include "deque"
 
 namespace zero {
     class Solution {
@@ -55,11 +56,23 @@ namespace zero {
 
         bool checkString(string s);
 
-        int countElements(vector<int>& nums);
+        int countElements(vector<int> &nums);
 
-        int arithmeticTriplets(vector<int>& nums, int diff);
+        int arithmeticTriplets(vector<int> &nums, int diff);
 
         int numberOfMatches(int n);
+
+        bool isThree(int n);
+
+        bool checkZeroOnes(string s);
+
+        int countCharacters(vector<string> &words, string chars);
+
+        vector<int> leftRightDifference(vector<int> &nums);
+
+        int rangeSum(vector<int> &nums, int n, int left, int right);
+
+        int countStudents(vector<int> &students, vector<int> &sandwiches);
 
     };
 }
