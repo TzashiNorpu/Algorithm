@@ -12,23 +12,29 @@ using namespace std;
 #include "unordered_map"
 #include "numeric"
 #include "deque"
+#include "regex"
 
 namespace zero {
     class CustomFunction {
-         public:
-            // Returns f(x, y) for any given positive integers x and y.
-             // Note that f(x, y) is increasing with respect to both x and y.
-             // i.e. f(x, y) < f(x + 1, y), f(x, y) < f(x, y + 1)
-            int f(int x, int y);
-        };
-     struct TreeNode {
-             int val;
-             TreeNode *left;
-             TreeNode *right;
-             TreeNode() : val(0), left(nullptr), right(nullptr) {}
-             TreeNode(int x) : val(x), left(nullptr), right(nullptr) {}
-             TreeNode(int x, TreeNode *left, TreeNode *right) : val(x), left(left), right(right) {}
-         };
+    public:
+        // Returns f(x, y) for any given positive integers x and y.
+        // Note that f(x, y) is increasing with respect to both x and y.
+        // i.e. f(x, y) < f(x + 1, y), f(x, y) < f(x, y + 1)
+        int f(int x, int y);
+    };
+
+    struct TreeNode {
+        int val;
+        TreeNode *left;
+        TreeNode *right;
+
+        TreeNode() : val(0), left(nullptr), right(nullptr) {}
+
+        TreeNode(int x) : val(x), left(nullptr), right(nullptr) {}
+
+        TreeNode(int x, TreeNode *left, TreeNode *right) : val(x), left(left), right(right) {}
+    };
+
     class Solution {
     public:
         string reversePrefix(string word, char ch);
@@ -88,9 +94,24 @@ namespace zero {
         int rangeSum(vector<int> &nums, int n, int left, int right);
 
         int countStudents(vector<int> &students, vector<int> &sandwiches);
-        vector<vector<int>> findSolution(CustomFunction& customfunction, int z);
 
-        int pseudoPalindromicPaths (TreeNode* root);
+        vector<vector<int>> findSolution(CustomFunction &customfunction, int z);
+
+        int pseudoPalindromicPaths(TreeNode *root);
+
+        string entityParser(string text);
+
+        int maxCoins(vector<int> &piles);
+
+        string oddString(vector<string> &words);
+
+        bool findRotation(vector<vector<int>> &mat, vector<vector<int>> &target);
+
+        TreeNode *removeLeafNodes(TreeNode *root, int target);
+
+        int minCostToMoveChips(vector<int> &position);
+
+        int clumsy(int n);
     };
 }
 
