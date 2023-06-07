@@ -112,6 +112,9 @@ namespace zero {
         int minCostToMoveChips(vector<int> &position);
 
         int clumsy(int n);
+        long long getDescentPeriods(vector<int>& prices);
+        int sumOddLengthSubarrays(vector<int>& arr);
+        string alphabetBoardPath(string target);
     };
 }
 

@@ -30,5 +30,5 @@ add_executable(Clion main.cpp
         ${SOURCES10}
         ${SOURCES11}
         ${SOURCES12}
-        zero/1400_1600/findSolution_1237.cpp zero/1400_1600/pseudoPalindromicPaths_1457.cpp)
+        zero/1400_1600/findSolution_1237.cpp zero/1400_1600/pseudoPalindromicPaths_1457.cpp zero/1400_1600/getDescentPeriods_2110.cpp zero/1400_1600/sumOddLengthSubarrays_1588.cpp zero/1400_1600/alphabetBoardPath_1138.cpp)
 
