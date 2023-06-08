@@ -112,9 +112,20 @@ namespace zero {
         int minCostToMoveChips(vector<int> &position);
 
         int clumsy(int n);
-        long long getDescentPeriods(vector<int>& prices);
-        int sumOddLengthSubarrays(vector<int>& arr);
+
+        long long getDescentPeriods(vector<int> &prices);
+
+        int sumOddLengthSubarrays(vector<int> &arr);
+
         string alphabetBoardPath(string target);
+
+        bool canVisitAllRooms(vector<vector<int>> &rooms);
+
+        int findTheWinner(int n, int k);
+
+        int distinctPrimeFactors(vector<int> &nums);
+
+        int minNumberOfHours(int initialEnergy, int initialExperience, vector<int> &energy, vector<int> &experience);
     };
 }
 
