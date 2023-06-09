@@ -13,6 +13,7 @@ using namespace std;
 #include "numeric"
 #include "deque"
 #include "regex"
+#include "queue"
 
 namespace zero {
     class CustomFunction {
@@ -126,6 +127,8 @@ namespace zero {
         int distinctPrimeFactors(vector<int> &nums);
 
         int minNumberOfHours(int initialEnergy, int initialExperience, vector<int> &energy, vector<int> &experience);
+
+        string kthLargestNumber(vector<string> &nums, int k);
     };
 }
 
