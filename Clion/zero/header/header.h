@@ -129,6 +129,26 @@ namespace zero {
         int minNumberOfHours(int initialEnergy, int initialExperience, vector<int> &energy, vector<int> &experience);
 
         string kthLargestNumber(vector<string> &nums, int k);
+
+        vector<string> findAndReplacePattern(vector<string>& words, string pattern);
+
+        int partitionArray(vector<int>& nums, int k);
+
+        vector<int> decrypt(vector<int>& code, int k);
+
+        int minMoves(int target, int maxDoubles);
+        int maxSatisfied(vector<int>& customers, vector<int>& grumpy, int minutes);
+        int minStoneSum(vector<int>& piles, int k);
+    };
+
+    class OrderedStream {
+    private:
+        vector<string> stream;
+        int ptr;
+    public:
+        OrderedStream(int n) ;
+
+        vector<string> insert(int idKey, string value);
     };
 }
 
