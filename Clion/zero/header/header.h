@@ -24,6 +24,17 @@ namespace zero {
         int f(int x, int y);
     };
 
+    struct ListNode {
+        int val;
+        ListNode *next;
+
+        ListNode() : val(0), next(nullptr) {}
+
+        ListNode(int x) : val(x), next(nullptr) {}
+
+        ListNode(int x, ListNode *next) : val(x), next(next) {}
+    };
+
     struct TreeNode {
         int val;
         TreeNode *left;
@@ -130,15 +141,35 @@ namespace zero {
 
         string kthLargestNumber(vector<string> &nums, int k);
 
-        vector<string> findAndReplacePattern(vector<string>& words, string pattern);
+        vector<string> findAndReplacePattern(vector<string> &words, string pattern);
 
-        int partitionArray(vector<int>& nums, int k);
+        int partitionArray(vector<int> &nums, int k);
 
-        vector<int> decrypt(vector<int>& code, int k);
+        vector<int> decrypt(vector<int> &code, int k);
 
         int minMoves(int target, int maxDoubles);
-        int maxSatisfied(vector<int>& customers, vector<int>& grumpy, int minutes);
-        int minStoneSum(vector<int>& piles, int k);
+
+        int maxSatisfied(vector<int> &customers, vector<int> &grumpy, int minutes);
+
+        int minStoneSum(vector<int> &piles, int k);
+
+        int edgeScore(vector<int> &edges);
+
+        vector<int> numMovesStones(int a, int b, int c);
+
+        int daysBetweenDates(string date1, string date2);
+
+        vector<vector<int>> spiralMatrix(int m, int n, ListNode *head);
+
+        vector<bool> checkArithmeticSubarrays(vector<int> &nums, vector<int> &l, vector<int> &r);
+
+        int maximumCostSubstring(string s, string chars, vector<int> &vals);
+
+        int longestSubarray(vector<int> &nums);
+
+        int longestOnes(vector<int> &nums, int k);
+
+
     };
 
     class OrderedStream {
@@ -146,7 +177,7 @@ namespace zero {
         vector<string> stream;
         int ptr;
     public:
-        OrderedStream(int n) ;
+        OrderedStream(int n);
 
         vector<string> insert(int idKey, string value);
     };
