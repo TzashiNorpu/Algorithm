@@ -169,7 +169,13 @@ namespace zero {
 
         int longestOnes(vector<int> &nums, int k);
 
+        int numberOfSubarrays(vector<int> &nums, int k);
 
+        int balancedString(string s);
+
+        int numSubarraysWithSum(vector<int> &nums, int goal);
+
+        int subarraysWithKDistinct(vector<int> &nums, int k);
     };
 
     class OrderedStream {
