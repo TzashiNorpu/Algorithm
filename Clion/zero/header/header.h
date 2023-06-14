@@ -176,6 +176,12 @@ namespace zero {
         int numSubarraysWithSum(vector<int> &nums, int goal);
 
         int subarraysWithKDistinct(vector<int> &nums, int k);
+
+        int totalFruit(vector<int>& fruits);
+
+        int minSubArrayLen(int target, vector<int>& nums);
+
+        int shortestSubarray(vector<int>& nums, int k);
     };
 
     class OrderedStream {

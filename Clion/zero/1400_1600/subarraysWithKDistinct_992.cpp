@@ -13,6 +13,7 @@ int Solution::subarraysWithKDistinct(vector<int> &nums, int k) {
       int i = 0, j = 0;
       for (; j < n; ++j) {
         // 第一个遇见该数字时K--
+        // !(count[nums[j]]++):参与!运算时是count[nums[j]]的值，之后在count[nums[j]]++
         if (!(count[nums[j]]++)) K--;
         while (K < 0)
           // 该数字在区间内没有了时K++
