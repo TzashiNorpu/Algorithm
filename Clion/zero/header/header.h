@@ -189,6 +189,12 @@ namespace zero {
         string customSortString(string order, string s);
 
         int projectionArea(vector<vector<int>> &grid);
+
+        int numMagicSquaresInside(vector<vector<int>>& grid);
+
+        bool isValid(string s);
+
+        int maxDiff(int num);
     };
 
     class OrderedStream {
