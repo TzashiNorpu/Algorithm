@@ -177,11 +177,18 @@ namespace zero {
 
         int subarraysWithKDistinct(vector<int> &nums, int k);
 
-        int totalFruit(vector<int>& fruits);
+        int totalFruit(vector<int> &fruits);
 
-        int minSubArrayLen(int target, vector<int>& nums);
+        int minSubArrayLen(int target, vector<int> &nums);
 
-        int shortestSubarray(vector<int>& nums, int k);
+        int shortestSubarray(vector<int> &nums, int k);
+
+        vector<int>
+        filterRestaurants(vector<vector<int>> &restaurants, int veganFriendly, int maxPrice, int maxDistance);
+
+        string customSortString(string order, string s);
+
+        int projectionArea(vector<vector<int>> &grid);
     };
 
     class OrderedStream {
