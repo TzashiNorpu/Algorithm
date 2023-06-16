@@ -190,11 +190,26 @@ namespace zero {
 
         int projectionArea(vector<vector<int>> &grid);
 
-        int numMagicSquaresInside(vector<vector<int>>& grid);
+        int numMagicSquaresInside(vector<vector<int>> &grid);
 
         bool isValid(string s);
 
         int maxDiff(int num);
+
+        int sumEvenGrandparent(TreeNode *root);
+
+        int countTime(string time);
+
+        int reductionOperations(vector<int> &nums);
+
+        ListNode *mergeInBetween(ListNode *list1, int a, int b, ListNode *list2);
+
+        int numComponents(ListNode *head, vector<int> &nums);
+
+        vector<vector<int>> differenceOfDistinctValues(vector<vector<int>> &grid);
+
+        string smallestFromLeaf(TreeNode *root);
+
     };
 
     class OrderedStream {
@@ -205,6 +220,18 @@ namespace zero {
         OrderedStream(int n);
 
         vector<string> insert(int idKey, string value);
+    };
+
+    class SeatManager {
+    private:
+        priority_queue<int, vector<int>, greater<int>> unreserverd;
+        unordered_set<int> reserved;
+    public:
+        SeatManager(int n);
+
+        int reserve();
+
+        void unreserve(int seatNumber);
     };
 }
 

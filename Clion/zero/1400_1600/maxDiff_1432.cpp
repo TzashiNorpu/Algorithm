@@ -6,19 +6,40 @@
 using namespace zero;
 
 int Solution::maxDiff(int num) {
-    string maxS = to_string(num);;
-    string minS = maxS;
-    int n = minS.size();
+  // 只替换一次
+  string maxS = to_string(num);;
+  string minS = maxS;
+  int n = minS.size();
 
-    char c = minS[0];
-    unordered_set<int> poses;
+  char c1 = maxS[0];
+  // 找到高位里第一个不为'9'的字符
+  if (c1 == '9') {
     for (int i = 0; i < n; ++i) {
-        maxS[i] = '9';
-        if (minS[i]==c) minS[i] = '1', poses.insert(i);
+      if (maxS[i] != c1) {
+        c1 = maxS[i];
+        break;
+      }
     }
-
+  }
+  char c2 = minS[0];
+  bool isFirstMin = true;
+  // 高位里找到第一个不为'1' 和'0'的字符
+  if (c2 == '1') {
     for (int i = 0; i < n; ++i) {
-        if (poses.find(i)==poses.end()) minS[i] = '0';
+      if (minS[i] != c2 && minS[i] != '0') {
+        c2 = minS[i];
+        isFirstMin = false;
+        break;
+      }
     }
-    return stoi(maxS) - stoi(minS);
+  }
+  for (int i = 0; i < n; ++i) {
+    if (maxS[i] == c1)
+      maxS[i] = '9';
+    if (minS[i] == c2) {
+      if (isFirstMin) minS[i] = '1';
+      else minS[i] = '0';
+    }
+  }
+  return stoi(maxS) - stoi(minS);
 }
