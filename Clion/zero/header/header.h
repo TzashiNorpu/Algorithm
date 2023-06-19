@@ -210,6 +210,12 @@ namespace zero {
 
         string smallestFromLeaf(TreeNode *root);
 
+        vector<int> frequencySort(vector<int> &nums);
+
+        TreeNode *reverseOddLevels(TreeNode *root);
+
+        vector<int> numSmallerByFrequency(vector<string> &queries, vector<string> &words);
+
     };
 
     class OrderedStream {
@@ -232,6 +238,18 @@ namespace zero {
         int reserve();
 
         void unreserve(int seatNumber);
+    };
+
+    class Cashier {
+    private:
+        int discount_index;
+        int discount;
+        unordered_map<int, int> price_map;
+        int customer_index = 0;
+    public:
+        Cashier(int n, int discount, vector<int> &products, vector<int> &prices);
+
+        double getBill(vector<int> product, vector<int> amount);
     };
 }
 
