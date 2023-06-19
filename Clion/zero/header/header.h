@@ -216,6 +216,8 @@ namespace zero {
 
         vector<int> numSmallerByFrequency(vector<string> &queries, vector<string> &words);
 
+        int minElements(vector<int> &nums, int limit, int goal);
+
     };
 
     class OrderedStream {
