@@ -218,6 +218,24 @@ namespace zero {
 
         int minElements(vector<int> &nums, int limit, int goal);
 
+        int orangesRotting(vector<vector<int>> &grid);
+
+        vector<int> numsSameConsecDiff(int n, int k);
+
+        int getWinner(vector<int> &arr, int k);
+
+        int kItemsWithMaximumSum(int numOnes, int numZeros, int numNegOnes, int k);
+
+        vector<int> vowelStrings(vector<string> &words, vector<vector<int>> &queries);
+
+        bool divisorGame(int n);
+
+        long long interchangeableRectangles(vector<vector<int>> &rectangles);
+
+        bool checkIfCanBreak(string s1, string s2);
+
+        double averageWaitingTime(vector<vector<int>> &customers);
+
     };
 
     class OrderedStream {
