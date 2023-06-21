@@ -236,6 +236,15 @@ namespace zero {
 
         double averageWaitingTime(vector<vector<int>> &customers);
 
+        int longestMountain(vector<int> &arr);
+
+        bool isEvenOddTree(TreeNode *root);
+
+        int numTimesAllBlue(vector<int> &flips);
+
+        bool carPooling(vector<vector<int>> &trips, int capacity);
+
+        bool isRectangleOverlap(vector<int> &rec1, vector<int> &rec2);
     };
 
     class OrderedStream {
@@ -270,6 +279,16 @@ namespace zero {
         Cashier(int n, int discount, vector<int> &products, vector<int> &prices);
 
         double getBill(vector<int> product, vector<int> amount);
+    };
+
+    class FindElements {
+    private:
+        TreeNode *root;
+        unordered_set<int> values;
+    public:
+        FindElements(TreeNode *root);
+
+        bool find(int target);
     };
 }
 
