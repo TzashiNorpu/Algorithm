@@ -245,6 +245,10 @@ namespace zero {
         bool carPooling(vector<vector<int>> &trips, int capacity);
 
         bool isRectangleOverlap(vector<int> &rec1, vector<int> &rec2);
+
+        vector<int> partitionLabels(string s);
+
+        vector<int> mostVisited(int n, vector<int> &rounds);
     };
 
     class OrderedStream {
