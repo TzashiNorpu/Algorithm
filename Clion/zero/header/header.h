@@ -249,6 +249,14 @@ namespace zero {
         vector<int> partitionLabels(string s);
 
         vector<int> mostVisited(int n, vector<int> &rounds);
+
+        int maxArea(int h, int w, vector<int> &horizontalCuts, vector<int> &verticalCuts);
+
+        vector<int> missingRolls(vector<int> &rolls, int mean, int n);
+
+        vector<int> arrayChange(vector<int> &nums, vector<vector<int>> &operations);
+
+        string maximumNumber(string num, vector<int> &change);
     };
 
     class OrderedStream {
@@ -293,6 +301,16 @@ namespace zero {
         FindElements(TreeNode *root);
 
         bool find(int target);
+    };
+
+    class DataStream {
+    private:
+        int val = 0, kmax = 0;
+        int valCount = 0;
+    public:
+        DataStream(int value, int k);
+
+        bool consec(int num);
     };
 }
 
